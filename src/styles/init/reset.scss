@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Oswald;
+}
+
+:root{
+  --yellow: #FFD166;
+  --placeholder: #727272;
+  --text-description: #5f5f5f;
+  --menu-height: 44px;
+}
+body{
+  @include flex($direction: column, $align: center);
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Bangers;
+}
+
+a{
+  text-decoration: none;
+  color: unset;
+}
+
+li{
+  list-style: none;
+}

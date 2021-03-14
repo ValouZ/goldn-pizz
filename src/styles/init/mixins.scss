@@ -1,0 +1,27 @@
+@mixin flex($direction: row, $justify: initial, $align: initial) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin box-shadow($h: 0px, $v: 4px, $b: 20px, $s: 0px, $c: rgba(0, 0, 0, 0.1)) {
+  -webkit-box-shadow: $h $v $b $s $c;
+  -moz-box-shadow: $h $v $b $s $c;
+  box-shadow: $h $v $b $s $c;
+}
+
+@mixin pAbsolute($left: none, $right: none, $top: none, $bottom: none) {
+  position: absolute;
+  left: $left;
+  right: $right;
+  top: $top;
+  bottom: $bottom;
+}
+
+@mixin pSticky($top: none, $left: none, $right: none) {
+  position: sticky;
+  top: $top;
+  left: $left;
+  right: $right;
+}

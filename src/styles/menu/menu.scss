@@ -1,0 +1,26 @@
+.menu {
+  @include pSticky(calc(100vh - 44px), 0);
+  margin-top: calc(-1 * var(--menu-height));
+  z-index: 25;
+  font-size: 20px;
+
+  nav {
+    @include flex($justify: space-around, $align: center);
+    height: var(--menu-height);
+    width: 100vw;
+    background: var(--yellow);
+
+    .home {
+      @include flex($justify: center, $align: center);
+      width: 39px;
+      height: 39px;
+      background: white;
+      border-radius: 100%;
+    }
+  }
+}
+
+.goldn-pizz {
+  margin-top: 26px;
+  font-size: 36px;
+}
