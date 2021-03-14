@@ -5,15 +5,15 @@
   width: 231px;
   @include box-shadow();
   border-radius: 50px;
-}
 
-.price {
-  @include pAbsolute($left: 26px);
-  font-size: 24px;
-  font-weight: 700;
+  .price {
+    @include pAbsolute($left: 26px);
+    font-size: 24px;
+    font-weight: 700;
 
-  span {
-    font-size: 18px;
+    span {
+      font-size: 18px;
+    }
   }
 }
 
@@ -26,7 +26,7 @@
   border-radius: inherit;
   font-weight: 700;
 
-  button{
+  button {
     @include flex($justify: center, $align: center);
     width: 45px;
     height: 100%;
@@ -35,16 +35,16 @@
     // outline: none;
     border: none;
 
-    img{
+    img {
       transition: 0.1s;
     }
-    
-    &:hover img{
+
+    &:hover img {
       transform: scale(1.2);
     }
   }
 
-  p{
+  p {
     font-size: 26px;
   }
 }
