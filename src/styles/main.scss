@@ -3,5 +3,11 @@
 
 @import "menu/menu.scss";
 
-@import "home/searchbar.scss";
-@import "home/cards.scss";
+@import "index/searchbar.scss";
+@import "index/cards.scss";
+
+@import "product-page/main.scss";
+@import "product-page/pizza-size.scss";
+@import "product-page/price-component.scss";
+@import "product-page/ingredients.scss";
+@import "product-page/description.scss";

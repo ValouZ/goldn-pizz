@@ -3,11 +3,12 @@
   margin-top: calc(-1 * var(--menu-height));
   z-index: 25;
   font-size: 20px;
+  width: 100%;
 
   nav {
     @include flex($justify: space-around, $align: center);
     height: var(--menu-height);
-    width: 100vw;
+
     background: var(--yellow);
 
     .home {

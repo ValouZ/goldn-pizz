@@ -1,0 +1,29 @@
+.product-background {
+  height: 100vh;
+  background: #e7e7e7;
+}
+
+.background-info {
+  @include flex($direction: column, $align: center);
+  position: relative;
+  width: 100%;
+  margin-top: 153px;
+  height: 100vh;
+  background: white;
+  border-radius: 27px 27px 0 0;
+  padding-top: 80px;
+
+  .pizza {
+    @include pAbsolute($top: 0, $left: 50%);
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+

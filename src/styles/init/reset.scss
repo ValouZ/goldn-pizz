@@ -14,7 +14,6 @@
 body{
   @include flex($direction: column, $align: center);
   position: relative;
-  min-width: 100vw;
   min-height: 100vh;
 }
 

@@ -1,0 +1,50 @@
+.price-component {
+  @include flex($align: center);
+  position: relative;
+  height: 48px;
+  width: 231px;
+  @include box-shadow();
+  border-radius: 50px;
+}
+
+.price {
+  @include pAbsolute($left: 26px);
+  font-size: 24px;
+  font-weight: 700;
+
+  span {
+    font-size: 18px;
+  }
+}
+
+.quantity {
+  @include flex($justify: space-between, $align: center);
+  @include pAbsolute($right: 0, $top: 0);
+  background: var(--yellow);
+  width: 124px;
+  height: 100%;
+  border-radius: inherit;
+  font-weight: 700;
+
+  button{
+    @include flex($justify: center, $align: center);
+    width: 45px;
+    height: 100%;
+    border-radius: inherit;
+    background: none;
+    // outline: none;
+    border: none;
+
+    img{
+      transition: 0.1s;
+    }
+    
+    &:hover img{
+      transform: scale(1.2);
+    }
+  }
+
+  p{
+    font-size: 26px;
+  }
+}

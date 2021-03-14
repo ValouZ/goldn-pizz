@@ -1,0 +1,21 @@
+.pizza-size {
+  @include flex($justify: space-between);
+  width: 205px;
+  margin-bottom: 24px;
+
+  button {
+    width: 52px;
+    height: 52px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    @include box-shadow();
+    font-size: 28px;
+    font-weight: 700;
+    background: white;
+
+    &.active{
+      background: var(--yellow);
+    }
+  }
+}
