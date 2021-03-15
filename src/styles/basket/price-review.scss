@@ -1,0 +1,35 @@
+.price-review {
+  @include flex($direction: column);
+  width: 350px;
+  margin-top: 23px;
+
+  &__item {
+    @include flex($justify: space-between);
+    font-size: 18px;
+    
+    &:not(:last-child){
+      margin-bottom: 14px;
+    }
+
+    h4 {
+      color: var(--text-description);
+      font-weight: 400;
+    }
+  }
+
+  .total{
+    margin-top: 5px;
+    h4{
+      font-size: 24px;
+      color: black;
+    }
+
+    .price{
+      font-size: 24px;
+
+      span{
+        font-size: 18px;
+      }
+    }
+  }
+}
