@@ -5,33 +5,32 @@
   font-family: Oswald;
 }
 
-:root{
-  --yellow: #FFD166;
+:root {
+  --yellow: #ffd166;
   --placeholder: #727272;
   --text-description: #5f5f5f;
   --menu-height: 44px;
 }
-body{
+body {
   @include flex($direction: column, $align: center);
   position: relative;
-  min-height: 100vh;
+  // min-height: 100vh;
+  margin-bottom: var(--menu-height);
+  padding-bottom: var(--menu-height);
 }
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   font-family: Bangers;
 }
 
-a{
+a {
   text-decoration: none;
   color: unset;
 }
 
-li{
+li {
   list-style: none;
 }
 
@@ -62,3 +61,4 @@ button {
   margin-bottom: 88px;
   width: 240px;
 }
+
