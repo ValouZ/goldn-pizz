@@ -1,0 +1,24 @@
+.order{
+  @include flex ($justify: space-between, $align: center);
+  margin-top: 30px;
+  font-family: Bangers;
+  font-size: 32px;
+  width: 240px;
+
+  &__button{
+    @include flex ($justify: center, $align: center);
+    height: 60px;
+    width: 60px;
+    background: black;
+    border-radius: 100%;
+    transition: 0.2s;
+
+    &:hover{
+      background: var(--yellow);
+    }
+  }
+
+  &--basket{
+    transform: translateX(45px);
+  }
+}
