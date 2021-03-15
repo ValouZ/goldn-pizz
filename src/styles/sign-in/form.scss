@@ -1,0 +1,21 @@
+.sign-in-form{
+  @include flex($direction:column, $justify:space-between);
+  width: 240px;
+  height: 96px;
+  margin-bottom: 10px;
+
+  input{
+    position: relative;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    color: #727272;
+    padding-bottom: 5px;
+  }
+}
+
+.sign-in-checkbox{
+  width: 240px;
+  
+}
