@@ -27,23 +27,17 @@
     <img src="assets/images/pizza-placeholder.jpg" alt="Placeholder" class="pizza">
     <h1>Goldn Marg'</h1>
     <section class="pizza-size" id="app-pizza-size">
-      <button>
-        <h2>S</h2>
-      </button>
-      <button class="active">
-        <h2>M</h2>
-      </button>
-      <button>
-        <h2>L</h2>
-      </button>
+      <button>S</button>
+      <button class="active">M</button>
+      <button>L</button>
     </section>
 
     <section class="price-component">
-      <p class="price">13.80 <span>€</span></p>
+      <p class="price" id="app-price">13.80 <span>€</span></p>
       <div class="quantity">
-        <button><img src="assets/images/remove.svg" alt="Remove"></button>
-        <p>1</p>
-        <button><img src="assets/images/add.svg" alt="Add"></button>
+        <button id="app-remove"><img src="assets/images/remove.svg" alt="Remove"></button>
+        <p id="app-quantity">0</p>
+        <button id="app-add"><img src="assets/images/add.svg" alt="Add"></button>
       </div>
     </section>
 
@@ -81,6 +75,7 @@
   </section>
 
   <script src="scripts/pizza-size.js"></script>
+  <script src="scripts/number-pizza.js"></script>
 </body>
 
 </html>
