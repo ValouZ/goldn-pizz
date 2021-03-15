@@ -1,6 +1,6 @@
 .cards{
   @include flex (column, center, center);
-  margin-bottom: 60px;
+  margin-bottom: 25px;
 
   .card:not(:last-child){
     margin-bottom: 23px;
