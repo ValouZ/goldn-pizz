@@ -1,5 +1,5 @@
 .menu {
-  @include pSticky(calc(100vh - 44px), 0);
+  @include pFixed(0);
   margin-top: calc(-1 * var(--menu-height));
   z-index: 25;
   font-size: 20px;

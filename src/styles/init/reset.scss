@@ -14,7 +14,8 @@
 body{
   @include flex($direction: column, $align: center);
   position: relative;
-  min-height: 100vh;
+  // min-height: 100vh;
+  margin-bottom: var(--menu-height);
 }
 
 h1,
