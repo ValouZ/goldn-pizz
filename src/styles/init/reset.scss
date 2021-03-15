@@ -34,3 +34,31 @@ a{
 li{
   list-style: none;
 }
+
+button {
+  outline: none;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.page-title {
+  font-size: 45px;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 18px;
+
+  span {
+    font-size: 14px;
+  }
+}
+
+.main-title{
+  margin-top: 111px;
+  margin-bottom: 88px;
+  width: 240px;
+}
