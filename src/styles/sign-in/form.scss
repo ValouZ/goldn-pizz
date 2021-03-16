@@ -4,6 +4,8 @@
   height: 96px;
   margin-bottom: 10px;
 
+  
+
   input{
     position: relative;
     outline: none;
@@ -12,9 +14,22 @@
     width: 100%;
     color: #727272;
     padding-bottom: 5px;
+    font-size: 24px;
   }
 }
 
 .sign-in-checkbox{
   width: 240px;
+  font-size: 24px;
+  margin-bottom: 70px;
+}
+
+.sign-in-connect{
+  margin-bottom: 30px;
+}
+
+.sign-in-other-option{
+  width: 240px;
+  @include flex($justify:space-between);
+  font-size: 19px;
 }
