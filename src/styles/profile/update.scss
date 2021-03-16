@@ -1,0 +1,19 @@
+.update-input {
+    &__button:hover {
+        .pen {
+            transform: translate(-3px, 3px);
+        }
+        .box {
+            opacity: 0;
+        }
+    }
+}
+
+.pen {
+    transition: 0.3s cubic-bezier(.17, .97, .71, .87);
+}
+
+.box {
+    transition: 0.1s;
+    transition-delay: 0.2s;
+}
