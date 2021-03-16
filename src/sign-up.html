@@ -25,43 +25,42 @@
 
   <h2 class="page-title main-title">Rejoins nous vite</h2>
 
-  <section class="form">
-    <form>
-      <div class="sign-up-form">
-        <select name="civilite" id="civilite" class="sign-up-selector">
-          <optgroup label="Sexe">
-            <option value="monsieur">
-              M.
-            </option>
-            <option value="madame">
-              Mme
-            </option>
-            <option value="autre">
-              Autre
-            </option>
-          </optgroup>
-        </select>
-        <input type="pseudo" placeholder="Pseudo">
-        <input type="password" placeholder="Mot de passe">
-        <input type="password" placeholder="Confirmez le mot de passe">
-        <input type="email" placeholder="Email">
-        <input type="text" placeholder="Adresse postale">
-        <input type="tel" placeholder="Numéro de téléphone">
-      </div>
-      <div class="sign-in-checkbox">
-        <input type="checkbox">
-        <label>Afficher le mot de passe</label>
-      </div>
-      <label class="order sign-in-connect" for="connexion">
-        Inscription
-        <button class="order__button" id="connexion">
-          <img src="assets/images/right-arrow.svg" alt="Commander">
-        </button>
-      </label>
-    </form>
-  </section>
+  <form class="form">
+    <div class="sign-up-form">
+      <select name="civilite" id="civilite" class="sign-up-selector">
+        <optgroup label="Sexe">
+          <option value="monsieur">
+            M.
+          </option>
+          <option value="madame">
+            Mme
+          </option>
+          <option value="autre">
+            Autre
+          </option>
+        </optgroup>
+      </select>
+      <input type="pseudo" placeholder="Pseudo">
+      <input type="password" placeholder="Mot de passe">
+      <input type="password" placeholder="Confirmez le mot de passe">
+      <input type="email" placeholder="Email">
+      <input type="text" placeholder="Adresse postale">
+      <input type="tel" placeholder="Numéro de téléphone">
+    </div>
 
-  <section class="sign-in-other-option">
+    <div class="show-checkbox">
+      <input type="checkbox" id="show-pswd">
+      <label for="show-pswd">Afficher le mot de passe</label>
+    </div>
+    <label class="order connect" for="connexion">
+      Inscription
+      <button class="order__button" id="connexion">
+        <img src="assets/images/right-arrow.svg" alt="Commander">
+      </button>
+    </label>
+  </form>
+
+  <section class="other-option">
     <a href="sign-in.html">Connexion</a>
     <a href="#">Mot de passe oublié</a>
   </section>

@@ -1,39 +1,36 @@
-.sign-in-form{
-  height: 96px;
-}
-
-.sign-in-form, .sign-up-form{
-  @include flex($direction:column, $justify:space-between);
+.sign-in-form,
+.sign-up-form {
   width: 240px;
-  margin-bottom: 10px;
 
   input {
-    position: relative;
     outline: none;
     border: none;
     border-bottom: 1px solid black;
     width: 100%;
-    color: #727272;
+    color: #000000;
     padding-bottom: 5px;
     font-size: 24px;
-    margin-bottom: 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
   }
 }
 
-.sign-in-checkbox {
+.show-checkbox {
   width: 240px;
   font-size: 24px;
   margin-bottom: 70px;
+  margin-top: 14px;
 }
 
-.sign-in-connect {
+.connect {
   margin-bottom: 30px;
 }
 
-.sign-in-other-option {
+.other-option {
   width: 240px;
-  @include flex($justify:space-between);
+  @include flex($justify: space-between);
   font-size: 19px;
   text-decoration: underline;
 }
-
