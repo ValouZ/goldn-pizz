@@ -1,7 +1,10 @@
-.sign-in-form {
+.sign-in-form{
+  height: 96px;
+}
+
+.sign-in-form, .sign-up-form{
   @include flex($direction:column, $justify:space-between);
   width: 240px;
-  height: 96px;
   margin-bottom: 10px;
 
   input {
@@ -13,6 +16,7 @@
     color: #727272;
     padding-bottom: 5px;
     font-size: 24px;
+    margin-bottom: 20px;
   }
 }
 
@@ -30,4 +34,6 @@
   width: 240px;
   @include flex($justify:space-between);
   font-size: 19px;
+  text-decoration: underline;
 }
+

@@ -20,33 +20,51 @@
       <!-- temporaire pour navigation -->
     </nav>
   </header>
-  
+
   <h1 class="goldn-pizz">Goldn Pizz'</h1>
 
-  <h2 class="page-title main-title">Content de te revoir</h2> 
-  
+  <h2 class="page-title main-title">Rejoins nous vite</h2>
+
   <section class="form">
     <form>
-      <div class="sign-in-form">
+      <div class="sign-up-form">
+        <select name="civilite" id="civilite" class="sign-up-selector">
+          <option value="">
+            Sexe
+          </option>
+          <option value="monsieur">
+            M.
+          </option>
+          <option value="madame">
+            Mme
+          </option>
+          <option value="autre">
+            Autre
+          </option>
+        </select>
         <input type="pseudo" placeholder="Pseudo">
         <input type="password" placeholder="Mot de passe">
+        <input type="password" placeholder="Confirmez le mot de passe">
+        <input type="email" placeholder="Email">
+        <input type="text" placeholder="Adresse postale">
+        <input type="tel" placeholder="Numéro de téléphone">
       </div>
       <div class="sign-in-checkbox">
         <input type="checkbox">
         <label>Afficher le mot de passe</label>
       </div>
       <label class="order sign-in-connect" for="connexion">
-        Connexion
+        Inscription
         <button class="order__button" id="connexion">
           <img src="assets/images/right-arrow.svg" alt="Commander">
         </button>
       </label>
     </form>
   </section>
-  
+
   <section class="sign-in-other-option">
-      <a href="sign-up.html">S'inscrire</a>
-      <a href="#">Mot de passe oublié</a>  
+    <a href="sign-in.html">Connexion</a>
+    <a href="#">Mot de passe oublié</a>
   </section>
 </body>
 
