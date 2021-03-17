@@ -1,27 +1,80 @@
 .menu {
   @include pFixed(0);
   margin-top: calc(-1 * var(--menu-height));
-  z-index: 25;
+  z-index: 5;
   font-size: 20px;
   width: 100%;
 
-  nav {
-    @include flex($justify: space-around, $align: center);
-    height: var(--menu-height);
+  @include tablet {
+    font-size: 25px;
+  }
 
+  @include desktop {
+    top: 0;
+    bottom: unset;
+    margin-top: unset;
+  }
+
+  nav{
+    width: 100%;
     background: var(--yellow);
 
-    .home {
-      @include flex($justify: center, $align: center);
-      width: 39px;
-      height: 39px;
-      background: white;
-      border-radius: 100%;
+    @include desktop{
+      @include flex ($justify: flex-end)
     }
+  }
+
+  ul {
+    @include flex($justify: space-around, $align: center);
+    height: var(--menu-height);
+    
+
+    @include desktop{
+      width: 35%;
+    }
+  }
+}
+
+.home {
+  a {
+    @include flex($justify: center, $align: center);
+    width: 39px;
+    height: 39px;
+    background: white;
+    border-radius: 100%;
+
+    @include tablet {
+      width: 50px;
+      height: 50px;
+
+      & img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+
+  @include desktop{
+    display: none;
   }
 }
 
 .goldn-pizz {
   margin-top: 26px;
   font-size: 36px;
+
+  @include tablet {
+    margin-top: 40px;
+    font-size: 50px;
+  }
+
+  @include desktop {
+    @include pFixed($top: 12px);
+    z-index: 6;
+    margin-top: 0px;
+  }
+
+  a{
+    font-family: inherit;
+  }
 }

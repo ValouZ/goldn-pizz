@@ -10,14 +10,21 @@
   --placeholder: #727272;
   --text-description: #5f5f5f;
   --menu-height: 44px;
+
+  @include tablet{
+    --menu-height: 70px;
+  }
 }
 
 body {
   @include flex($direction: column, $align: center);
   position: relative;
   // min-height: 100vh;
-  margin-bottom: var(--menu-height);
-  padding-bottom: var(--menu-height);
+  margin-bottom: calc(2 *  var(--menu-height));
+
+  @include desktop{
+    margin-bottom: var(--menu-height);
+  }
 }
 
 h1,
@@ -55,6 +62,14 @@ button {
 
   span {
     font-size: 14px;
+
+    @include tablet{
+      font-size: 20px;
+    }
+  }
+
+  @include tablet{
+    font-size: 26px;
   }
 }
 

@@ -20,9 +20,22 @@
   bottom: $bottom;
 }
 
-@mixin pFixed($bottom: none, $left: none, $right: none) {
+@mixin pFixed($bottom: none, $top:none, $left: none, $right: none) {
   position: fixed;
   bottom: $bottom;
+  top: $top;
   left: $left;
   right: $right;
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
 }
