@@ -3,7 +3,7 @@
   margin-bottom: 23px;
 
   @include desktop {
-    margin-top: 190px;
+    margin-top: var(--margin-desktop);
     margin-bottom: 64px;
   }
 }

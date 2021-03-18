@@ -1,3 +1,11 @@
+.form{
+  @include flex($direction: column, $align: center);
+
+  @include desktop{
+    align-items: flex-end;
+  }
+}
+
 .sign-up-selector{
   width: 100%;
   border: none;
@@ -8,7 +16,7 @@
   font-size: 24px;
   color: #727272;
   @include tablet {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -28,3 +36,8 @@
   }
 }
 
+.connect{
+  @include desktop{
+    margin-top: 50px;
+  }
+}
