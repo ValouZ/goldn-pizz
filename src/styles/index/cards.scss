@@ -1,10 +1,10 @@
 .cards {
   @include flex(column, center, center);
 
-  @include desktop{
+  @include desktop {
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 25px;
+    margin: 0 100px;
   }
 }
 
@@ -23,9 +23,11 @@
     height: 170px;
   }
 
-  @include desktop{
-    margin: 0 12.5px ;
+  @include desktop {
+    margin: 0 12.5px;
     margin-bottom: 25px;
+    width: 550px;
+    height: 201px;
   }
 
   &:not(:last-child) {
@@ -46,6 +48,11 @@
       height: 18px;
       background-size: 18px;
     }
+
+    @include desktop{
+      right: 37px;
+      top: 37px;
+    }
   }
 
   img {
@@ -57,6 +64,11 @@
       margin-right: 30px;
       width: 150px;
     }
+
+    @include desktop{
+      margin-right: 42px;
+      width: 180px;
+    }
   }
 
   .content {
@@ -64,6 +76,10 @@
 
     @include tablet {
       width: 190px;
+    }
+
+    @include desktop {
+      width: 213px;
     }
 
     .pizza-name {
@@ -74,6 +90,10 @@
       @include tablet {
         font-size: 32px;
       }
+
+      @include desktop {
+        font-size: 36px;
+      }
     }
 
     .description {
@@ -83,6 +103,10 @@
 
       @include tablet {
         font-size: 16px;
+      }
+
+      @include desktop {
+        font-size: 18px;
       }
     }
   }

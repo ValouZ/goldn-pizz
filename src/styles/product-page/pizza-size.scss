@@ -1,7 +1,25 @@
+.choice {
+  @include flex($direction: column, $align: center);
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 666px;
+  }
+}
+
 .pizza-size {
   @include flex($justify: space-between);
   width: 205px;
   margin-bottom: 24px;
+
+  @include tablet {
+    width: 286px;
+  }
+
+  @include desktop {
+    margin-bottom: 0px;
+  }
 
   button {
     width: 52px;
@@ -14,7 +32,13 @@
     background: white;
     transition: 0.2s;
 
-    &.active{
+    @include tablet {
+      width: 72px;
+      height: 72px;
+      font-size: 50px;
+    }
+
+    &.active {
       background: var(--yellow);
     }
   }
