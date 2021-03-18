@@ -1,3 +1,11 @@
+.only-desktop{
+  display: none;
+
+  @include desktop{
+    display: initial;
+  }
+}
+
 .product-background {
   background: linear-gradient(to bottom, #e7e7e7 50%, #ffffff 50%);
 }
