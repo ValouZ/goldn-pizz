@@ -41,5 +41,14 @@
     &.active {
       background: var(--yellow);
     }
+
+    &:hover {
+      background: darken($color: #ffffff, $amount: 5);
+      @include box-shadow($c: rgba(0, 0, 0, 0.3));
+
+      &.active {
+        background: darken($color: #ffd166, $amount: 10);
+      }
+    }
   }
 }
