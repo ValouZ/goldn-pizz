@@ -10,7 +10,7 @@
   --placeholder: #727272;
   --text-description: #5f5f5f;
   --menu-height: 44px;
-
+  --margin-desktop: 190px;
   @include tablet {
     --menu-height: 70px;
   }
@@ -55,7 +55,7 @@ button {
 .page-title {
   font-size: 45px;
 
-  @include desktop{
+  @include desktop {
     font-size: 62px;
   }
 }
@@ -89,6 +89,15 @@ button {
   margin-top: 111px;
   margin-bottom: 88px;
   width: 240px;
+
+  @include tablet {
+    width: 340px;
+  }
+
+  @include desktop {
+    width: unset;
+    margin-top: var(--margin-desktop);
+  }
 }
 
 input {

@@ -1,19 +1,26 @@
 .update-input {
-    &__button:hover {
-        .pen {
-            transform: translate(-3px, 3px);
-        }
-        .box {
-            opacity: 0;
-        }
+  &__button:hover {
+    .pen {
+      transform: translate(-3px, 3px);
     }
+    .box {
+      opacity: 0;
+    }
+  }
 }
 
 .pen {
-    transition: 0.3s cubic-bezier(.17, .97, .71, .87);
+  transition: 0.3s cubic-bezier(0.17, 0.97, 0.71, 0.87);
 }
 
 .box {
-    transition: 0.1s;
-    transition-delay: 0.2s;
+  transition: 0.1s;
+  transition-delay: 0.2s;
+}
+
+.columns-desktop {
+  @include desktop {
+    width: 900px;
+    @include flex($justify: space-between);
+  }
 }
