@@ -3,9 +3,21 @@
   width: 350px;
   margin-top: 23px;
 
+  @include tablet{
+    width: 400px;
+  }
+
   &__item {
     @include flex($justify: space-between);
     font-size: 18px;
+
+    @include tablet{
+      font-size: 26px;
+    }
+
+    @include desktop{
+      font-size: 28px;
+    }
     
     &:not(:last-child){
       margin-bottom: 14px;
@@ -22,6 +34,14 @@
     h4{
       font-size: 24px;
       color: black;
+
+      @include tablet {
+        font-size: 30px;
+      }
+
+      @include desktop{
+        font-size: 36px;
+      }
     }
 
     .price{
