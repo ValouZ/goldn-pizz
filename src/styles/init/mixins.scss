@@ -1,4 +1,4 @@
-@mixin flex($direction: row, $justify: initial, $align: initial, $wrap: none) {
+@mixin flex($direction: row, $justify: initial, $align: initial, $wrap: nowrap) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
@@ -12,7 +12,7 @@
   box-shadow: $h $v $b $s $c;
 }
 
-@mixin pAbsolute($left: none, $right: none, $top: none, $bottom: none) {
+@mixin pAbsolute($left: unset, $right: unset, $top: unset, $bottom: unset) {
   position: absolute;
   left: $left;
   right: $right;
@@ -20,7 +20,7 @@
   bottom: $bottom;
 }
 
-@mixin pFixed($bottom: none, $top:none, $left: none, $right: none) {
+@mixin pFixed($bottom: unset, $top:unset, $left: unset, $right: unset) {
   position: fixed;
   bottom: $bottom;
   top: $top;
