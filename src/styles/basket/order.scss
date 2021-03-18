@@ -1,24 +1,42 @@
-.order{
-  @include flex ($justify: space-between, $align: center);
+.order {
+  @include flex($justify: space-between, $align: center);
   margin-top: 30px;
   font-family: Bangers;
   font-size: 32px;
   width: 240px;
 
-  &__button{
-    @include flex ($justify: center, $align: center);
+  @include tablet {
+    width: 350px;
+    font-size: 50px;
+  }
+
+  &__button {
+    @include flex($justify: center, $align: center);
     height: 60px;
     width: 60px;
     background: black;
     border-radius: 100%;
     transition: 0.2s;
 
-    &:hover{
+    @include tablet {
+      height: 80px;
+      width: 80px;
+
+      img{
+        width: 50px;
+      }
+    }
+
+    &:hover {
       background: var(--yellow);
     }
   }
 
-  &--basket{
+  &--basket {
     transform: translateX(45px);
+
+    @include tablet{
+      transform: translateX(25px);
+    }
   }
 }

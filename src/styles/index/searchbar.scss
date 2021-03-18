@@ -7,7 +7,15 @@
   label {
     @include pAbsolute($left: 20px, $top: 50%);
     transform: translateY(-50%);
-    height: 25px;
+
+    @include tablet {
+      height: 30px;
+      left: 24px;
+    }
+
+    img {
+      height: 100%;
+    }
   }
   input {
     width: 315px;
@@ -22,6 +30,13 @@
     font-weight: 300;
     outline: none;
 
+    @include tablet {
+      padding-left: 74px;
+      width: 415px;
+      height: 45px;
+      font-size: 28px;
+    }
+
     &::placeholder {
       color: var(--placeholder);
     }
@@ -32,6 +47,15 @@
     transform: translateY(-50%);
     width: 25px;
     height: 25px;
+  }
+}
+
+.searchbar {
+  margin-top: 76px;
+
+  @include desktop{
+    margin-top: 190px;
+    margin-bottom: 52px;
   }
 }
 
