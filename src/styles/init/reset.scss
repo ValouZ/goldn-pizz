@@ -89,6 +89,10 @@ button {
   margin-top: 111px;
   margin-bottom: 88px;
   width: 240px;
+
+  @include tablet{
+    width:340px;
+  }
 }
 
 input {

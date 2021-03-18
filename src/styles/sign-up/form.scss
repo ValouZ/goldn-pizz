@@ -7,4 +7,24 @@
   margin-bottom: 50px;
   font-size: 24px;
   color: #727272;
+  @include tablet {
+    font-size: 40px;
+  }
 }
+
+.sign-up-form-left-group{
+  margin-bottom: 50px;
+}
+
+.sign-up-form{
+  @include desktop {
+    @include flex($direction:row);
+  }
+}
+
+.sign-up-form div:not(:last-child){
+  @include desktop{
+    margin-right: 50px;
+  }
+}
+
