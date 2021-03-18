@@ -10,6 +10,10 @@
     font-size: 50px;
   }
 
+  @include desktop{
+    margin-top: 74px;
+  }
+
   &__button {
     @include flex($justify: center, $align: center);
     height: 60px;
