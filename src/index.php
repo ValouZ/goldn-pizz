@@ -1,3 +1,17 @@
+<?php 
+include("traitement/pdo.php");
+
+$req = $bdd->query('SELECT * FROM pizza');
+
+$resultats = $req->fetchAll(PDO::FETCH_ASSOC);
+// foreach ($resultats as $pizza) {
+//     echo $pizza['nom_pizza'] . '<br>';
+// }
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,15 +31,15 @@
   <header class="menu">
     <nav>
       <ul>
-        <li class="home"><a href="index.html"><img src="assets/images/home.svg" alt="Accueil"></a></li>
-        <li><a href="basket.html">Panier</a></li><!-- temporaire pour navigation -->
-        <li><a href="sign-up.html">Inscription</a></li>
-        <li><a href="sign-in.html">Connexion</a></li>
-        <li><a href="profile.html">Profil</a></li><!-- temporaire pour navigation -->
+        <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
+        <li><a href="basket.php">Panier</a></li><!-- temporaire pour navigation -->
+        <li><a href="sign-up.php">Inscription</a></li>
+        <li><a href="sign-in.php">Connexion</a></li>
+        <li><a href="profile.php">Profil</a></li><!-- temporaire pour navigation -->
       </ul>
     </nav>
   </header>
-  <h1 class="goldn-pizz"><a href="index.html">Goldn Pizz'</a></h1>
+  <h1 class="goldn-pizz"><a href="index.php">Goldn Pizz'</a></h1>
 
   <section class="searchbar" aria-label="Barre de recherche">
     <label for="search">
@@ -34,71 +48,24 @@
     <input type="text" id='search' placeholder="Rechercher">
   </section>
 
+
+
   <section class="cards">
-    <a class="card" href="product-page.html">
-      <img src="assets/images/pizza-placeholder.jpg" alt="Placeholder">
+    <?php
+    foreach ($resultats as $pizza) {  
+    ?>
+    <a class="card" href="product-page.php">
+      <img src="<?=$pizza['image1']?>" alt="<?=$pizza['alt1']?>">
       <div class="content">
-        <h2 class="pizza-name">Goldn Marg'</h2>
-        <p class="description">Ceci est une margarita, elle est délicieuse et Tom la valide fort</p>
-        <p class="price">13.80 <span>€</span></p>
+        <h2 class="pizza-name"><?=$pizza['nom_pizza']?></h2>
+        <p class="description"><?=$pizza['description_pizza']?></p>
+        <p class="price"><?=$pizza['prix_pizza']?><span>€</span></p>
       </div>
     </a>
-    <a class="card" href="product-page.html">
-      <img src="assets/images/pizza-placeholder.jpg" alt="Placeholder">
-      <div class="content">
-        <h2 class="pizza-name">Goldn Marg'</h2>
-        <p class="description">Ceci est une margarita, elle est délicieuse et Tom la valide fort</p>
-        <p class="price">13.80 <span>€</span></p>
-      </div>
-    </a>
-    <a class="card" href="product-page.html">
-      <img src="assets/images/pizza-placeholder.jpg" alt="Placeholder">
-      <div class="content">
-        <h2 class="pizza-name">Goldn Marg'</h2>
-        <p class="description">Ceci est une margarita, elle est délicieuse et Tom la valide fort</p>
-        <p class="price">13.80 <span>€</span></p>
-      </div>
-    </a>
-    <a class="card" href="product-page.html">
-      <img src="assets/images/pizza-placeholder.jpg" alt="Placeholder">
-      <div class="content">
-        <h2 class="pizza-name">Goldn Marg'</h2>
-        <p class="description">Ceci est une margarita, elle est délicieuse et Tom la valide fort</p>
-        <p class="price">13.80 <span>€</span></p>
-      </div>
-    </a>
-    <a class="card" href="product-page.html">
-      <img src="assets/images/pizza-placeholder.jpg" alt="Placeholder">
-      <div class="content">
-        <h2 class="pizza-name">Goldn Marg'</h2>
-        <p class="description">Ceci est une margarita, elle est délicieuse et Tom la valide fort</p>
-        <p class="price">13.80 <span>€</span></p>
-      </div>
-    </a>
-    <a class="card" href="product-page.html">
-      <img src="assets/images/pizza-placeholder.jpg" alt="Placeholder">
-      <div class="content">
-        <h2 class="pizza-name">Goldn Marg'</h2>
-        <p class="description">Ceci est une margarita, elle est délicieuse et Tom la valide fort</p>
-        <p class="price">13.80 <span>€</span></p>
-      </div>
-    </a>
-    <a class="card" href="product-page.html">
-      <img src="assets/images/pizza-placeholder.jpg" alt="Placeholder">
-      <div class="content">
-        <h2 class="pizza-name">Goldn Marg'</h2>
-        <p class="description">Ceci est une margarita, elle est délicieuse et Tom la valide fort</p>
-        <p class="price">13.80 <span>€</span></p>
-      </div>
-    </a>
-    <a class="card" href="product-page.html">
-      <img src="assets/images/pizza-placeholder.jpg" alt="Placeholder">
-      <div class="content">
-        <h2 class="pizza-name">Goldn Marg'</h2>
-        <p class="description">Ceci est une margarita, elle est délicieuse et Tom la valide fort</p>
-        <p class="price">13.80 <span>€</span></p>
-      </div>
-    </a>
+  <?php
+  }
+  ?>
+
   </section>
 </body>
 

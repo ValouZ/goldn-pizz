@@ -37,7 +37,7 @@
   &::after {
     content: "";
     @include pAbsolute($right: 15px, $top: 23px);
-    background: center center no-repeat url("~/assets/images/arrow.svg");
+    background: center center no-repeat url("/assets/images/arrow.svg");
     width: 10px;
     height: 10px;
 
