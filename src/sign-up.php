@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>S'inscrire - Goldn Pizz'</title>
   <link rel="shortcut icon" href="assets/favicon/pizza.svg" type="image/x-icon">
-  <link rel="stylesheet" href="styles/main.scss">
+  <link rel="stylesheet" href="styles/main.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@300;400;700&display=swap"
     rel="stylesheet">
