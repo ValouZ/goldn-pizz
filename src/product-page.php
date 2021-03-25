@@ -3,9 +3,13 @@ include("traitement/pdo.php");
 
 $req_pizza = $bdd->query('SELECT * FROM pizza WHERE id_pizza = '.$_GET['id']);
 
+$req_ingredient = $bdd->query('SELECT * FROM ingredient INNER JOIN pizza_ingredient ON ingredient.id_ingredient = pizza_ingredient.id_ingredient INNER JOIN pizza ON pizza_ingredient.id_pizza = pizza.id_pizza WHERE pizza.id_pizza ='.$_GET['id']);
+
 
 $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
 
+//faire un prepare = url rewriting
+$resultats_ingredient = $req_ingredient->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -60,16 +64,20 @@ foreach ($resultats_pizza as $pizza) {
         </div>
       </section>
     </div>
-
+    
     <div class="info">
       <section class="ingredients">
         <h2>Ingrédients</h2>
-
+        
         <div class="items">
+        <?php
+          foreach($resultats_ingredient as $ingredient ){
+        ?>
           <div class="item">
             <img src="assets/images/pizzas/pizza-placeholder.jpg" alt="placeholder">
-            <p>Sauce tomate</p>
+            <p><?=$ingredient['nom_ingredient']?></p>
           </div>
+          <?php }?>
         </div>
       </section>
 
