@@ -307,7 +307,7 @@
             <option value="Zimbabwe">Zimbabwe </option>
           </optgroup>
         </select>
-
+        
         <input type="text" placeholder="Ville">
         <input type="text" placeholder="Code Postal">
         <input type="text" placeholder="Rue">

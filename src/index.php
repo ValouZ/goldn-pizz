@@ -14,7 +14,7 @@ $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -54,7 +54,7 @@ $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
     <?php
     foreach ($resultats as $pizza) {  
     ?>
-    <a class="card" href="product-page.php?id='<?= $pizza['id_pizza']?>'">
+    <a class="card" href="product-page.php">
       <img src="<?=$pizza['image1']?>" alt="<?=$pizza['alt1']?>">
       <div class="content">
         <h2 class="pizza-name"><?=$pizza['nom_pizza']?></h2>
@@ -62,7 +62,7 @@ $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
         <p class="price"><?=$pizza['prix_pizza']?><span>€</span></p>
       </div>
     </a>
-    <?php
+  <?php
   }
   ?>
 

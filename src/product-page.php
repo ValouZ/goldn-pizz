@@ -1,25 +1,11 @@
-<?php 
-include("traitement/pdo.php");
-
-$req_pizza = $bdd->query('SELECT * FROM pizza WHERE id_pizza = '.$_GET['id']);
-
-
-$resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-foreach ($resultats_pizza as $pizza) {
-?>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $pizza['nom_pizza']?> - Goldn Pizz'</title>
+  <title>Goldn Marg' - Goldn Pizz'</title>
   <link rel="shortcut icon" href="assets/favicon/pizza.svg" type="image/x-icon">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -31,19 +17,19 @@ foreach ($resultats_pizza as $pizza) {
   <header class="menu">
     <nav>
       <ul>
-        <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
-        <li><a href="basket.php">Panier</a></li><!-- temporaire pour navigation -->
-        <li><a href="sign-up.php">Inscription</a></li>
-        <li><a href="sign-in.php">Connexion</a></li>
-        <li><a href="profile.php">Profil</a></li><!-- temporaire pour navigation -->
+        <li class="home"><a href="index.html"><img src="assets/images/home.svg" alt="Accueil"></a></li>
+        <li><a href="basket.html">Panier</a></li><!-- temporaire pour navigation -->
+        <li><a href="sign-up.html">Inscription</a></li>
+        <li><a href="sign-in.html">Connexion</a></li>
+        <li><a href="profile.html">Profil</a></li><!-- temporaire pour navigation -->
       </ul>
     </nav>
   </header>
-  <h1 class="goldn-pizz only-desktop"><a href="index.php">Goldn Pizz'</a></h1>
+  <h1 class="goldn-pizz only-desktop"><a href="index.html">Goldn Pizz'</a></h1>
 
   <section class="background-info">
-    <img src="assets/images/pizzas/pizza-placeholder.jpg" alt="Placeholder" class="pizza">
-    <h1><?= $pizza['nom_pizza']?></h1>
+    <img src="assets/images/pizza-placeholder.jpg" alt="Placeholder" class="pizza">
+    <h1>Goldn Marg'</h1>
     <div class="choice">
       <section class="pizza-size" id="app-pizza-size" aria-label="Choix des tailles de pizza">
         <button>S</button>
@@ -52,7 +38,7 @@ foreach ($resultats_pizza as $pizza) {
       </section>
 
       <section class="price-component" aria-label="Choisir la quantité">
-        <p class="price" id="app-price"><?= $pizza['prix_pizza']?><span>€</span></p>
+        <p class="price" id="app-price">13.80 <span>€</span></p>
         <div class="quantity">
           <button id="app-remove"><img src="assets/images/remove.svg" alt="Remove" class="remove"></button>
           <p id="app-quantity">0</p>
@@ -64,24 +50,41 @@ foreach ($resultats_pizza as $pizza) {
     <div class="info">
       <section class="ingredients">
         <h2>Ingrédients</h2>
-
         <div class="items">
           <div class="item">
-            <img src="assets/images/pizzas/pizza-placeholder.jpg" alt="placeholder">
+            <img src="assets/images/pizza-placeholder.jpg" alt="placeholder">
             <p>Sauce tomate</p>
+          </div>
+          <div class="item">
+            <img src="assets/images/pizza-placeholder.jpg" alt="placeholder">
+            <p>Jambon</p>
+          </div>
+          <div class="item">
+            <img src="assets/images/pizza-placeholder.jpg" alt="placeholder">
+            <p>Mozzarrella</p>
+          </div>
+          <div class="item">
+            <img src="assets/images/pizza-placeholder.jpg" alt="placeholder">
+            <p>Mozzarrella</p>
+          </div>
+          <div class="item">
+            <img src="assets/images/pizza-placeholder.jpg" alt="placeholder">
+            <p>Mozzarrella</p>
           </div>
         </div>
       </section>
 
       <section class="description">
         <h2>Description</h2>
-        <p><?= $pizza['description_pizza'] ?></p>
+        <p>At the time this article was written, the Wii News Channel had not yet been launched, but a placeholder icon
+          is
+          shown on the Wii main menu.
+          At the time this article was written, the Wii News Channel had not yet been launched, but a placeholder icon
+          is
+          shown on the Wii main menu.</p>
       </section>
     </div>
   </section>
-  <?php 
-  };
-  ?>
 
   <script src="scripts/pizza-size.js"></script>
   <script src="scripts/number-pizza.js"></script>
