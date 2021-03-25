@@ -1,0 +1,19 @@
+#--------------------------------------------------
+# Répertoire : /articles/
+#--------------------------------------------------
+
+# Le serveur doit suivre les liens symboliques :
+Options +FollowSymlinks
+
+# Activation du module de réécriture d'URL :
+RewriteEngine on
+
+#--------------------------------------------------
+# Règles de réécriture d'URL :
+#--------------------------------------------------
+
+# Article sans numéro de page :
+RewriteRule ^product-page-([0-9]+)-([0-9]+).php$   /src/product-page.php?id=$1&page=$2 [L]
+
+# Article avec numéro de page :
+RewriteRule ^product-page-([0-9]+)-([0-9]+)-([0-9]+).php   /src/product-page.php?id=$1&page=$2&rubrique=$3  [L]
