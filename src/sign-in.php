@@ -29,8 +29,8 @@
   <form class="form" method="post" action="traitement/connexion-traitement.php">
     <section class="form__content" aria-label="Formulaire de connexion">
       <div class="sign-in-form">
-        <input type="text" placeholder="Pseudo" name="pseudo" require>
-        <input type="password" placeholder="Mot de passe" name="password" require>
+        <input type="text" placeholder="Pseudo" name="pseudo" required>
+        <input type="password" placeholder="Mot de passe" name="password" required>
       </div>
       <div class="show-checkbox">
         <input type="checkbox" id="show-pswd">
