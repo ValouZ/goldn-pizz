@@ -17,15 +17,15 @@
   <header class="menu">
     <nav>
       <ul>
-        <li class="home"><a href="index.html"><img src="assets/images/home.svg" alt="Accueil"></a></li>
-        <li><a href="basket.html">Panier</a></li><!-- temporaire pour navigation -->
-        <li><a href="sign-up.html">Inscription</a></li>
-        <li><a href="sign-in.html">Connexion</a></li>
-        <li><a href="profile.html">Profil</a></li><!-- temporaire pour navigation -->
+        <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
+        <li><a href="basket.php">Panier</a></li><!-- temporaire pour navigation -->
+        <li><a href="sign-up.php">Inscription</a></li>
+        <li><a href="sign-in.php">Connexion</a></li>
+        <li><a href="profile.php">Profil</a></li><!-- temporaire pour navigation -->
       </ul>
     </nav>
   </header>
-  <h1 class="goldn-pizz"><a href="index.html">Goldn Pizz'</a></h1>
+  <h1 class="goldn-pizz"><a href="index.php">Goldn Pizz'</a></h1>
 
   <h2 class="page-title main-title">Salut Robin</h2>
 

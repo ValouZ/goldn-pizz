@@ -17,20 +17,20 @@
   <header class="menu">
     <nav>
       <ul>
-        <li class="home"><a href="index.html"><img src="assets/images/home.svg" alt="Accueil"></a></li>
+        <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
       </ul>
     </nav>
   </header>
 
-  <h1 class="goldn-pizz"><a href="index.html">Goldn Pizz'</a></h1>
+  <h1 class="goldn-pizz"><a href="index.php">Goldn Pizz'</a></h1>
 
   <h2 class="page-title main-title">Content de te revoir</h2>
 
-  <form class="form">
+  <form class="form" method="post" action="traitement/connexion-traitement.php">
     <section class="form__content" aria-label="Formulaire de connexion">
       <div class="sign-in-form">
-        <input type="text" placeholder="Pseudo">
-        <input type="password" placeholder="Mot de passe">
+        <input type="text" placeholder="Pseudo" name="pseudo">
+        <input type="password" placeholder="Mot de passe" name="password">
       </div>
       <div class="show-checkbox">
         <input type="checkbox" id="show-pswd">
@@ -39,14 +39,14 @@
     </section>
     <label class="order connect" for="connexion">
       Connexion
-      <button class="order__button" id="connexion">
+      <button class="order__button" id="connexion" name="formconnexion">
         <img src="assets/images/right-arrow.svg" alt="Commander">
       </button>
     </label>
   </form>
 
   <section class="other-option" aria-label="Redirections">
-    <a href="sign-up.html">S'inscrire</a>
+    <a href="sign-up.php">S'inscrire</a>
     <a href="#">Mot de passe oublié</a>
   </section>
 </body>

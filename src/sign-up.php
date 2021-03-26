@@ -31,7 +31,7 @@
 
   <h2 class="page-title main-title">Rejoins nous vite</h2>
 
-  <form class="form" method="post" action="traitement/inscription_traitement.php">
+  <form class="form" method="post" action="traitement/inscription-traitement.php">
     <div class="sign-up-form">
       <div class="sign-up-form-left-group">
         <select name="civilite" id="civilite" class="sign-up-selector">
@@ -329,7 +329,7 @@
   </form>
 
   <section class="other-option" aria-label="Redirections">
-    <a href="sign-in.html">Connexion</a>
+    <a href="sign-in.php">Connexion</a>
     <a href="#">Mot de passe oublié</a>
   </section>
 </body>
