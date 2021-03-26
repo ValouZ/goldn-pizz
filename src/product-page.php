@@ -74,7 +74,7 @@ foreach ($resultats_pizza as $pizza) {
           foreach($resultats_ingredient as $ingredient ){
         ?>
           <div class="item">
-            <img src="assets/images/pizzas/pizza-placeholder.jpg" alt="placeholder">
+            <img src="<?=$ingredient['img_ingredient']?>" alt="placeholder">
             <p><?=$ingredient['nom_ingredient']?></p>
           </div>
           <?php }?>
