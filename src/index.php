@@ -62,10 +62,9 @@ $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
         <p class="price"><?=$pizza['prix_pizza']?><span>€</span></p>
       </div>
     </a>
-    <?php
+  <?php
   }
   ?>
-
   </section>
 </body>
 

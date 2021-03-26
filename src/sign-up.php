@@ -1,3 +1,8 @@
+<?php 
+  include('traitement/pdo.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,35 +22,35 @@
   <header class="menu">
     <nav>
       <ul>
-        <li class="home"><a href="index.html"><img src="assets/images/home.svg" alt="Accueil"></a></li>
+        <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
       </ul>
     </nav>
   </header>
 
-  <h1 class="goldn-pizz"><a href="index.html">Goldn Pizz'</a></h1>
+  <h1 class="goldn-pizz"><a href="index.php">Goldn Pizz'</a></h1>
 
   <h2 class="page-title main-title">Rejoins nous vite</h2>
 
-  <form class="form">
+  <form class="form" method="post" action="traitement/inscription_traitement.php">
     <div class="sign-up-form">
       <div class="sign-up-form-left-group">
         <select name="civilite" id="civilite" class="sign-up-selector">
           <optgroup label="Sexe">
-            <option value="monsieur">
+            <option value="1">
               M.
             </option>
-            <option value="madame">
+            <option value="2">
               Mme
             </option>
-            <option value="autre">
+            <option value="3">
               Autre
             </option>
           </optgroup>
         </select>
-        <input type="text" placeholder="Pseudo">
-        <input type="password" placeholder="Mot de passe">
-        <input type="password" placeholder="Confirmez le mot de passe">
-        <input type="email" placeholder="Email">
+        <input type="text" placeholder="Pseudo" name="pseudo">
+        <input type="password" placeholder="Mot de passe" name="password">
+        <input type="password" placeholder="Confirmez le mot de passe" name="password-confirm">
+        <input type="email" placeholder="Email" name="email">
       </div>
 
       <div class="sign-up-form-right-group">
@@ -308,16 +313,16 @@
           </optgroup>
         </select>
 
-        <input type="text" placeholder="Ville">
-        <input type="text" placeholder="Code Postal">
-        <input type="text" placeholder="Rue">
-        <input type="tel" placeholder="Numéro de téléphone" pattern="[0-9]{10}">
+        <input type="text" placeholder="Ville" name="ville">
+        <input type="text" placeholder="Code Postal" name="postcode">
+        <input type="text" placeholder="Rue" name="rue">
+        <input type="tel" placeholder="Numéro de téléphone" pattern="[0-9]{10}" name="telephone">
       </div>
     </div>
 
     <label class="order connect" for="connexion">
       Inscription
-      <button class="order__button" id="connexion">
+      <button class="order__button" id="connexion" type="submit" name="forminscription">
         <img src="assets/images/right-arrow.svg" alt="Commander">
       </button>
     </label>

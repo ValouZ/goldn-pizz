@@ -87,7 +87,7 @@ foreach ($resultats_pizza as $pizza) {
       </section>
     </div>
   </section>
-  <?php 
+  <?php
   };
   ?>
 
