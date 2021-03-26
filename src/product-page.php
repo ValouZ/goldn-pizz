@@ -46,7 +46,7 @@ foreach ($resultats_pizza as $pizza) {
   <h1 class="goldn-pizz only-desktop"><a href="index.php">Goldn Pizz'</a></h1>
 
   <section class="background-info">
-    <img src="assets/images/pizzas/pizza-placeholder.jpg" alt="Placeholder" class="pizza">
+    <img src="<?= $pizza['image1']?>" alt="<?= $pizza['alt1']?>" class="pizza">
     <h1><?= $pizza['nom_pizza']?></h1>
     <div class="choice">
       <section class="pizza-size" id="app-pizza-size" aria-label="Choix des tailles de pizza">
@@ -74,7 +74,7 @@ foreach ($resultats_pizza as $pizza) {
           foreach($resultats_ingredient as $ingredient ){
         ?>
           <div class="item">
-            <img src="<?=$ingredient['img_ingredient']?>" alt="placeholder">
+            <img src="<?=$ingredient['img_ingredient']?>" alt="<?=$ingredient['alt']?>">
             <p><?=$ingredient['nom_ingredient']?></p>
           </div>
           <?php }?>
