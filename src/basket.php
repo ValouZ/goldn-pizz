@@ -1,4 +1,6 @@
 <?php
+$title = "Panier";
+$menu = "2";
 include('header.php');
 ?>
   <div class="basket">

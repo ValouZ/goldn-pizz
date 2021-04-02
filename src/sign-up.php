@@ -1,5 +1,7 @@
 <?php 
-  include('traitement/pdo.php');
+
+  $title= "S'inscrire";
+  $menu = "1";
 ?>
 
 

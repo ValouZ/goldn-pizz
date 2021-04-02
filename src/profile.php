@@ -1,11 +1,13 @@
 <?php
+$title = "Profil";
+$menu = "2";
 include('traitement/pdo.php');
 include('header.php');
 
+
+
 if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
-  echo 'caca';
   $getId = intval($_SESSION['id']);
-  var_dump($getId);
   $req = $bdd -> prepare('SELECT * FROM client WHERE id_client = ?');
   $req->execute(array($getId));
   $clientInfo = $req->fetch();
@@ -24,7 +26,7 @@ if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
       <section class="update-input update-input--profile" aria-label="Changer son sexe">
         <input type="text" id='sexe' value="<?=$clientInfo['genre_client'] ?>">
         <label for="sexe">
-          Civilité
+          Civilité 
         </label>
         <button class="update-input__button">
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

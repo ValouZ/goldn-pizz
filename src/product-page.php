@@ -1,6 +1,8 @@
 <?php 
+
+$menu = "2";
 include("traitement/pdo.php");
-include('header.php');
+
 
 $req_pizza = $bdd->query('SELECT * FROM pizza WHERE id_pizza = '.$_GET['id']);
 
@@ -11,6 +13,9 @@ $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
 
 //faire un prepare = url rewriting
 $resultats_ingredient = $req_ingredient->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 ?>
 
 
@@ -18,6 +23,9 @@ $resultats_ingredient = $req_ingredient->fetchAll(PDO::FETCH_ASSOC);
 
 <?php
 foreach ($resultats_pizza as $pizza) {
+  $title = $pizza['nom_pizza'];
+
+  include('header.php');
 ?>
 
   <section class="background-info">
