@@ -53,6 +53,7 @@ $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
   <section class="cards">
     <?php
     foreach ($resultats as $pizza) {  
+      var_dump($_SESSION['pseudo_client']);
     ?>
     <a class="card" href="product-page.php?id='<?= $pizza['id_pizza']?>'">
       <img src="<?=$pizza['image1']?>" alt="<?=$pizza['alt1']?>">

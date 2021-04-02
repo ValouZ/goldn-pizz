@@ -11,4 +11,6 @@ try {
   echo 'Echeec lors de la connexion' . $e->getMessage(); 
 }
 
+
+
 ?>

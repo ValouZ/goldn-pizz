@@ -1,3 +1,21 @@
+<?php
+
+
+
+include('traitement/pdo.php');
+
+if(isset($_GET['id']) AND $_GET['id'] > 0){
+  $getId = intval($_GET['id']);
+  var_dump($getId);
+  $req = $bdd -> prepare('SELECT * FROM client WHERE id_client = ?');
+  $req->execute(array($getId));
+  $clientInfo = $req->fetch();
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,20 +37,19 @@
       <ul>
         <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
         <li><a href="basket.php">Panier</a></li><!-- temporaire pour navigation -->
-        <li><a href="sign-up.php">Inscription</a></li>
-        <li><a href="sign-in.php">Connexion</a></li>
+        <li><a href="deconnexion.php">Déconnexion</a></li>
         <li><a href="profile.php">Profil</a></li><!-- temporaire pour navigation -->
       </ul>
     </nav>
   </header>
   <h1 class="goldn-pizz"><a href="index.php">Goldn Pizz'</a></h1>
 
-  <h2 class="page-title main-title">Salut Robin</h2>
+  <h2 class="page-title main-title">Salut <?= $clientInfo['pseudo_client'] ?></h2>
 
   <div class="columns-desktop">
     <div class="left-desktop">
       <section class="update-input update-input--profile" aria-label="Changer son sexe">
-        <input type="text" id='sexe' value="Monsieur">
+        <input type="text" id='sexe' value="<?=$clientInfo['genre_client'] ?>">
         <label for="sexe">
           Civilité
         </label>
@@ -49,7 +66,7 @@
       </section>
 
       <section class="update-input update-input--profile" aria-label="Changer le pseudo">
-        <input type="text" id='pseudo' value="ValouZ">
+        <input type="text" id='pseudo' value="<?=$clientInfo['pseudo_client'] ?>">
         <label for="pseudo">
           Pseudo
         </label>
@@ -192,3 +209,9 @@
 </body>
 
 </html>
+
+<?php
+
+}
+
+?>
