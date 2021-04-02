@@ -22,7 +22,7 @@ if (isset($_POST['forminscription'])) {
     $reqPseudo->execute(array($pseudo));
     $pseudoExist = $reqPseudo->rowCount();
     if ($pseudoExist == 0) {
-      if ($pseudoLenght < 18) {
+      if ($pseudoLenght >= 3 && $pseudoLenght < 18) {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
           $reqemail = $bdd->prepare("SELECT * FROM client WHERE email_client = ?");
           $reqemail->execute(array($email));
@@ -37,37 +37,51 @@ if (isset($_POST['forminscription'])) {
                       $passwordHash = password_hash($password, PASSWORD_DEFAULT);
                       $reqinsert = $bdd->prepare('INSERT INTO client(pseudo_client,email_client,mdp_client,genre_client,pays_client,ville_client,postcode_client,rue_client,tel_client,role_client) VALUES (?,?,?,?,?,?,?,?,?,0)');
                       $reqinsert->execute(array($pseudo, $email, $passwordHash, $civilite, $pays, $ville, $postcode, $rue, $telephone));
-                      header('location:../sign-in.php');
+                      header('location:../sign-in.php?created'); // Inscription réussi
+                      exit();
                     } else {
-                      echo "<h2> CODE POSTAL PAS CHIFFRE </h2>" . $postcode;
+                      header('location:../sign-up.php?error=0'); // erreur code postal
+                      exit();
                     }
                   } else {
-                    echo "<h2> LONGUEUR TELEPHONE != 10 </h2>" . $telephoneLenght;
+                    header('location:../sign-up.php?error=1'); // erreur téléphone
+                    exit();
                   }
                 } else {
-                  echo "<h2> MAUVAIS TELEPHONE </h2>" . $telephone;
+                  header('location:../sign-up.php?error=1'); // erreur téléphone
+                  exit();
                 }
               } else {
-                echo "<h2> LES DEUX MOTS DE PASSES SONT DIFFERENTS </h2>" . $passwordConfirm . $password;
+                header('location:../sign-up.php?error=2'); // mots de passe différents
+                exit();
               }
             } else {
-              echo "<h2> MAUVAIS MDP </h2>" . $passwordConfirm . $password;
+              header('location:../sign-up.php?error=3'); // erreur regxr
+              exit();
             }
           } else {
-            echo "<h2> EMAIL DEJA EXISTANT </h2>";
+            header('location:../sign-up.php?error=4'); // email existe déjà 
+            exit();
           }
         } else {
-          echo "<h2> PB EMAIL </h2>";
+          header('location:../sign-up.php?error=5'); // erreur email
+          exit();
         }
       } else {
-        echo "<h2> PSEUDO TROP LONG </h2>" . $pseudoLenght;
+        header('location:../sign-up.php?error=6'); // pseudo trop long
+        exit();
       }
     } else {
-      echo "<h2> PSEUDO EXISTE DEJA </h2>" . $pseudo;
+      header('location:../sign-up.php?error=7'); // pseudo existe deja
+      exit();
     }
+  } else {
+    header('location:../sign-up.php?error=8'); // Champ(s) vide
+    exit();
   }
 } else {
-  echo 'pas bon'; // A MODIFIER
+  header('location:../sign-up.php?error=9'); // tentative d'inscription sans passer par la page sign-up
+  exit();
 }
 ?>
 <a href="../sign-up.php">RETOUR</a>

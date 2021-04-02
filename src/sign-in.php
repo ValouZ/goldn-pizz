@@ -1,3 +1,27 @@
+<?php
+include('traitement/functions.php');
+
+$result = "";
+if (isset($_GET['error'])) {
+  $error = $_GET['error'];
+
+  switch ($error) {
+    case 0:
+      $result = "Erreur d'identifiant ou de mot de passe";
+      break;
+    case 1:
+      $result = "Les champs du formulaire sont vides";
+      break;
+    case 2:
+      $result = "N'essaye pas de te connecter comme ça voyons";
+      break;
+  }
+} else if (isset($_GET['created'])) {
+  $created = $_GET['created'];
+  $result = "Compte créé - Vous pouvez maintenant vous connecter";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,8 +33,7 @@
   <link rel="shortcut icon" href="assets/favicon/pizza.svg" type="image/x-icon">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@300;400;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -26,6 +49,12 @@
 
   <h2 class="page-title main-title">Content de te revoir</h2>
 
+  <?php
+  if ($result !== '' && isset($created)) {
+    display_message_url($result);
+  }
+  ?>
+
   <form class="form" method="post" action="traitement/connexion-traitement.php">
     <section class="form__content" aria-label="Formulaire de connexion">
       <div class="sign-in-form">
@@ -37,6 +66,13 @@
         <label for="show-pswd">Afficher le mot de passe</label>
       </div>
     </section>
+
+    <?php
+    if ($result !== '' && isset($error)) {
+      display_message_url($result);
+    }
+    ?>
+
     <label class="order connect" for="connexion">
       Connexion
       <button class="order__button" id="connexion" name="formconnexion">

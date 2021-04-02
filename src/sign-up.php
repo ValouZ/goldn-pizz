@@ -1,5 +1,43 @@
-<?php 
-  include('traitement/pdo.php');
+<?php
+include('traitement/pdo.php');
+
+$result = "";
+if (isset($_GET['error'])) {
+  $error = $_GET['error'];
+
+  switch ($error) {
+    case 0:
+      $result = "Le code postal n'est pas bon";
+      break;
+    case 1:
+      $result = "Mauvais numéro de téléphone";
+      break;
+    case 2:
+      $result = "Les mots de passes ne concordent pas";
+      break;
+    case 3:
+      $result = "Le mot de passe ne suit pas nos indications";
+      break;
+    case 4:
+      $result = "L'email est déjà enregistré dans notre base de données";
+      break;
+    case 5:
+      $result = "L'email n'est pas valide";
+      break;
+    case 6:
+      $result = "Le pseudo doit faire entre 3 et 18 caractères";
+      break;
+    case 7:
+      $result = "Ce pseudo n'est pas disponible";
+      break;
+    case 8:
+      $result = "Certains champs sont vides";
+      break;
+    case 9:
+      $result = "N'essaye pas de t'inscrire comme ça voyons";
+      break;
+  }
+}
 ?>
 
 
@@ -14,8 +52,7 @@
   <link rel="shortcut icon" href="assets/favicon/pizza.svg" type="image/x-icon">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@300;400;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -319,6 +356,18 @@
         <input type="tel" placeholder="Numéro de téléphone" pattern="[0-9]{10}" name="telephone">
       </div>
     </div>
+
+    <?php
+    if ($result !== '') {
+    ?>
+      <section class="error">
+        <?php
+        echo $result;
+        ?>
+      </section>
+    <?php
+    }
+    ?>
 
     <label class="order connect" for="connexion">
       Inscription
