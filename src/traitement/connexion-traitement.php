@@ -2,14 +2,17 @@
 
 include('pdo.php');
 
+session_start();
+
 
 if (isset($_POST['formconnexion'])){
   $pseudo = htmlspecialchars($_POST['pseudo']);
+  
   $password = htmlspecialchars($_POST['password']);
 
   if(!empty($pseudo) AND !empty($password)){
-    $req = $bdd -> prepare('SELECT * FROM client WHERE pseudo_client = ?');
-    $req->execute(array($pseudo));
+    $req = $bdd -> prepare('SELECT * FROM client WHERE (pseudo_client = ? or email_client =?)');
+    $req->execute(array($pseudo,$pseudo));
     $clientExist = $req->rowCount();
     if($clientExist == 1){
       $infoClient = $req->fetch();

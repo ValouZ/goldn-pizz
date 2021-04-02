@@ -37,7 +37,7 @@ if (isset($_POST['forminscription'])) {
                       $passwordHash = password_hash($password, PASSWORD_DEFAULT);
                       $reqinsert = $bdd->prepare('INSERT INTO client(pseudo_client,email_client,mdp_client,genre_client,pays_client,ville_client,postcode_client,rue_client,tel_client,role_client) VALUES (?,?,?,?,?,?,?,?,?,0)');
                       $reqinsert->execute(array($pseudo, $email, $passwordHash, $civilite, $pays, $ville, $postcode, $rue, $telephone));
-                      echo "NOUVEAU CLIENT";
+                      header('location:../sign-in.php');
                     } else {
                       echo "<h2> CODE POSTAL PAS CHIFFRE </h2>" . $postcode;
                     }
