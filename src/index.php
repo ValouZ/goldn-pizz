@@ -1,4 +1,6 @@
-<?php 
+<?php
+$title = "Accueil";
+$menu = "2";
 include("traitement/pdo.php");
 include('header.php');
 
