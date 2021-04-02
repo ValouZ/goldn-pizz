@@ -335,13 +335,7 @@ if (isset($_GET['error'])) {
 
   <?php
   if ($result !== '') {
-  ?>
-    <section class="error">
-      <?php
-      echo $result;
-      ?>
-    </section>
-  <?php
+    display_message_url($result);
   }
   ?>
 
