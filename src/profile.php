@@ -24,7 +24,16 @@ if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
   <div class="columns-desktop">
     <div class="left-desktop">
       <section class="update-input update-input--profile" aria-label="Changer son sexe">
-        <input type="text" id='sexe' value="<?=$clientInfo['genre_client'] ?>">
+        <input type="text" id='sexe' 
+        value="<?php
+        if($clientInfo['genre_client']==1){
+          echo "Monsieur";
+        }elseif($clientInfo['genre_client']==2){
+          echo "Madame";
+        }elseif($clientInfo['genre_client']==3){
+          echo "Autre";
+        }
+        ?>">
         <label for="sexe">
           Civilité 
         </label>
@@ -58,7 +67,7 @@ if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
       </section>
 
       <section class="update-input update-input--profile" aria-label="Changer le mot de passe">
-        <input type="password" id='mdp' value="goldnvalouz">
+        <input type="password" id='mdp' value="........"> <!-- placeholder, on voit pas la longueur du mdp, modification demander ancien mdp -->
         <label for="mdp">
           Mot de passe
         </label>
@@ -75,7 +84,7 @@ if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
       </section>
 
       <section class="update-input update-input--profile" aria-label="Changer son mail">
-        <input type="email" id='email' value="goldn.valouz@gmail.com">
+        <input type="email" id='email' value="<?=$clientInfo['email_client'] ?>">
         <label for="email">
           Email
         </label>
@@ -92,7 +101,7 @@ if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
       </section>
 
       <section class="update-input update-input--profile" aria-label="Changer de pays">
-        <input type="text" id='country' value="France">
+        <input type="text" id='country' value="<?=$clientInfo['pays_client'] ?>">
         <label for="country">
           Pays
         </label>
@@ -111,7 +120,7 @@ if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
 
     <div class="right-desktop">
       <section class="update-input update-input--profile" aria-label="Changer de ville">
-        <input type="text" id='city' value="Montesson">
+        <input type="text" id='city' value="<?=$clientInfo['ville_client'] ?>">
         <label for="city">
           Ville
         </label>
@@ -128,7 +137,7 @@ if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
       </section>
 
       <section class="update-input update-input--profile" aria-label="Changer de code postal">
-        <input type="text" id='postcode' value="78360">
+        <input type="text" id='postcode' value="<?=$clientInfo['postcode_client'] ?>">
         <label for="postcode">
           Code postal
         </label>
@@ -145,7 +154,7 @@ if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
       </section>
 
       <section class="update-input update-input--profile" aria-label="Changer de rue">
-        <input type="text" id='street' value="2 rue des petits champs">
+        <input type="text" id='street' value="<?=$clientInfo['rue_client'] ?>">
         <label for="street">
           Rue
         </label>
@@ -162,7 +171,7 @@ if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
       </section>
 
       <section class="update-input update-input--profile" aria-label="Changer de numéro de téléphone">
-        <input type="tel" placeholder="Numéro de téléphone" pattern="[0-9]{10}" value="0659099746">
+        <input type="tel" placeholder="Numéro de téléphone" pattern="[0-9]{10}" value="<?=$clientInfo['tel_client'] ?>">
         <label for="street">
           Numéro de téléphone
         </label>

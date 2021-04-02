@@ -16,12 +16,21 @@ if (isset($_POST['formconnexion'])) {
     if ($clientExist == 1) {
       $infoClient = $req->fetch();
       $passwordUser = $infoClient['mdp_client'];
+      $getRole = $infoClient['role_client'];
       if (password_verify($password, $passwordUser)) {
-        $_SESSION['id'] = $infoClient['id_client'];
-        $_SESSION['pseudo'] = $infoClient['pseudo_client'];
-        $_SESSION['password'] = $infoClient['mdp_client'];
-        header('location:../profile.php');
-        exit();
+        if ($getRole == 1){
+          $_SESSION['id'] = $infoClient['id_client'];
+          $_SESSION['pseudo'] = $infoClient['pseudo_client'];
+          $_SESSION['password'] = $infoClient['mdp_client'];
+          echo "ta mere la schmet";
+          exit();
+        }elseif($getRole == 0){
+          $_SESSION['id'] = $infoClient['id_client'];
+          $_SESSION['pseudo'] = $infoClient['pseudo_client'];
+          $_SESSION['password'] = $infoClient['mdp_client'];
+          header('location:../profile.php');
+          exit();
+        }
       } else {
         header('location:../sign-in.php?error=0'); // mauvais mdp
         exit();
