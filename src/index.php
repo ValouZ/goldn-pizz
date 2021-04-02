@@ -35,7 +35,7 @@ $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
       <div class="content">
         <h2 class="pizza-name"><?=$pizza['nom_pizza']?></h2>
         <p class="description"><?=$pizza['description_pizza']?></p>
-        <p class="price"><?=$pizza['prix_pizza']?><span>€</span></p>
+        <p class="price"><?=$pizza['prix_pizza']?><span> € </span></p>
       </div>
     </a>
   <?php

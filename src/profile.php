@@ -50,7 +50,7 @@ if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
       </section>
 
       <section class="update-input update-input--profile" aria-label="Changer le pseudo">
-        <input type="text" id='pseudo' value="<?=$clientInfo['pseudo_client'] ?>">
+        <input type="text" id='pseudo' value="<?=$clientInfo['pseudo_client'] ?>" disabled>
         <label for="pseudo">
           Pseudo
         </label>
