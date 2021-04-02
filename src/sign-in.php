@@ -29,11 +29,11 @@
   <form class="form" method="post" action="traitement/connexion-traitement.php">
     <section class="form__content" aria-label="Formulaire de connexion">
       <div class="sign-in-form">
-        <input type="text" placeholder="Pseudo ou Email" name="pseudo" required>
-        <input type="password" placeholder="Mot de passe" name="password" required>
+        <input type="text" placeholder="Pseudo" name="pseudo" required>
+        <input id="app-password" type="password" placeholder="Mot de passe" name="password" required>
       </div>
       <div class="show-checkbox">
-        <input type="checkbox" id="show-pswd">
+        <input id="app-check" type="checkbox" id="show-pswd">
         <label for="show-pswd">Afficher le mot de passe</label>
       </div>
     </section>
@@ -49,6 +49,8 @@
     <a href="sign-up.php">S'inscrire</a>
     <a href="#">Mot de passe oublié</a>
   </section>
+
+  <script src="scripts/show-password.js"></script>
 </body>
 
 </html>
