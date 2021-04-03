@@ -19,8 +19,13 @@
 }
 
 .columns-desktop {
+  display: none;
   @include desktop {
     width: 900px;
     @include flex($justify: space-between);
   }
+}
+
+.validate{
+  background: red;
 }

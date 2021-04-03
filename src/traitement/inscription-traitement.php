@@ -83,5 +83,5 @@ if (isset($_POST['forminscription'])) {
   header('location:../sign-up.php?error=9'); // tentative d'inscription sans passer par la page sign-up
   exit();
 }
-?>
-<a href="../sign-up.php">RETOUR</a>
+
+echo 'il y a un problème';

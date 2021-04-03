@@ -41,7 +41,6 @@ session_start();
           </ul>
         </nav>
       </header>
-      <h1 class="goldn-pizz"><a href="index.php">Goldn Pizz'</a></h1>
     <?php
     } elseif ($menu == "2") {
     ?>
