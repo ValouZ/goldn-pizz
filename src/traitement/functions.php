@@ -1,5 +1,4 @@
 <?php
-
 function display_message_url($result)
 {
 ?>

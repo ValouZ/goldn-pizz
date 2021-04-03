@@ -18,13 +18,13 @@ if (isset($_POST['formconnexion'])) {
       $passwordUser = $infoClient['mdp_client'];
       $getRole = $infoClient['role_client'];
       if (password_verify($password, $passwordUser)) {
-        if ($getRole == 1){
+        if ($getRole == 1) {
           $_SESSION['id'] = $infoClient['id_client'];
           $_SESSION['pseudo'] = $infoClient['pseudo_client'];
           $_SESSION['password'] = $infoClient['mdp_client'];
           echo "ta mere la schmet";
           exit();
-        }elseif($getRole == 0){
+        } elseif ($getRole == 0) {
           $_SESSION['id'] = $infoClient['id_client'];
           $_SESSION['pseudo'] = $infoClient['pseudo_client'];
           $_SESSION['password'] = $infoClient['mdp_client'];

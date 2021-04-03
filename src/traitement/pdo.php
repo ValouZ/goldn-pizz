@@ -5,7 +5,7 @@ $option = [
 ];
 
 try {
-  $bdd = new PDO('mysql:host=localhost;dbname=goldnpizz;','root','root', $option);
+  $bdd = new PDO('mysql:host=localhost;dbname=goldnpizz;','root','', $option);
 }catch(PDOException $e){
   echo 'Echeec lors de la connexion' . $e->getMessage(); 
 }

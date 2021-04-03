@@ -4,20 +4,12 @@ $menu = "2";
 include('traitement/pdo.php');
 include('header.php');
 
-
-
 if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
   $getId = intval($_SESSION['id']);
   $req = $bdd->prepare('SELECT * FROM client WHERE id_client = ?');
   $req->execute(array($getId));
   $clientInfo = $req->fetch();
 ?>
-
-
-
-
-
-
 
   <h2 class="page-title main-title">Salut <?= $clientInfo['pseudo_client'] ?></h2>
 

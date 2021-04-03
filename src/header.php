@@ -13,30 +13,27 @@ session_start();
   <link rel="shortcut icon" href="assets/favicon/pizza.svg" type="image/x-icon">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@300;400;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <?php
-  if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
+  if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
   ?>
-  <header class="menu">
-    <nav>
-      <ul>
-        <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
-        <li><a href="basket.php">Panier</a></li><!-- temporaire pour navigation -->
-        <li><a href="profile.php">Profil</a></li><!-- temporaire pour navigation -->
-        <li><a href="sign-out.php">Déconnexion</a></li>
-      </ul>
-    </nav>
-  </header>
-  <?php
-  }
-  else
-  {
-    if($menu == "1"){
-      ?>
+    <header class="menu">
+      <nav>
+        <ul>
+          <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
+          <li><a href="basket.php">Panier</a></li><!-- temporaire pour navigation -->
+          <li><a href="profile.php">Profil</a></li><!-- temporaire pour navigation -->
+          <li><a href="sign-out.php">Déconnexion</a></li>
+        </ul>
+      </nav>
+    </header>
+    <?php
+  } else {
+    if ($menu == "1") {
+    ?>
       <header class="menu">
         <nav>
           <ul>
@@ -45,9 +42,9 @@ session_start();
         </nav>
       </header>
       <h1 class="goldn-pizz"><a href="index.php">Goldn Pizz'</a></h1>
-      <?php
-    }elseif($menu == "2"){
-      ?>
+    <?php
+    } elseif ($menu == "2") {
+    ?>
       <header class="menu">
         <nav>
           <ul>
@@ -61,5 +58,5 @@ session_start();
   <?php
     }
   }
-?>
+  ?>
   <h1 class="goldn-pizz"><a href="index.php">Goldn Pizz'</a></h1>
