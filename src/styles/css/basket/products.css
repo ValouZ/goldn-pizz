@@ -1,21 +1,22 @@
 /*
 Error: Undefined mixin 'desktop'.
-        on line 4 of D:\xampp\htdocs\goldn-pizz\src\styles\product-page\main.scss, in `desktop'
-        from line 4 of D:\xampp\htdocs\goldn-pizz\src\styles\product-page\main.scss
+        on line 5 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\products.scss, in `desktop'
+        from line 5 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\products.scss
 
-1: .only-desktop{
-2:   display: none;
-3: 
-4:   @include desktop{
-5:     display: initial;
-6:   }
-7: }
-8: 
-9: .product-background {
+1: .basket-title {
+2:   margin-top: 76px;
+3:   margin-bottom: 23px;
+4: 
+5:   @include desktop {
+6:     margin-top: var(--margin-desktop);
+7:     margin-bottom: 64px;
+8:   }
+9: }
+10: 
 
 Backtrace:
-D:\xampp\htdocs\goldn-pizz\src\styles\product-page\main.scss:4:in `desktop'
-D:\xampp\htdocs\goldn-pizz\src\styles\product-page\main.scss:4
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\products.scss:5:in `desktop'
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\products.scss:5
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -64,4 +65,4 @@ D:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'desktop'.\A         on line 4 of D:\xampp\htdocs\goldn-pizz\src\styles\product-page\main.scss, in `desktop'\A         from line 4 of D:\xampp\htdocs\goldn-pizz\src\styles\product-page\main.scss\A \A 1: .only-desktop{\A 2:   display: none;\A 3: \A 4:   @include desktop{\A 5:     display: initial;\A 6:   }\A 7: }\A 8: \A 9: .product-background {"; }
+  content: "Error: Undefined mixin 'desktop'.\A         on line 5 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\products.scss, in `desktop'\A         from line 5 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\products.scss\A \A 1: .basket-title {\A 2:   margin-top: 76px;\A 3:   margin-bottom: 23px;\A 4: \A 5:   @include desktop {\A 6:     margin-top: var(--margin-desktop);\A 7:     margin-bottom: 64px;\A 8:   }\A 9: }\A 10: "; }

@@ -1,23 +1,19 @@
 /*
-Error: Undefined mixin 'tablet'.
-        on line 14 of D:\xampp\htdocs\goldn-pizz\src\styles\init\reset.scss, in `tablet'
-        from line 14 of D:\xampp\htdocs\goldn-pizz\src\styles\init\reset.scss
+Error: Undefined mixin 'flex'.
+        on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\index\cards.scss, in `flex'
+        from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\index\cards.scss
 
-9:   --yellow: #ffd166;
-10:   --placeholder: #727272;
-11:   --text-description: #5f5f5f;
-12:   --menu-height: 44px;
-13:   --margin-desktop: 190px;
-14:   @include tablet {
-15:     --menu-height: 70px;
-16:   }
-17: }
-18: 
-19: body {
+1: .cards {
+2:   @include flex(column, center, center);
+3: 
+4:   @include desktop {
+5:     flex-direction: row;
+6:     flex-wrap: wrap;
+7:     margin: 0 100px;
 
 Backtrace:
-D:\xampp\htdocs\goldn-pizz\src\styles\init\reset.scss:14:in `tablet'
-D:\xampp\htdocs\goldn-pizz\src\styles\init\reset.scss:14
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\index\cards.scss:2:in `flex'
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\index\cards.scss:2
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -66,4 +62,4 @@ D:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'tablet'.\A         on line 14 of D:\xampp\htdocs\goldn-pizz\src\styles\init\reset.scss, in `tablet'\A         from line 14 of D:\xampp\htdocs\goldn-pizz\src\styles\init\reset.scss\A \A 9:   --yellow: #ffd166;\A 10:   --placeholder: #727272;\A 11:   --text-description: #5f5f5f;\A 12:   --menu-height: 44px;\A 13:   --margin-desktop: 190px;\A 14:   @include tablet {\A 15:     --menu-height: 70px;\A 16:   }\A 17: }\A 18: \A 19: body {"; }
+  content: "Error: Undefined mixin 'flex'.\A         on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\index\cards.scss, in `flex'\A         from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\index\cards.scss\A \A 1: .cards {\A 2:   @include flex(column, center, center);\A 3: \A 4:   @include desktop {\A 5:     flex-direction: row;\A 6:     flex-wrap: wrap;\A 7:     margin: 0 100px;"; }

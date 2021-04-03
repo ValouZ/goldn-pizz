@@ -1,4 +1,24 @@
 .update-input {
+  &--profile {
+    label {
+      height: unset;
+      font-weight: 300;
+      top: -20px;
+      transform: translateY(0);
+      font-size: 14px;
+
+      &:hover {
+        cursor: text;
+      }
+    }
+
+    input {
+      @include box-shadow();
+      padding-left: 20px;
+      padding-right: 50px;
+    }
+  }
+
   &__button:hover {
     .pen {
       transform: translate(-3px, 3px);
@@ -19,13 +39,20 @@
 }
 
 .columns-desktop {
-  display: none;
   @include desktop {
     width: 900px;
     @include flex($justify: space-between);
   }
 }
 
-.validate{
+.hidden-password {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.validate {
   background: red;
 }

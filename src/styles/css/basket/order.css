@@ -1,23 +1,19 @@
 /*
-Error: Undefined mixin 'desktop'.
-        on line 23 of D:\xampp\htdocs\goldn-pizz\src\styles\profile\update.scss, in `desktop'
-        from line 23 of D:\xampp\htdocs\goldn-pizz\src\styles\profile\update.scss
+Error: Undefined mixin 'flex'.
+        on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\order.scss, in `flex'
+        from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\order.scss
 
-18:   transition-delay: 0.2s;
-19: }
-20: 
-21: .columns-desktop {
-22:   display: none;
-23:   @include desktop {
-24:     width: 900px;
-25:     @include flex($justify: space-between);
-26:   }
-27: }
-28: 
+1: .order {
+2:   @include flex($justify: space-between, $align: center);
+3:   margin-top: 30px;
+4:   font-family: Bangers;
+5:   font-size: 32px;
+6:   width: 240px;
+7: 
 
 Backtrace:
-D:\xampp\htdocs\goldn-pizz\src\styles\profile\update.scss:23:in `desktop'
-D:\xampp\htdocs\goldn-pizz\src\styles\profile\update.scss:23
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\order.scss:2:in `flex'
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\order.scss:2
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -66,4 +62,4 @@ D:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'desktop'.\A         on line 23 of D:\xampp\htdocs\goldn-pizz\src\styles\profile\update.scss, in `desktop'\A         from line 23 of D:\xampp\htdocs\goldn-pizz\src\styles\profile\update.scss\A \A 18:   transition-delay: 0.2s;\A 19: }\A 20: \A 21: .columns-desktop {\A 22:   display: none;\A 23:   @include desktop {\A 24:     width: 900px;\A 25:     @include flex($justify: space-between);\A 26:   }\A 27: }\A 28: "; }
+  content: "Error: Undefined mixin 'flex'.\A         on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\order.scss, in `flex'\A         from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\order.scss\A \A 1: .order {\A 2:   @include flex($justify: space-between, $align: center);\A 3:   margin-top: 30px;\A 4:   font-family: Bangers;\A 5:   font-size: 32px;\A 6:   width: 240px;\A 7: "; }

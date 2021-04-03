@@ -1,7 +1,7 @@
 /*
 Error: Undefined mixin 'flex'.
-        on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\product-page\price-component.scss, in `flex'
-        from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\product-page\price-component.scss
+        on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\product-page\price-component.scss, in `flex'
+        from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\product-page\price-component.scss
 
 1: .price-component {
 2:   @include flex($align: center);
@@ -12,8 +12,8 @@ Error: Undefined mixin 'flex'.
 7:   border-radius: 50px;
 
 Backtrace:
-D:\xampp\htdocs\goldn-pizz\src\styles\product-page\price-component.scss:2:in `flex'
-D:\xampp\htdocs\goldn-pizz\src\styles\product-page\price-component.scss:2
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\product-page\price-component.scss:2:in `flex'
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\product-page\price-component.scss:2
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -62,4 +62,4 @@ D:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'flex'.\A         on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\product-page\price-component.scss, in `flex'\A         from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\product-page\price-component.scss\A \A 1: .price-component {\A 2:   @include flex($align: center);\A 3:   position: relative;\A 4:   height: 48px;\A 5:   width: 231px;\A 6:   @include box-shadow();\A 7:   border-radius: 50px;"; }
+  content: "Error: Undefined mixin 'flex'.\A         on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\product-page\price-component.scss, in `flex'\A         from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\product-page\price-component.scss\A \A 1: .price-component {\A 2:   @include flex($align: center);\A 3:   position: relative;\A 4:   height: 48px;\A 5:   width: 231px;\A 6:   @include box-shadow();\A 7:   border-radius: 50px;"; }

@@ -1,19 +1,19 @@
 /*
 Error: Undefined mixin 'flex'.
-        on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\sign-up\form.scss, in `flex'
-        from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\sign-up\form.scss
+        on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\price-review.scss, in `flex'
+        from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\price-review.scss
 
-1: .form{
-2:   @include flex($direction: column, $align: center);
-3: 
-4:   @include desktop{
-5:     align-items: flex-end;
-6:   }
-7: }
+1: .conclude{
+2:   @include flex($direction: column, $align: center)
+3: }
+4: 
+5: .price-review {
+6:   @include flex($direction: column);
+7:   width: 350px;
 
 Backtrace:
-D:\xampp\htdocs\goldn-pizz\src\styles\sign-up\form.scss:2:in `flex'
-D:\xampp\htdocs\goldn-pizz\src\styles\sign-up\form.scss:2
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\price-review.scss:2:in `flex'
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\price-review.scss:2
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -62,4 +62,4 @@ D:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'flex'.\A         on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\sign-up\form.scss, in `flex'\A         from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\sign-up\form.scss\A \A 1: .form{\A 2:   @include flex($direction: column, $align: center);\A 3: \A 4:   @include desktop{\A 5:     align-items: flex-end;\A 6:   }\A 7: }"; }
+  content: "Error: Undefined mixin 'flex'.\A         on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\price-review.scss, in `flex'\A         from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\basket\price-review.scss\A \A 1: .conclude{\A 2:   @include flex($direction: column, $align: center)\A 3: }\A 4: \A 5: .price-review {\A 6:   @include flex($direction: column);\A 7:   width: 350px;"; }

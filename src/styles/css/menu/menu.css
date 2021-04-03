@@ -1,22 +1,19 @@
 /*
-Error: Undefined mixin 'desktop'.
-        on line 5 of D:\xampp\htdocs\goldn-pizz\src\styles\basket\products.scss, in `desktop'
-        from line 5 of D:\xampp\htdocs\goldn-pizz\src\styles\basket\products.scss
+Error: Undefined mixin 'pFixed'.
+        on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\menu\menu.scss, in `pFixed'
+        from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\menu\menu.scss
 
-1: .basket-title {
-2:   margin-top: 76px;
-3:   margin-bottom: 23px;
-4: 
-5:   @include desktop {
-6:     margin-top: var(--margin-desktop);
-7:     margin-bottom: 64px;
-8:   }
-9: }
-10: 
+1: .menu {
+2:   @include pFixed(0);
+3:   margin-top: calc(-1 * var(--menu-height));
+4:   z-index: 5;
+5:   font-size: 20px;
+6:   width: 100%;
+7: 
 
 Backtrace:
-D:\xampp\htdocs\goldn-pizz\src\styles\basket\products.scss:5:in `desktop'
-D:\xampp\htdocs\goldn-pizz\src\styles\basket\products.scss:5
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\menu\menu.scss:2:in `pFixed'
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\menu\menu.scss:2
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -65,4 +62,4 @@ D:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'desktop'.\A         on line 5 of D:\xampp\htdocs\goldn-pizz\src\styles\basket\products.scss, in `desktop'\A         from line 5 of D:\xampp\htdocs\goldn-pizz\src\styles\basket\products.scss\A \A 1: .basket-title {\A 2:   margin-top: 76px;\A 3:   margin-bottom: 23px;\A 4: \A 5:   @include desktop {\A 6:     margin-top: var(--margin-desktop);\A 7:     margin-bottom: 64px;\A 8:   }\A 9: }\A 10: "; }
+  content: "Error: Undefined mixin 'pFixed'.\A         on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\menu\menu.scss, in `pFixed'\A         from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\menu\menu.scss\A \A 1: .menu {\A 2:   @include pFixed(0);\A 3:   margin-top: calc(-1 * var(--menu-height));\A 4:   z-index: 5;\A 5:   font-size: 20px;\A 6:   width: 100%;\A 7: "; }

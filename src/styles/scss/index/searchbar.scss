@@ -59,22 +59,4 @@
   }
 }
 
-.update-input--profile {
-  label {
-    height: unset;
-    font-weight: 300;
-    top: -20px;
-    transform: translateY(0);
-    font-size: 14px;
 
-    &:hover {
-      cursor: text;
-    }
-  }
-
-  input {
-    @include box-shadow();
-    padding-left: 20px;
-    padding-right: 50px;
-  }
-}

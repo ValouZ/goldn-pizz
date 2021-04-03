@@ -1,19 +1,21 @@
 /*
-Error: Undefined mixin 'flex'.
-        on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\basket\price-review.scss, in `flex'
-        from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\basket\price-review.scss
+Error: Undefined mixin 'tablet'.
+        on line 4 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\product-page\infos.scss, in `tablet'
+        from line 4 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\product-page\infos.scss
 
-1: .conclude{
-2:   @include flex($direction: column, $align: center)
-3: }
-4: 
-5: .price-review {
-6:   @include flex($direction: column);
-7:   width: 350px;
+1: .info {
+2:   margin-top: 40px;
+3: 
+4:   @include tablet {
+5:     margin-top: 60px;
+6:   }
+7: 
+8:   @include desktop {
+9:     margin-top: 80px;
 
 Backtrace:
-D:\xampp\htdocs\goldn-pizz\src\styles\basket\price-review.scss:2:in `flex'
-D:\xampp\htdocs\goldn-pizz\src\styles\basket\price-review.scss:2
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\product-page\infos.scss:4:in `tablet'
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\product-page\infos.scss:4
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -62,4 +64,4 @@ D:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'flex'.\A         on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\basket\price-review.scss, in `flex'\A         from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\basket\price-review.scss\A \A 1: .conclude{\A 2:   @include flex($direction: column, $align: center)\A 3: }\A 4: \A 5: .price-review {\A 6:   @include flex($direction: column);\A 7:   width: 350px;"; }
+  content: "Error: Undefined mixin 'tablet'.\A         on line 4 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\product-page\infos.scss, in `tablet'\A         from line 4 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\product-page\infos.scss\A \A 1: .info {\A 2:   margin-top: 40px;\A 3: \A 4:   @include tablet {\A 5:     margin-top: 60px;\A 6:   }\A 7: \A 8:   @include desktop {\A 9:     margin-top: 80px;"; }

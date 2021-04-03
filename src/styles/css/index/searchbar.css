@@ -1,24 +1,39 @@
 /*
-Error: Undefined mixin 'flex'.
-        on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\product-page\pizza-size.scss, in `flex'
-        from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\product-page\pizza-size.scss
+Error: Undefined mixin 'pAbsolute'.
+        on line 8 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\index\searchbar.scss, in `pAbsolute'
+        from line 8 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\index\searchbar.scss
 
-1: .choice {
-2:   @include flex($direction: column, $align: center);
-3: 
-4:   @include desktop {
-5:     flex-direction: row;
-6:     justify-content: space-between;
-7:     width: 666px;
+3:   position: relative;
+4:   margin-top: 13px;
+5:   margin-bottom: 30px;
+6: 
+7:   label {
+8:     @include pAbsolute($left: 20px, $top: 50%);
+9:     transform: translateY(-50%);
+10: 
+11:     @include tablet {
+12:       height: 30px;
+13:       left: 24px;
 
 Backtrace:
-D:\xampp\htdocs\goldn-pizz\src\styles\product-page\pizza-size.scss:2:in `flex'
-D:\xampp\htdocs\goldn-pizz\src\styles\product-page\pizza-size.scss:2
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\index\searchbar.scss:8:in `pAbsolute'
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\index\searchbar.scss:8
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `with_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:350:in `visit_mixin'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
@@ -62,4 +77,4 @@ D:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'flex'.\A         on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\product-page\pizza-size.scss, in `flex'\A         from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\product-page\pizza-size.scss\A \A 1: .choice {\A 2:   @include flex($direction: column, $align: center);\A 3: \A 4:   @include desktop {\A 5:     flex-direction: row;\A 6:     justify-content: space-between;\A 7:     width: 666px;"; }
+  content: "Error: Undefined mixin 'pAbsolute'.\A         on line 8 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\index\searchbar.scss, in `pAbsolute'\A         from line 8 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\index\searchbar.scss\A \A 3:   position: relative;\A 4:   margin-top: 13px;\A 5:   margin-bottom: 30px;\A 6: \A 7:   label {\A 8:     @include pAbsolute($left: 20px, $top: 50%);\A 9:     transform: translateY(-50%);\A 10: \A 11:     @include tablet {\A 12:       height: 30px;\A 13:       left: 24px;"; }
