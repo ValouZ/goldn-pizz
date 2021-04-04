@@ -8,8 +8,6 @@ for (let i = 0; i < updateButtons.length; i++) {
   updateButtons[i].addEventListener("click", (e) => edit(e));
 }
 
-newPassword();
-
 function edit(e) {
   e.preventDefault();
   // Débloque les input et cache les boutons d'editions
@@ -19,15 +17,13 @@ function edit(e) {
   }
   // Affiche le bouton de confirmation
   validateButton.classList.remove("hide");
-  
+  newPassword();
 }
 
 function newPassword() {
-  console.log(hiddenPasswords[0].classList);
-  console.log(hiddenPasswords[1].classList);
-  for (let i = 0; i < hiddenPasswords.length; i++) {
-    hiddenPasswords[i].classList.remove("hidden-password");
+  // Les élements sont enlevé à chaque tour de l'objet hiddenPasswords,
+  // c'est pourquoi on boucle sur le premier élément à chaque fois
+  while (hiddenPasswords[0]) {
+    hiddenPasswords[0].classList.remove("hidden-password");
   }
-
-  console.dir(hiddenPasswords);
 }

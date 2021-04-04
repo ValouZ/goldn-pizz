@@ -1,16 +1,16 @@
-.form{
+.form {
   @include flex($direction: column, $align: center);
 
-  @include desktop{
+  @include desktop {
     align-items: flex-end;
   }
 }
 
-.sign-up-selector{
+.sign-up-selector {
   width: 100%;
   border: none;
   outline: none;
-  border-bottom:1px solid black ;
+  border-bottom: 1px solid black;
   padding-bottom: 5px;
   margin-bottom: 50px;
   font-size: 24px;
@@ -20,24 +20,45 @@
   }
 }
 
-.sign-up-form-left-group{
+.sign-up-form-left-group {
   margin-bottom: 50px;
 }
 
-.sign-up-form{
+.sign-up-form {
   @include desktop {
-    @include flex($direction:row);
+    @include flex($direction: row);
   }
 }
 
-.sign-up-form div:not(:last-child){
-  @include desktop{
+.sign-up-form div:not(:last-child) {
+  @include desktop {
     margin-right: 50px;
   }
 }
 
-.connect{
-  @include desktop{
+.connect {
+  @include desktop {
     margin-top: 50px;
   }
+}
+
+.error,
+.success {
+  width: 100%;
+  padding: 0 10px;
+  max-width: 315px;
+  background: rgba($color: red, $alpha: 0.4);
+  border-radius: 100px;
+  text-align: center;
+  font-size: 16px;
+
+  @include tablet {
+    max-width: unset;
+    font-size: 24px;
+  }
+}
+
+.success {
+  background: rgba($color: green, $alpha: 0.4);
+  margin-bottom: 20px;
 }

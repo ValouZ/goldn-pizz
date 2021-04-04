@@ -27,13 +27,16 @@ if (isset($_GET['error'])) {
 
 <h2 class="page-title main-title">Content de te revoir</h2>
 
-<?php
-if ($result !== '' && isset($created)) {
-  display_message_url($result);
-}
-?>
+
 
 <form class="form" method="post" action="traitement/connexion-traitement.php">
+
+  <?php
+  if ($result !== '' && isset($created)) {
+    display_message_url($result, 1);
+  }
+  ?>
+
   <section class="form__content" aria-label="Formulaire de connexion">
     <div class="sign-in-form">
       <input type="text" placeholder="Pseudo" name="pseudo" required>
@@ -47,7 +50,7 @@ if ($result !== '' && isset($created)) {
 
   <?php
   if ($result !== '' && isset($error)) {
-    display_message_url($result);
+    display_message_url($result, 0);
   }
   ?>
 

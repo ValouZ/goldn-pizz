@@ -45,14 +45,13 @@
   }
 }
 
-.hidden-password {
-  display: none;
-}
-
+.hidden-password,
 .hide {
   display: none;
 }
+.update-form{
+  @include flex($direction: column, $align: center)
+}
+.order--profile{
 
-.validate {
-  background: red;
 }

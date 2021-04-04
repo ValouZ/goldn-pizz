@@ -3,10 +3,10 @@ Error: Undefined mixin 'flex'.
         on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\sign-up\form.scss, in `flex'
         from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\sign-up\form.scss
 
-1: .form{
+1: .form {
 2:   @include flex($direction: column, $align: center);
 3: 
-4:   @include desktop{
+4:   @include desktop {
 5:     align-items: flex-end;
 6:   }
 7: }
@@ -62,4 +62,4 @@ D:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'flex'.\A         on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\sign-up\form.scss, in `flex'\A         from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\sign-up\form.scss\A \A 1: .form{\A 2:   @include flex($direction: column, $align: center);\A 3: \A 4:   @include desktop{\A 5:     align-items: flex-end;\A 6:   }\A 7: }"; }
+  content: "Error: Undefined mixin 'flex'.\A         on line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\sign-up\form.scss, in `flex'\A         from line 2 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\sign-up\form.scss\A \A 1: .form {\A 2:   @include flex($direction: column, $align: center);\A 3: \A 4:   @include desktop {\A 5:     align-items: flex-end;\A 6:   }\A 7: }"; }

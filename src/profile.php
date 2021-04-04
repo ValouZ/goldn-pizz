@@ -19,7 +19,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
 ?>
 
   <h2 class="page-title main-title">Salut <?= $clientInfo['pseudo_client'] ?></h2>
-  <form action="traitement/update-profile.php" method="post">
+  <form class="update-form" action="traitement/update-profile.php" method="post">
     <div class="columns-desktop">
       <div class="left-desktop">
         <!-- <section class="update-input app-update update-input--profile" aria-label="Changer son sexe">
@@ -175,11 +175,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
 
     <?php
     if ($result !== '') {
-      display_message_url($result);
+      display_message_url($result, 0);
     }
     ?>
 
-    <label id="app-validate" class="order hide" for="validate">
+    <label id="app-validate" class="order order--profile hide" for="validate">
       Valider
       <button class="order__button" id="validate" name="validate">
         <img src="assets/images/right-arrow.svg" alt="Valider">

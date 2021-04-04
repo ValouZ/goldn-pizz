@@ -1,5 +1,5 @@
 <?php
-
+include('variables.php');
 include('pdo.php');
 
 if (isset($_POST['forminscription'])) {
@@ -28,7 +28,7 @@ if (isset($_POST['forminscription'])) {
           $reqemail->execute(array($email));
           $mailexist = $reqemail->rowCount();
           if ($mailexist == 0) {
-            if (preg_match('~^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[$%?!]).{10,20}$~u', $password) == 1) {
+            if (preg_match($regxr, $password) == 1) {
               if ($passwordConfirm === $password) {
                 if (filter_var(intval($telephone), FILTER_VALIDATE_INT)) {
                   $telephoneLenght = strlen($telephone);

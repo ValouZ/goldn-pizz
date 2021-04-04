@@ -1,8 +1,13 @@
 <?php
-function display_message_url($result)
+function display_message_url($result, $state)
 {
+  if ($state === 1) {
+    $class = 'success';
+  } else {
+    $class = 'error';
+  }
 ?>
-  <section class="error">
+  <section class="<?= $class ?>">
     <?php
     echo $result;
     ?>
@@ -12,7 +17,7 @@ function display_message_url($result)
 
 function error_message($error)
 {
-  $result='';
+  $result = '';
   switch ($error) {
     case 0:
       $result = "Le code postal n'est pas bon";
@@ -43,6 +48,9 @@ function error_message($error)
       break;
     case 9:
       $result = "N'essaye pas de t'inscrire comme ça voyons";
+      break;
+    case 10:
+      $result = "L'ancien mot de passe est incorrect";
       break;
   }
 

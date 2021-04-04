@@ -304,7 +304,7 @@ if (isset($_GET['error'])) {
 
   <?php
   if ($result !== '') {
-    display_message_url($result);
+    display_message_url($result, 0);
   }
   ?>
 
