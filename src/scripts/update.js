@@ -2,6 +2,7 @@ let updateButtons = document.getElementsByClassName("update-input__button");
 let sectionUpdate = document.getElementsByClassName("app-update");
 let validateButton = document.getElementById("app-validate");
 let hiddenPasswords = document.getElementsByClassName("hidden-password");
+let oldPassword = document.getElementById("app-old-password");
 
 // Event listeners
 for (let i = 0; i < updateButtons.length; i++) {
@@ -17,6 +18,9 @@ function edit(e) {
   }
   // Affiche le bouton de confirmation
   validateButton.classList.remove("hide");
+  oldPassword.childNodes[1].value = ""; // Supprimer le contenu de l'input
+  // oldPassword.childNodes[1].placeholder = "";
+  oldPassword.childNodes[5].textContent = "Ancien mot de passe"; // Changer le texte du label
   newPassword();
 }
 

@@ -45,13 +45,21 @@
   }
 }
 
+.passwords {
+  input::placeholder {
+    font-size: 14px;
+
+    @include tablet{
+      font-size: 20px;
+    }
+  }
+}
+
 .hidden-password,
 .hide {
   display: none;
 }
-.update-form{
-  @include flex($direction: column, $align: center)
-}
-.order--profile{
 
+.update-form {
+  @include flex($direction: column, $align: center);
 }

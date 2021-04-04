@@ -216,6 +216,9 @@ h2 { font-size: 24px; letter-spacing: 0.6px; margin-bottom: 11px; }
 
 @media (min-width: 1200px) { .columns-desktop { width: 900px; display: flex; flex-direction: row; justify-content: space-between; align-items: initial; flex-wrap: nowrap; } }
 
+.passwords input::placeholder { font-size: 14px; }
+@media screen and (min-width: 768px) { .passwords input::placeholder { font-size: 20px; } }
+
 .hidden-password, .hide { display: none; }
 
 .update-form { display: flex; flex-direction: column; justify-content: initial; align-items: center; flex-wrap: nowrap; }

@@ -60,8 +60,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
 
 
         <section class="passwords">
-          <section class="update-input app-update update-input--profile" aria-label="Changer le mot de passe">
-            <input type="password" id='mdp' name="password" value="........" disabled="true"> <!-- placeholder, on voit pas la longueur du mdp, modification demander ancien mdp -->
+          <section class="update-input app-update update-input--profile" id="app-old-password" aria-label="Changer le mot de passe">
+            <input type="password" id='mdp' name="password" value="........" placeholder='Laisser vide si vous ne voulez pas le modifier' disabled="true">
             <label for="mdp">
               Mot de passe
             </label>
@@ -74,14 +74,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
           </section>
 
           <section class="update-input update-input--profile hidden-password" aria-label="Nouveau mot de passe">
-            <input type="password" id='new-mdp' name="new-password">
+            <input type="password" id='new-mdp' name="new-password" placeholder='Laisser vide si vous ne voulez pas le modifier'>
             <label for="new-mdp">
               Nouveau mot de passe
             </label>
           </section>
 
           <section class="update-input update-input--profile hidden-password" aria-label="Confirmer mot de passe">
-            <input type="password" id='confirm-mdp' name="confirm-password">
+            <input type="password" id='confirm-mdp' name="confirm-password" placeholder='Laisser vide si vous ne voulez pas le modifier'>
             <label for="confirm-mdp">
               Confirmer mot de passe
             </label>

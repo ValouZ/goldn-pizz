@@ -46,7 +46,7 @@ if (isset($_POST['validate'])) {
   }
 
 
-  if (!empty($pseudo) and !empty($oldPassword) and !empty($email) and !empty($country) and !empty($city) and !empty($postcode) and !empty($street) and !empty($phone)) {
+  if (!empty($pseudo) and !empty($email) and !empty($country) and !empty($city) and !empty($postcode) and !empty($street) and !empty($phone)) {
     $pseudoLenght = strlen($pseudo);
     $reqPseudo = $bdd->prepare("SELECT * FROM client WHERE pseudo_client  = ? AND id_client != ?");
     $reqPseudo->execute(array($pseudo, $id_client));
