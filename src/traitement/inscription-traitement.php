@@ -3,7 +3,7 @@ include('variables.php');
 include('pdo.php');
 
 if (isset($_POST['forminscription'])) {
-  $pseudo = htmlspecialchars($_POST['pseudo']);
+    
   $civilite = htmlspecialchars($_POST['civilite']);
   // $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
   $password = htmlspecialchars($_POST['password']);

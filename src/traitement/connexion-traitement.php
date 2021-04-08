@@ -21,8 +21,8 @@ if (isset($_POST['formconnexion'])) {
         if ($getRole == 1) {
           $_SESSION['id'] = $infoClient['id_client'];
           $_SESSION['pseudo'] = $infoClient['pseudo_client'];
-          // $_SESSION['password'] = $infoClient['mdp_client'];
-          echo "ta mere la schmet";
+          $_SESSION['password'] = $infoClient['mdp_client'];
+          header('location:../admin.php');
           exit();
         } elseif ($getRole == 0) {
           $_SESSION['id'] = $infoClient['id_client'];
