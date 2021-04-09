@@ -16,7 +16,7 @@ if ($pizzaExist == 0) {
   $reqPanier = $bdd->prepare('INSERT INTO panier (id_client, id_pizza, prix_pizza, nbr_pizza) VALUES (?, ?, ?, 1)');
   $reqPanier->execute(array($idClient, $idPizza, $prixPizza));
 } else {
-   
+  
   // Modifier le nombre de pizza avec un id spécifique
   $result = $reqPizzaExist->fetch(PDO::FETCH_ASSOC);
   $nbr_pizza = $result['nbr_pizza'] + $operation; // On ajoute ou enleve 1 pizza
