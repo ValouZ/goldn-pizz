@@ -70,15 +70,13 @@ foreach ($resultats_pizza as $pizza) {
       </section>
     </div>
   </section>
-
-  <div id="result"></div>
 <?php
 };
 ?>
 
 <script src="scripts/pizza-size.js"></script>
 <script src="scripts/number-pizza.js"></script>
-<script src="scripts/ajax.js"></script>
+<script src="scripts/ajax-product.js"></script>
 </body>
 
 </html>
