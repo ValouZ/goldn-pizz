@@ -3,7 +3,7 @@ include('variables.php');
 include('pdo.php');
 
 if (isset($_POST['forminscription'])) {
-    
+  $pseudo = htmlspecialchars($_POST['pseudo']);  
   $civilite = htmlspecialchars($_POST['civilite']);
   // $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
   $password = htmlspecialchars($_POST['password']);
@@ -68,7 +68,8 @@ if (isset($_POST['forminscription'])) {
           exit();
         }
       } else {
-        header('location:../sign-up.php?error=6'); // pseudo trop long
+        var_dump("$pseudoLenght");
+        // header('location:../sign-up.php?error=6'); // pseudo trop long
         exit();
       }
     } else {
