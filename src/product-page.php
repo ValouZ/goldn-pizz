@@ -1,18 +1,25 @@
 <?php
-$count = 0;
+// session_start();
 $menu = "2";
+$idPizzaUrl = $_GET['id'];
 include("traitement/pdo.php");
 
-$req_pizza = $bdd->query('SELECT * FROM pizza WHERE id_pizza = ' . $_GET['id']);
-$req_ingredient = $bdd->query('SELECT * FROM ingredient INNER JOIN pizza_ingredient ON ingredient.id_ingredient = pizza_ingredient.id_ingredient INNER JOIN pizza ON pizza_ingredient.id_pizza = pizza.id_pizza WHERE pizza.id_pizza =' . $_GET['id']);
-
+$req_pizza = $bdd->prepare('SELECT * FROM pizza WHERE id_pizza = ?');
+$req_pizza->execute(array($idPizzaUrl));
 $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
-//faire un prepare = url rewriting
-$resultats_ingredient = $req_ingredient->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($resultats_pizza as $pizza) {
   $title = $pizza['nom_pizza'];
   include('header.php');
+  $idClient = $_SESSION['id'];
+
+  $req_ingredient = $bdd->prepare('SELECT * FROM ingredient INNER JOIN pizza_ingredient ON ingredient.id_ingredient = pizza_ingredient.id_ingredient INNER JOIN pizza ON pizza_ingredient.id_pizza = pizza.id_pizza WHERE pizza.id_pizza = ?');
+  $req_ingredient->execute(array($idPizzaUrl));
+  $resultats_ingredient = $req_ingredient->fetchAll(PDO::FETCH_ASSOC);
+
+  $req_panier = $bdd->prepare('SELECT * FROM panier WHERE id_pizza = ? AND id_client = ?');
+  $req_panier->execute(array($idPizzaUrl, $idClient));
+  $resultat_panier = $req_panier->fetch(PDO::FETCH_ASSOC);
 ?>
 
   <section class="background-info">
@@ -29,7 +36,13 @@ foreach ($resultats_pizza as $pizza) {
         <p class="price" id="app-price"><?= $pizza['prix_pizza'] ?><span> € </span></p>
         <div class="quantity">
           <button id="app-remove"><img src="assets/images/remove.svg" alt="Remove" class="remove"></button>
-          <p id="app-quantity"><?= $count ?></p>
+          <p id="app-quantity"><?php
+                                if ($resultat_panier) {
+                                  echo $resultat_panier["nbr_pizza"];
+                                } else {
+                                  echo 0;
+                                }
+                                ?></p>
           <button id="app-add"><img src="assets/images/add.svg" alt="Add" class="add"></button>
         </div>
       </section>
@@ -57,12 +70,15 @@ foreach ($resultats_pizza as $pizza) {
       </section>
     </div>
   </section>
+
+  <div id="result"></div>
 <?php
 };
 ?>
 
 <script src="scripts/pizza-size.js"></script>
 <script src="scripts/number-pizza.js"></script>
+<script src="scripts/ajax.js"></script>
 </body>
 
 </html>
