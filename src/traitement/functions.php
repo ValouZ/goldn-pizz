@@ -56,3 +56,11 @@ function error_message($error)
 
   return $result;
 }
+
+function access_denied()
+{
+  // Permet d'éviter d'accéder aux pages par l'url même en étant déconnecté
+  if (isset($_SESSION) && count($_SESSION) === 0) {
+    header('Location:index.php?QuestCeQueTuFouBordelDeMerde');
+  }
+}

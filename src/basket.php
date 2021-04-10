@@ -7,6 +7,9 @@ $serviceFees = 1.50;
 $totalOfAllTheFuckingTotal;
 include('header.php');
 include('traitement/pdo.php');
+include('traitement/functions.php');
+
+access_denied();
 
 $req_pizza = $bdd->prepare('SELECT * FROM panier INNER JOIN pizza ON panier.id_pizza = pizza.id_pizza WHERE panier.id_client = ?');
 $req_pizza->execute(array($_SESSION['id']));

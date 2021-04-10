@@ -5,6 +5,8 @@ include('traitement/pdo.php');
 include('traitement/functions.php');
 include('header.php');
 
+access_denied();
+
 $result = "";
 if (isset($_GET['error'])) {
   $error = $_GET['error'];

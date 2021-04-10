@@ -18,11 +18,11 @@ session_start();
 
 <body>
   <?php
-  if(isset($_SESSION['id'])&& isset($_SESSION['pseudo'])){
-  
+  if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
 
-    if($menu == "1"){
-      ?>
+
+    if ($menu == "1") {
+  ?>
       <header class="menu">
         <nav>
           <ul>
@@ -31,26 +31,26 @@ session_start();
           </ul>
         </nav>
       </header>
-      <?php
-    }elseif($menu == "2"){
-      ?>
+    <?php
+    } elseif ($menu == "2") {
+      // Menu général en mode client
+    ?>
       <header class="menu">
         <nav>
           <ul>
             <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
-            <li><a href="basket.php">Panier</a></li><!-- temporaire pour navigation -->
-            <li><a href="profile.php">Profil</a></li><!-- temporaire pour navigation -->
+            <li><a href="basket.php">Panier</a></li>
+            <li><a href="profile.php">Profil</a></li>
             <li><a href="sign-out.php">Deconnexion</a></li>
           </ul>
         </nav>
       </header>
-  <?php
+    <?php
     }
-  }
-  else
-  {
-    if($menu == "1"){
-      ?>
+  } else {
+    if ($menu == "1") {
+      // Menu page de connexion et inscription
+    ?>
       <header class="menu">
         <nav>
           <ul>
@@ -60,13 +60,13 @@ session_start();
       </header>
     <?php
     } elseif ($menu == "2") {
+      // Menu général en mode visiteur
     ?>
       <header class="menu">
         <nav>
           <ul>
             <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
-            <li><a href="basket.php">Panier</a></li><!-- temporaire pour navigation -->
-            <li><a href="sign-in.php">Connexion</a></li><!-- temporaire pour navigation -->
+            <li><a href="sign-in.php">Connexion</a></li>
             <li><a href="sign-up.php">Inscription</a></li>
           </ul>
         </nav>
