@@ -66,6 +66,7 @@ button {
   font-size: 18px;
 
   span {
+    font-family: inherit;
     font-size: 14px;
 
     @include tablet {
