@@ -74,7 +74,7 @@ $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 
-<script src="scripts/ajax-basket.js"></script>
+<script src="assets/scripts/ajax-basket.js"></script>
 </body>
 
 </html>

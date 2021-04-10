@@ -67,7 +67,7 @@ if (isset($_GET['error'])) {
   <a href="#">Mot de passe oublié</a>
 </section>
 
-<script src="scripts/show-password.js"></script>
+<script src="assets/scripts/show-password.js"></script>
 </body>
 
 </html>

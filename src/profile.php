@@ -188,7 +188,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
   </form>
 
 
-  <script src="scripts/update.js"></script>
+  <script src="assets/scripts/update.js"></script>
   </body>
 
   </html>
