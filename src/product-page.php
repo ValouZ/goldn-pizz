@@ -11,15 +11,18 @@ $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
 foreach ($resultats_pizza as $pizza) {
   $title = $pizza['nom_pizza'];
   include('header.php');
-  $idClient = $_SESSION['id'];
 
   $req_ingredient = $bdd->prepare('SELECT * FROM ingredient INNER JOIN pizza_ingredient ON ingredient.id_ingredient = pizza_ingredient.id_ingredient INNER JOIN pizza ON pizza_ingredient.id_pizza = pizza.id_pizza WHERE pizza.id_pizza = ?');
   $req_ingredient->execute(array($idPizzaUrl));
   $resultats_ingredient = $req_ingredient->fetchAll(PDO::FETCH_ASSOC);
 
-  $req_panier = $bdd->prepare('SELECT * FROM panier WHERE id_pizza = ? AND id_client = ?');
-  $req_panier->execute(array($idPizzaUrl, $idClient));
-  $resultat_panier = $req_panier->fetch(PDO::FETCH_ASSOC);
+  $resultat_panier = null;
+  if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
+    // Permet de vérifier si l'on est connecté
+    $req_panier = $bdd->prepare('SELECT * FROM panier WHERE id_pizza = ? AND id_client = ?');
+    $req_panier->execute(array($idPizzaUrl, $_SESSION['id']));
+    $resultat_panier = $req_panier->fetch(PDO::FETCH_ASSOC);
+  }
 ?>
 
   <section class="background-info">
@@ -46,6 +49,9 @@ foreach ($resultats_pizza as $pizza) {
           <button id="app-add"><img src="assets/images/add.svg" alt="Add" class="add"></button>
         </div>
       </section>
+      <?php if (count($_SESSION) == 0) { ?>
+        <h3 class="disconnected">Pensez à vous connecter pour ajout des produits à votre panier</h3>
+      <?php } ?>
     </div>
 
     <div class="info">
