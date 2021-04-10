@@ -52,7 +52,7 @@ foreach ($resultats_pizza as $pizza) {
         </section>
         <?php if (count($_SESSION) === 0) { ?>
           <!-- Si l'on n'est pas connecté, on demande à l'utilisateur de le faire pour pouvoir commander -->
-          <h3 class="disconnected">Pensez à vous connecter pour ajouter des produits à votre panier</h3>
+          <section class="disconnected">Pensez à vous connecter pour ajouter des produits à votre panier</section>
         <?php } ?>
       </div>
 

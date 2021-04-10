@@ -5,6 +5,7 @@
   width: 231px;
   @include box-shadow();
   border-radius: 50px;
+  font-family: "Oswald Bold";
 
   @include tablet {
     width: 297px;
@@ -14,7 +15,6 @@
   .price {
     @include pAbsolute($left: 26px);
     font-size: 24px;
-    font-weight: 700;
 
     @include tablet {
       font-size: 34px;
@@ -22,6 +22,7 @@
     }
 
     span {
+      font-family: inherit;
       font-size: 18px;
 
       @include tablet {
@@ -38,7 +39,7 @@
   width: 124px;
   height: 100%;
   border-radius: inherit;
-  font-weight: 700;
+  font-family: "Oswald Bold";
 
   @include tablet {
     width: 150px;
@@ -74,6 +75,7 @@
   }
 
   p {
+    font-family: inherit;
     font-size: 26px;
 
     @include tablet {
@@ -83,8 +85,7 @@
 }
 
 .disconnected {
-  font-family: Oswald;
-  font-weight: 400;
+  font-family: "Oswald Light";
   margin-top: 20px;
   background: rgba($color: red, $alpha: 0.4);
   width: 100%;
