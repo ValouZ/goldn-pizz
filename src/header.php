@@ -12,8 +12,6 @@ session_start();
   <title> <?= $title ?> - Goldn Pizz'</title>
   <link rel="shortcut icon" href="assets/favicon/pizza.svg" type="image/x-icon">
   <link rel="stylesheet" href="assets/styles/main.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>

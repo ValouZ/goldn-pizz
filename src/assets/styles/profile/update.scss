@@ -2,7 +2,7 @@
   &--profile {
     label {
       height: unset;
-      font-weight: 300;
+      font-family: "Oswald Light";
       top: -20px;
       transform: translateY(0);
       font-size: 14px;
@@ -49,7 +49,7 @@
   input::placeholder {
     font-size: 14px;
 
-    @include tablet{
+    @include tablet {
       font-size: 20px;
     }
   }
