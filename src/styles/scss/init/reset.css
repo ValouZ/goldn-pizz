@@ -1,23 +1,23 @@
 /*
 Error: Undefined mixin 'tablet'.
-        on line 14 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\init\reset.scss, in `tablet'
-        from line 14 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\init\reset.scss
+        on line 15 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\init\reset.scss, in `tablet'
+        from line 15 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\init\reset.scss
 
-9:   --yellow: #ffd166;
-10:   --placeholder: #727272;
-11:   --text-description: #5f5f5f;
-12:   --menu-height: 44px;
-13:   --margin-desktop: 190px;
-14:   @include tablet {
-15:     --menu-height: 70px;
-16:   }
-17: }
-18: 
-19: body {
+10:   --low-yellow: rgba(255, 209, 102, 0.4);
+11:   --placeholder: #727272;
+12:   --text-description: #5f5f5f;
+13:   --menu-height: 44px;
+14:   --margin-desktop: 190px;
+15:   @include tablet {
+16:     --menu-height: 70px;
+17:   }
+18: }
+19: 
+20: body {
 
 Backtrace:
-D:\xampp\htdocs\goldn-pizz\src\styles\scss\init\reset.scss:14:in `tablet'
-D:\xampp\htdocs\goldn-pizz\src\styles\scss\init\reset.scss:14
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\init\reset.scss:15:in `tablet'
+D:\xampp\htdocs\goldn-pizz\src\styles\scss\init\reset.scss:15
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 D:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -65,4 +65,4 @@ D:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'tablet'.\A         on line 14 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\init\reset.scss, in `tablet'\A         from line 14 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\init\reset.scss\A \A 9:   --yellow: #ffd166;\A 10:   --placeholder: #727272;\A 11:   --text-description: #5f5f5f;\A 12:   --menu-height: 44px;\A 13:   --margin-desktop: 190px;\A 14:   @include tablet {\A 15:     --menu-height: 70px;\A 16:   }\A 17: }\A 18: \A 19: body {"; }
+  content: "Error: Undefined mixin 'tablet'.\A         on line 15 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\init\reset.scss, in `tablet'\A         from line 15 of D:\xampp\htdocs\goldn-pizz\src\styles\scss\init\reset.scss\A \A 10:   --low-yellow: rgba(255, 209, 102, 0.4);\A 11:   --placeholder: #727272;\A 12:   --text-description: #5f5f5f;\A 13:   --menu-height: 44px;\A 14:   --margin-desktop: 190px;\A 15:   @include tablet {\A 16:     --menu-height: 70px;\A 17:   }\A 18: }\A 19: \A 20: body {"; }

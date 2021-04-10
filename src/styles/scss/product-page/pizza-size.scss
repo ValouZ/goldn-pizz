@@ -1,10 +1,11 @@
 .choice {
   @include flex($direction: column, $align: center);
-
+  position: relative;
   @include desktop {
     flex-direction: row;
     justify-content: space-between;
     width: 666px;
+    margin-bottom: 15px;
   }
 }
 

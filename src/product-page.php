@@ -25,57 +25,59 @@ foreach ($resultats_pizza as $pizza) {
   }
 ?>
 
-  <section class="background-info">
-    <img src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt1'] ?>" class="pizza">
-    <h1><?= $pizza['nom_pizza'] ?></h1>
-    <div class="choice">
-      <section class="pizza-size" id="app-pizza-size" aria-label="Choix des tailles de pizza">
-        <button>S</button>
-        <button class="active">M</button>
-        <button>L</button>
-      </section>
+  <main class="product-background">
+    <section class="background-info">
+      <img src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt1'] ?>" class="pizza">
+      <h1><?= $pizza['nom_pizza'] ?></h1>
+      <div class="choice">
+        <section class="pizza-size" id="app-pizza-size" aria-label="Choix des tailles de pizza">
+          <button>S</button>
+          <button class="active">M</button>
+          <button>L</button>
+        </section>
 
-      <section class="price-component" aria-label="Choisir la quantité">
-        <p class="price" id="app-price"><?= $pizza['prix_pizza'] ?><span> € </span></p>
-        <div class="quantity">
-          <button id="app-remove"><img src="assets/images/remove.svg" alt="Remove" class="remove"></button>
-          <p id="app-quantity"><?php
-                                if ($resultat_panier) {
-                                  echo $resultat_panier["nbr_pizza"];
-                                } else {
-                                  echo 0;
-                                }
-                                ?></p>
-          <button id="app-add"><img src="assets/images/add.svg" alt="Add" class="add"></button>
-        </div>
-      </section>
-      <?php if (count($_SESSION) == 0) { ?>
-        <h3 class="disconnected">Pensez à vous connecter pour ajout des produits à votre panier</h3>
-      <?php } ?>
-    </div>
+        <section class="price-component" aria-label="Choisir la quantité">
+          <p class="price" id="app-price"><?= $pizza['prix_pizza'] ?><span> € </span></p>
+          <div class="quantity">
+            <button id="app-remove"><img src="assets/images/remove.svg" alt="Remove" class="remove"></button>
+            <p id="app-quantity"><?php
+                                  if ($resultat_panier) {
+                                    echo $resultat_panier["nbr_pizza"];
+                                  } else {
+                                    echo 0;
+                                  }
+                                  ?></p>
+            <button id="app-add"><img src="assets/images/add.svg" alt="Add" class="add"></button>
+          </div>
+        </section>
+        <?php if (count($_SESSION) == 0) { ?>
+          <h3 class="disconnected">Pensez à vous connecter pour ajouter des produits à votre panier</h3>
+        <?php } ?>
+      </div>
 
-    <div class="info">
-      <section class="ingredients">
-        <h2>Ingrédients</h2>
+      <div class="info">
+        <section class="ingredients">
+          <h2>Ingrédients</h2>
 
-        <div class="items">
-          <?php
-          foreach ($resultats_ingredient as $ingredient) {
-          ?>
-            <div class="item">
-              <img src="<?= $ingredient['img_ingredient'] ?>" alt="<?= $ingredient['alt'] ?>">
-              <p><?= $ingredient['nom_ingredient'] ?></p>
-            </div>
-          <?php } ?>
-        </div>
-      </section>
+          <div class="items">
+            <?php
+            foreach ($resultats_ingredient as $ingredient) {
+            ?>
+              <div class="item">
+                <img src="<?= $ingredient['img_ingredient'] ?>" alt="<?= $ingredient['alt'] ?>">
+                <p><?= $ingredient['nom_ingredient'] ?></p>
+              </div>
+            <?php } ?>
+          </div>
+        </section>
 
-      <section class="description">
-        <h2>Description</h2>
-        <p><?= $pizza['description_pizza'] ?></p>
-      </section>
-    </div>
-  </section>
+        <section class="description">
+          <h2>Description</h2>
+          <p><?= $pizza['description_pizza'] ?></p>
+        </section>
+      </div>
+    </section>
+  </main>
 <?php
 };
 ?>
