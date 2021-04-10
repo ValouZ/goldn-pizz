@@ -15,29 +15,42 @@
     margin-top: unset;
   }
 
-  nav{
+  nav {
     width: 100%;
     background: var(--yellow);
 
-    @include desktop{
-      @include flex ($justify: flex-end)
+    @include desktop {
+      @include flex($justify: flex-end);
     }
   }
+}
 
-  ul {
-    @include flex($justify: space-around, $align: center);
-    height: var(--menu-height);
-    
+.list-items {
+  @include flex($justify: space-around, $align: center);
+  height: var(--menu-height);
 
-    @include desktop{
-      width: 35%;
+  @include desktop {
+    width: 35%;
+  }
+
+  a {
+    @include flex($justify: center, $align: center);
+    padding: 10px;
+  }
+
+  img {
+    height: 25px;
+    width: 25px;
+
+    @include tablet {
+      height: 35px;
+      width: 35px;
     }
   }
 }
 
 .home {
   a {
-    @include flex($justify: center, $align: center);
     width: 39px;
     height: 39px;
     background: white;
@@ -46,15 +59,10 @@
     @include tablet {
       width: 50px;
       height: 50px;
-
-      & img {
-        width: 35px;
-        height: 35px;
-      }
     }
   }
 
-  @include desktop{
+  @include desktop {
     display: none;
   }
 }
@@ -74,7 +82,7 @@
     margin-top: 0px;
   }
 
-  a{
+  a {
     font-family: inherit;
   }
 }
