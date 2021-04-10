@@ -27,8 +27,7 @@ if (isset($_POST['formconnexion'])) {
         } elseif ($getRole == 0) {
           $_SESSION['id'] = $infoClient['id_client'];
           $_SESSION['pseudo'] = $infoClient['pseudo_client'];
-          // $_SESSION['password'] = $infoClient['mdp_client'];
-          header('location:../profile.php');
+          header('location:../index.php');
           exit();
         }
       } else {
