@@ -1,6 +1,14 @@
 <?php
 session_start();
 include_once('traitement/pdo.php');
+
+$req_pizza = $bdd->prepare('SELECT * FROM panier WHERE id_client = ?');
+$req_pizza->execute(array($_SESSION['id']));
+$pizzas = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
+$count_pizza = 0;
+foreach ($pizzas as $item) {
+  $count_pizza += $item['nbr_pizza'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -32,7 +40,7 @@ include_once('traitement/pdo.php');
       <li>
         <a href="basket.php">
           <img src="assets/images/basket.svg" alt="Panier">
-          <span class="basket-counter">0</span>
+          <span class="basket-counter"><?= $count_pizza ?></span>
         </a>
       </li>
       <li><a href="profile.php"><img src="assets/images/user.svg" alt="Profil"></a></li>
