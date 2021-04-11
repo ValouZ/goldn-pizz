@@ -11,7 +11,7 @@ $reqDeletePizzaIngredient->execute(array($id));
 $reqDeletePizza = $bdd->prepare('DELETE FROM pizza WHERE id_pizza =?');
 $reqDeletePizza->execute(array($id));
 
-// header('location:../admin.php');
+header('location:../admin.php');
 
 
 

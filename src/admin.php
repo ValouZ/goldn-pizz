@@ -59,7 +59,7 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
           <?= $users['tel_client']?>
           </td>
           <td class="td">
-            <a href="traitement/delete.php?id=<?= $users['id_client']?>">Supprimer</a>
+            <a href="traitement/delete-users.php?id=<?= $users['id_client']?>">Supprimer</a>
           </td>
         </tr>
         <?php

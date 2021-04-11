@@ -11,6 +11,8 @@ $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
 foreach ($resultats_pizza as $pizza) {
   $title = $pizza['nom_pizza'];
   include('header.php');
+  
+  $idClient = $_SESSION['id'];
 
   $req_ingredient = $bdd->prepare('SELECT * FROM ingredient INNER JOIN pizza_ingredient ON ingredient.id_ingredient = pizza_ingredient.id_ingredient INNER JOIN pizza ON pizza_ingredient.id_pizza = pizza.id_pizza WHERE pizza.id_pizza = ?');
   $req_ingredient->execute(array($idPizzaUrl));
