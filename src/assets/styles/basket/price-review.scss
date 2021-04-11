@@ -1,5 +1,5 @@
-.conclude{
-  @include flex($direction: column, $align: center)
+.conclude {
+  @include flex($direction: column, $align: center);
 }
 
 .price-review {
@@ -7,7 +7,7 @@
   width: 350px;
   margin-top: 23px;
 
-  @include tablet{
+  @include tablet {
     width: 400px;
   }
 
@@ -15,15 +15,15 @@
     @include flex($justify: space-between);
     font-size: 18px;
 
-    @include tablet{
+    @include tablet {
       font-size: 26px;
     }
 
-    @include desktop{
-      font-size: 28px;
+    @include desktop {
+      font-size: 32px;
     }
-    
-    &:not(:last-child){
+
+    &:not(:last-child) {
       margin-bottom: 14px;
     }
 
@@ -33,9 +33,9 @@
     }
   }
 
-  .total{
+  .total {
     margin-top: 5px;
-    h4{
+    h4 {
       font-size: 24px;
       color: black;
 
@@ -43,16 +43,32 @@
         font-size: 30px;
       }
 
-      @include desktop{
+      @include desktop {
         font-size: 36px;
       }
     }
 
-    .price{
+    .price {
       font-size: 24px;
 
-      span{
+      @include tablet {
+        font-size: 30px;
+      }
+
+      @include desktop {
+        font-size: 36px;
+      }
+
+      span {
         font-size: 18px;
+
+        @include tablet {
+          font-size: 24px;
+        }
+
+        @include desktop {
+          font-size: 28px;
+        }
       }
     }
   }
