@@ -1,6 +1,5 @@
 .menu {
   @include pFixed(0);
-  margin-top: calc(-1 * var(--menu-height));
   z-index: 5;
   font-size: 20px;
   width: 100%;

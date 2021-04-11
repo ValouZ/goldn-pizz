@@ -20,6 +20,7 @@ foreach ($pizzas as $item) {
   <title> <?= $title ?> - Goldn Pizz'</title>
   <link rel="shortcut icon" href="assets/favicon/pizza.svg" type="image/x-icon">
   <link rel="stylesheet" href="assets/styles/main.css">
+  <script src="assets/scripts/basket-icon.js" defer></script>
 </head>
 
 <body>
