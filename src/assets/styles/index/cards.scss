@@ -17,6 +17,8 @@
   @include box-shadow();
   border-radius: 19px;
   background: white;
+  z-index: 100;
+  transition: box-shadow 0.2s;
 
   @include tablet {
     width: 447px;
@@ -30,6 +32,10 @@
     height: 201px;
   }
 
+  &:hover {
+    @include box-shadow($c: rgba(0, 0, 0, 0.3));
+  }
+
   &:not(:last-child) {
     margin-bottom: 23px;
   }
@@ -37,7 +43,7 @@
   &::after {
     content: "";
     @include pAbsolute($right: 15px, $top: 23px);
-    background: center center no-repeat url("/assets/images/arrow.svg");
+    background: center center no-repeat url("../images/arrow.svg");
     width: 10px;
     height: 10px;
 
@@ -49,7 +55,7 @@
       background-size: 18px;
     }
 
-    @include desktop{
+    @include desktop {
       right: 37px;
       top: 37px;
     }
@@ -65,7 +71,7 @@
       width: 150px;
     }
 
-    @include desktop{
+    @include desktop {
       margin-right: 42px;
       width: 180px;
     }
