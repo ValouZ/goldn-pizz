@@ -29,9 +29,9 @@ session_start();
           } elseif ($menu == "2") { // Menu général en mode client
     ?>
       <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
-      <li class="basket"><a href="basket.php"><img src="assets/images/basket.svg" alt="Panier"></a></li>
-      <li class="profil"><a href="profile.php"><img src="assets/images/user.svg" alt="Profil"></a></li>
-      <li class="logout"><a href="logout.php"><img src="assets/images/logout.svg" alt="Déconnexion"></a></li>
+      <li><a href="basket.php"><img src="assets/images/basket.svg" alt="Panier"></a></li>
+      <li><a href="profile.php"><img src="assets/images/user.svg" alt="Profil"></a></li>
+      <li><a href="logout.php"><img src="assets/images/logout.svg" alt="Déconnexion"></a></li>
     <?php
           }
         } else {

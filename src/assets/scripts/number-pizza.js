@@ -9,6 +9,5 @@ removeButton.addEventListener("click", () => changeQuantity(-1));
 
 function changeQuantity(value) {
   counter += value;
-  counter = counter < 0 ? 0 : counter;
-  quantity.textContent = counter;
+  quantity.textContent = counter < 0 ? 0 : counter;
 }

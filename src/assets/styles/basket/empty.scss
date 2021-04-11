@@ -1,6 +1,5 @@
 .basket__empty {
   @include flex($direction: column, $align: center);
-  margin-top: 50px;
   width: 95vw;
   h3 {
     font-family: "Oswald Bold";

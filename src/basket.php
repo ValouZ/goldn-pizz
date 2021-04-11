@@ -37,7 +37,7 @@ $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="quantity">
               <button class="app-remove"><img src="assets/images/remove.svg" alt="Remove"></button>
-              <p><?= $pizza['nbr_pizza'] ?></p>
+              <p class="app-quantity"><?= $pizza['nbr_pizza'] ?></p>
               <button class="app-add"><img src="assets/images/add.svg" alt="Add"></button>
             </div>
           </div>
@@ -87,6 +87,7 @@ $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
 
 
 <script src="assets/scripts/ajax-basket.js"></script>
+<script src="assets/scripts/basket-number-pizza.js"></script>
 </body>
 
 </html>
