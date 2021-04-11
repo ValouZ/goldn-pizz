@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function ajax(button, operation) {
-  console.log("BIENVENUE");
   let fileTraitement = "traitement/config-ajax.php",
     xhr;
 
@@ -30,7 +29,6 @@ function ajax(button, operation) {
   }
 
   let idPizza = button.parentElement.parentElement.children[1].children[0].id; // Recupere l'id dans le titre
-  console.log("ID - " + idPizza);
 
   let prixPizza = 0;
 
