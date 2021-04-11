@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('pdo.php');
+include_once('pdo.php');
 
 extract($_POST);
 $idClient = $_SESSION['id'];

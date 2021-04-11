@@ -1,9 +1,9 @@
 <?php
 $title = "Profil";
 $menu = "2";
-include('traitement/pdo.php');
-include('traitement/functions.php');
-include('header.php');
+include_once('traitement/pdo.php');
+include_once('traitement/functions.php');
+include_once('header.php');
 
 access_denied();
 

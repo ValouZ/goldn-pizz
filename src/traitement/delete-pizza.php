@@ -1,6 +1,6 @@
 <?php
 
-include('pdo.php');
+include_once('pdo.php');
 
 $id = $_GET['id'];
 var_dump($id);

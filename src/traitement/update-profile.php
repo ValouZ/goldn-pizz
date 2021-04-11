@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('variables.php');
-include('pdo.php');
+include_once('variables.php');
+include_once('pdo.php');
 
 if (isset($_POST['validate'])) {
   $id_client = $_SESSION['id'];

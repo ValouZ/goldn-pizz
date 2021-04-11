@@ -1,8 +1,8 @@
 <?php
 $title = "Se connecter";
 $menu = "1";
-include('header.php');
-include('traitement/functions.php');
+include_once('header.php');
+include_once('traitement/functions.php');
 
 $result = "";
 if (isset($_GET['error'])) {

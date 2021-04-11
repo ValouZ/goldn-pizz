@@ -1,8 +1,8 @@
 <?php 
 $title = "Admin";
 $menu = "1";
-include('traitement/pdo.php');
-include('header.php');
+include_once('traitement/pdo.php');
+include_once('header.php');
 
 $reqUsers = $bdd ->query('SELECT * FROM client WHERE role_client != 1');
 $reqPizza = $bdd ->query('SELECT * FROM pizza WHERE 1');

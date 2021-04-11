@@ -2,7 +2,7 @@
 // session_start();
 $menu = "2";
 $idPizzaUrl = $_GET['id'];
-include("traitement/pdo.php");
+include_once("traitement/pdo.php");
 
 $req_pizza = $bdd->prepare('SELECT * FROM pizza WHERE id_pizza = ?');
 $req_pizza->execute(array($idPizzaUrl));
@@ -10,7 +10,7 @@ $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($resultats_pizza as $pizza) {
   $title = $pizza['nom_pizza'];
-  include('header.php');
+  include_once('header.php');
   
   $idClient = $_SESSION['id'];
 

@@ -1,6 +1,6 @@
 <?php
-include('variables.php');
-include('pdo.php');
+include_once('variables.php');
+include_once('pdo.php');
 
 if (isset($_POST['forminscription'])) {
   $pseudo = htmlspecialchars($_POST['pseudo']);  

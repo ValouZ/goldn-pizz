@@ -1,9 +1,9 @@
 <?php
 $title = "S'inscrire";
 $menu = "1";
-include("header.php");
-include('traitement/functions.php');
-include('traitement/pdo.php');
+include_once("header.php");
+include_once('traitement/functions.php');
+include_once('traitement/pdo.php');
 
 $result = "";
 if (isset($_GET['error'])) {

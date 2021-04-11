@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('traitement/functions.php');
+include_once('traitement/functions.php');
 
 access_denied();
 

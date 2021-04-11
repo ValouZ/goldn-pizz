@@ -1,8 +1,8 @@
 <?php
 $title = "Accueil";
 $menu = "2";
-include("traitement/pdo.php");
-include('header.php');
+include_once("traitement/pdo.php");
+include_once('header.php');
 
 $req = $bdd->query('SELECT * FROM pizza');
 $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
