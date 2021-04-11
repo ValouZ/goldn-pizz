@@ -1,5 +1,6 @@
 let removeButton = document.getElementsByClassName("app-remove");
 let addButton = document.getElementsByClassName("app-add");
+let quantityTest = document.getElementsByClassName("app-quantity")[0];
 
 for (let i = 0; i < addButton.length; i++) {
   addButton[i].addEventListener("click", function (e) {
@@ -14,8 +15,14 @@ for (let i = 0; i < addButton.length; i++) {
 
 function changeQuantity(value, button) {
   let quantity = button.parentNode.children[1];
+  let card = button.parentNode.parentNode;
   let counter = parseInt(quantity.textContent);
 
   counter += value;
-  quantity.textContent = counter < 0 ? 0 : counter;
+
+  if (counter === 0) {
+    card.classList.add('remove-card');
+  } else {
+    quantity.textContent = counter;
+  }
 }

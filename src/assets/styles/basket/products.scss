@@ -14,7 +14,7 @@
 
 @include desktop {
   .basket-content {
-    @include flex($justify: space-between);
+    @include flex($justify: space-between, $align: flex-start);
     width: 1120px;
   }
 }
@@ -23,6 +23,7 @@
   @include box-shadow();
   border-radius: 19px;
   overflow: hidden;
+  height: fit-content;
 }
 
 .basket-card {
@@ -110,4 +111,8 @@
       }
     }
   }
+}
+
+.remove-card {
+  display: none;
 }
