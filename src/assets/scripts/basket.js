@@ -42,12 +42,14 @@ function updateBill() {
   let cards = document.getElementsByClassName("basket-card");
   let productPrice = 0;
   let totalPrice = 0;
-  for (let i = 0; i < cards.length; i++) {
+  let cardsLength = cards.length;
+  let priceReviewLength = priceReview.length;
+  for (let i = 0; i < cardsLength; i++) {
     productPrice += parseFloat(cards[i].children[1].children[2].textContent);
   }
   productReview.innerHTML = priceDisplay(productPrice);
 
-  for (let i = 0; i < priceReview.length - 1; i++) {
+  for (let i = 0; i < priceReviewLength - 1; i++) {
     totalPrice += parseFloat(priceReview[i].children[1].textContent);
   }
   totalReview.innerHTML = priceDisplay(totalPrice);
@@ -58,8 +60,9 @@ function emptyBasket() {
   let content = document.getElementsByClassName("basket-content")[0];
   let cards = document.getElementsByClassName("basket-card");
   let hideAll = true; // True signifie qu'on va cacher tout le contenu pour dire que le panier est vide
-
-  for (let i = 0; i < cards.length; i++) {
+  let cardsLength = cards.length;
+  
+  for (let i = 0; i < cardsLength; i++) {
     if (cards[i].classList.length !== 2) {
       // Si ne serait ce qu'une des cartes à moins de classe que les autres,
       // alors il reste des pizza dans la commande
