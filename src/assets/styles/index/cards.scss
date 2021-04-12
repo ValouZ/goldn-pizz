@@ -1,6 +1,6 @@
 .cards {
   @include flex(column, center, center);
-
+  z-index: 1;
   @include desktop {
     flex-direction: row;
     flex-wrap: wrap;
