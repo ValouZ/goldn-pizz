@@ -27,7 +27,7 @@ foreach ($resultats_pizza as $pizza) {
 
   <main class="product-background">
     <section class="background-info">
-      <img src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt1'] ?>" class="pizza">
+      <img src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt'] ?>" class="pizza">
       <h1><?= $pizza['nom_pizza'] ?></h1>
       <div class="choice">
         <section class="pizza-size" id="app-pizza-size" aria-label="Choix des tailles de pizza">

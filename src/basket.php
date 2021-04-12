@@ -29,7 +29,7 @@ $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
           $totalProducts += $price;
         ?>
           <div class="basket-card">
-            <img class='product' src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt1'] ?>">
+            <img class='product' src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt'] ?>">
             <div class="content">
               <h3 class="pizza-name" id="<?= $pizza['id_pizza'] ?>"><?= $pizza['nom_pizza'] ?></h3>
               <p class="size">Taille M</p>
