@@ -83,7 +83,7 @@ foreach ($resultats_pizza as $pizza) {
 };
 ?>
 
-<script src="assets/scripts/pizza-size.js"></script>
+<!-- <script src="assets/scripts/pizza-size.js"></script> -->
 <script src="assets/scripts/number-pizza.js"></script>
 <script src="assets/scripts/ajax-product.js"></script>
 </body>

@@ -67,12 +67,14 @@ $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
           </div>
         </section>
 
-        <label class="order order--basket" for="order">
-          Commander
-          <button class="order__button" id="order">
-            <img src="assets/images/right-arrow.svg" alt="Commander">
-          </button>
-        </label>
+        <form action="ordered.php" method="POST">
+          <label class="order order--basket" for="order">
+            Commander
+            <button class="order__button" id="order">
+              <img src="assets/images/right-arrow.svg" alt="Commander">
+            </button>
+          </label>
+        </form>
       </div>
     </div>
   <?php } else { ?>
