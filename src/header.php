@@ -34,7 +34,7 @@ if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
         if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
           if ($menu == "1") {
         ?>
-            <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
+            <li class="home"><a href="admin.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
             <li><a href="logout.php">Deconnexion</a></li>
       </ul>
     <?php
