@@ -60,6 +60,7 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
         <tbody>
 
           <tr>
+            <th class="th">Id pizza</th>
             <th class="th">Nom pizza</th>
             <th class="th">Prix</th>
           </tr>
@@ -68,6 +69,9 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
             foreach($resultatPizza as $pizza){
           ?>
           <tr class="table__top">
+            <td class="td">
+            <input id="idpizza" type="text" value="<?= $pizza['nom_pizza']?>" name="id-pizza">
+            </td>
             <td class="td">
               <input id="pizzanom" type="text" value="<?= $pizza['nom_pizza']?>" disabled="true" name="nom-pizza">       
             </td>
