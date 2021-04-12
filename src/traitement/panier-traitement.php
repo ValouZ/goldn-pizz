@@ -8,6 +8,9 @@ access_denied();
 if (isset($_POST['order'])) {
   $req_pizza = $bdd->prepare('DELETE FROM panier WHERE id_client = ?');
   $req_pizza->execute(array($_SESSION['id']));
+  // $header = "From: valentin.debray@gmail.com";
+  // $r = mail('debray.va@gmail.com', 'TEST', 'essai',$header);
+  // var_dump($r);
   header('location: ../ordered.php');
   exit();
 } else {
