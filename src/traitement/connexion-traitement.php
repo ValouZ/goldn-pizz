@@ -21,12 +21,13 @@ if (isset($_POST['formconnexion'])) {
         if ($getRole == 1) {
           $_SESSION['id'] = $infoClient['id_client'];
           $_SESSION['pseudo'] = $infoClient['pseudo_client'];
-          $_SESSION['password'] = $infoClient['mdp_client'];
+          $_SESSION['role'] = $infoClient['role_client'];
           header('location:../admin.php');
           exit();
         } elseif ($getRole == 0) {
           $_SESSION['id'] = $infoClient['id_client'];
           $_SESSION['pseudo'] = $infoClient['pseudo_client'];
+          $_SESSION['role'] = $infoClient['role_client'];
           header('location:../index.php');
           exit();
         }

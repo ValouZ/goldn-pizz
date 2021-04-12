@@ -64,3 +64,10 @@ function access_denied()
     header('Location:index.php?QuestCeQueTuFouBordelDeMerde');
   }
 }
+
+function is_not_admin()
+{
+  if ($_SESSION['role'] != 1) {
+    header('Location:index.php?TuTePrendsPourQui');
+  }
+}
