@@ -1,6 +1,7 @@
 <?php 
 $title = "Admin";
 $menu = "1";
+$i = 0;
 include_once('traitement/pdo.php');
 include_once('header.php');
 
@@ -22,11 +23,6 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
       <tr>
         <th class="th">Pseudo</th>
         <th class="th">Email</th>
-        <th class="th">Civilité</th>
-        <th class="th">Pays</th>
-        <th class="th">Ville</th>
-        <th class="th">Code Postal</th>
-        <th class="th">Adresse</th>
         <th class="th">Numéro Téléphone</th>
       </tr>
       <?php
@@ -41,21 +37,6 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
             <?= $users['email_client']?>
           </td>
           <td class="td">
-          <?= $users['genre_client']?>
-          </td>
-          <td class="td">
-          <?= $users['pays_client']?>
-          </td>
-          <td class="td">
-          <?= $users['ville_client']?>
-          </td>
-          <td class="td">
-          <?= $users['postcode_client']?>
-          </td>
-          <td class="td">
-          <?= $users['rue_client']?>
-          </td>
-          <td class="td">
           <?= $users['tel_client']?>
           </td>
           <td class="td">
@@ -68,40 +49,52 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
       </tbody>
       
     </table>
-    <table class="table2">
-      <thead class="table__center">
-        <tr>
-          <th>Tableau pizza</th>
-        </tr>
-      </thead>
+    <form class="update-form" action="traitement/update-admin.php" method="post">
+      <table class="table2">
+        <thead class="table__center">
+          <tr>
+            <th>Tableau pizza</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+
+          <tr>
+            <th class="th">Nom pizza</th>
+            <th class="th">Prix</th>
+          </tr>
+
+          <?php
+            foreach($resultatPizza as $pizza){
+          ?>
+          <tr class="table__top">
+            <td class="td">
+              <input id="pizzanom" type="text" value="<?= $pizza['nom_pizza']?>" disabled="true" name="nom-pizza">       
+            </td>
+            <td class="td">
+              <input id="pizzaprix" type="text" value="<?= $pizza['prix_pizza']?>" disabled="true" name="prix-pizza">
+            </td>
+            <section class="app-update">
+            <td class="td">
+              <button class="button__update">Modifier</button>
+            </td> 
+            <td class="td">
+              <a href="traitement/delete-pizza.php?id=<?= $pizza['id_pizza']?>">Supprimer</a>
+            </td> 
+            </section>
+          </tr>
+          <?php
+          }
+          ?>
+        </tbody>
+      </table>
+
       
-      <tbody>
-
-        <tr>
-          <th class="th">Nom pizza</th>
-        </tr>
-
-      <?php
-  foreach($resultatPizza as $pizza){
-
-  ?>
-        <tr class="table__top">
-          <td class="td">
-            <?= $pizza['nom_pizza']?>          
-          </td>
-          <td class="td">
-            <a href="traitement/delete-pizza.php?id=<?= $pizza['id_pizza']?>">Supprimer</a>
-          </td>
-
-        </tr>
-        <?php
-  }
-  ?>
-      </tbody>
-      
-    </table>
-  
-
+      <button class="button__validate hide" id="validate" name="validate">
+      Valider
+      </button>
+      </form>
+    <script src="assets/scripts/update-admin.js"></script>
   </body>
 
 </html>
