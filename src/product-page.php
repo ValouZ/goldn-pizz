@@ -27,7 +27,11 @@ foreach ($resultats_pizza as $pizza) {
 
   <main class="product-background">
     <section class="background-info">
-      <img src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt'] ?>" class="pizza">
+      <div class="images">
+        <img src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt'] ?>" class="pizza">
+        <img src="<?= $pizza['image2'] ?>" alt="<?= $pizza['alt'] ?>" class="pizza">
+        <img src="<?= $pizza['image3'] ?>" alt="<?= $pizza['alt'] ?>" class="pizza">
+      </div>
       <h1><?= $pizza['nom_pizza'] ?></h1>
       <div class="choice">
         <section class="pizza-size" id="app-pizza-size" aria-label="Choix des tailles de pizza">
@@ -86,6 +90,7 @@ foreach ($resultats_pizza as $pizza) {
 <script src="assets/scripts/pizza-size.js"></script>
 <script src="assets/scripts/number-pizza.js"></script>
 <script src="assets/scripts/ajax-product.js"></script>
+<script src="assets/scripts/swap-image.js"></script>
 </body>
 
 </html>
