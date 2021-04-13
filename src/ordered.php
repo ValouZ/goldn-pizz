@@ -1,6 +1,7 @@
 <?php
-$menu = '2';
-$title = "Validé";
+include_once("traitement/variables.php");
+
+$info = $header_info[5]; // Voir variables.php
 include_once('header.php');
 ?>
 

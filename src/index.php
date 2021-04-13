@@ -1,7 +1,8 @@
 <?php
-$title = "Accueil";
-$menu = "2";
+include_once("traitement/variables.php");
 include_once("traitement/pdo.php");
+
+$info = $header_info[0]; // Voir variables.php
 include_once('header.php');
 
 $req = $bdd->query('SELECT * FROM pizza');

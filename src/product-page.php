@@ -1,6 +1,4 @@
 <?php
-// session_start();
-$menu = "2";
 $idPizzaUrl = $_GET['id'];
 include("traitement/pdo.php");
 
@@ -9,7 +7,8 @@ $req_pizza->execute(array($idPizzaUrl));
 $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($resultats_pizza as $pizza) {
-  $title = $pizza['nom_pizza'];
+  // On n'utilise pas la variable du fichier variables.php car on génère un nom différent pour chaque pizza
+  $info = [$pizza['nom_pizza'], 2];
   include_once('header.php');
 
   $req_ingredient = $bdd->prepare('SELECT * FROM ingredient INNER JOIN pizza_ingredient ON ingredient.id_ingredient = pizza_ingredient.id_ingredient INNER JOIN pizza ON pizza_ingredient.id_pizza = pizza.id_pizza WHERE pizza.id_pizza = ?');

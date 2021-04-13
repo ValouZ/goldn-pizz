@@ -1,10 +1,11 @@
 <?php
-$title = "Admin";
-$menu = "1";
-$i = 0;
+$i = 0; // ROBIN ??????
+include_once("traitement/variables.php");
 include_once('traitement/pdo.php');
-include_once('header.php');
 include_once('traitement/functions.php');
+
+$info = $header_info[6]; // Voir variables.php
+include_once('header.php');
 
 access_denied();
 is_not_admin();

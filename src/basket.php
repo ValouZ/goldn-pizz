@@ -1,14 +1,16 @@
 <?php
-$title = "Panier";
-$menu = "2";
+include_once("traitement/variables.php");
+include_once('traitement/pdo.php');
+include_once('traitement/functions.php');
+
+$info = $header_info[4]; // Voir variables.php
+include_once('header.php');
+
 $totalProducts = 0;
 $deliveryFees = 2.50;
 $serviceFees = 1.50;
 $totalOfAllTheFuckingTotal;
 
-include_once('header.php');
-include_once('traitement/pdo.php');
-include_once('traitement/functions.php');
 
 access_denied();
 
