@@ -5,10 +5,12 @@ include('pdo.php');
 
 if (isset($_POST['validate'])) {
 
-  $idPizza = htmlspecialchars($_POST['id-pizza']);
+  
   $nomPizza = htmlspecialchars($_POST['nom-pizza']);
   $prixPizza = htmlspecialchars($_POST['prix-pizza']);
+  $idPizza = htmlspecialchars($_POST['id-pizza']);
   
+  var_dump($idPizza);
 
   if (!empty($_POST['nom-pizza']) or !empty($_POST['prix-pizza'])) {
     if (filter_var($prixPizza, FILTER_VALIDATE_FLOAT)) {

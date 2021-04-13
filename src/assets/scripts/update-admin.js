@@ -15,13 +15,14 @@ for (let i = 0; i < updateButton.length; i++) {
 function updateAdmin(button){
 
   let line = button.parentNode.parentNode;
-  let prixPizza = line.children[1].children[0];
-  let nomPizza = line.children[0].children[0];
+  let prixPizza = line.children[2].children[0];
+  let nomPizza = line.children[1].children[0];
+  
+
+  console.log(prixPizza);
 
   prixPizza.disabled = false;
   nomPizza.disabled = false;
-
-  
 
   validateButton.classList.remove("hide");
 }
