@@ -5,7 +5,6 @@ include_once('pdo.php');
 
 if (isset($_POST['validate'])) {
   $id_client = $_SESSION['id'];
-  // $sex = htmlspecialchars($_POST['civilite']);
   $pseudo = htmlspecialchars($_POST['pseudo']);
   $oldPassword = htmlspecialchars($_POST['password']); // Ancien mot de passe rentré par l'utilisateur
   $newPassword = htmlspecialchars($_POST['new-password']); // Nouveau mot de passe

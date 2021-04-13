@@ -1,4 +1,5 @@
 <?php
+// Connexion à la base de donnée en local
 $option = [
   PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -10,7 +11,7 @@ try {
   echo 'Echeec lors de la connexion' . $e->getMessage();
 }
 
-// Pour le site en ligne
+// Connexion à la base de donnée en ligne
 // $option = [
 //   PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', 
 //   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

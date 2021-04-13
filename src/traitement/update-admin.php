@@ -3,6 +3,8 @@
 session_start();
 include('pdo.php');
 
+var_dump($_POST);
+
 if (isset($_POST['validate'])) {
 
   
@@ -21,5 +23,5 @@ if (isset($_POST['validate'])) {
   //   }
   // }
 } else {
-  header('location:../admin.php?error=0');
+  // header('location:../admin.php?error=0');
 }

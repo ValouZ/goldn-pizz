@@ -65,7 +65,7 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
   </tbody>
 
 </table>
-    <form class="update-form" action="traitement/update-admin.php?id=" method="post">
+    <form class="update-form" action="traitement/update-admin.php" method="post">
       <table class="table2">
         <thead class="table__center">
           <tr>
@@ -88,7 +88,7 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
           <tr class="table__top">
             
             <input type="hidden" name="id-pizza" value="<?= $pizza['id_pizza']?>">
-            <?php var_dump($pizza['id_pizza'])?>
+            <?php // var_dump($pizza['id_pizza'])?>
             
             <td class="td">
               <input id="pizzanom" type="text" value="<?= $pizza['nom_pizza']?>" disabled="true" name="nom-pizza">       
