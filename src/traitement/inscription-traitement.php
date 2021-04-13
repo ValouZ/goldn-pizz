@@ -3,40 +3,56 @@ include_once('variables.php');
 include_once('pdo.php');
 
 if (isset($_POST['forminscription'])) {
-  $pseudo = htmlspecialchars($_POST['pseudo']);  
-  $civilite = htmlspecialchars($_POST['civilite']);
-  // $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+  $pseudo = htmlspecialchars($_POST['pseudo']);
+  $sex = htmlspecialchars($_POST['civilite']);
   $password = htmlspecialchars($_POST['password']);
   $passwordConfirm = htmlspecialchars($_POST['password-confirm']);
   $email = htmlspecialchars($_POST['email']);
-  $pays = htmlspecialchars($_POST['pays']);
+  $country = htmlspecialchars($_POST['pays']);
   $postcode = htmlspecialchars($_POST['postcode']);
-  $ville = htmlspecialchars($_POST['ville']);
-  $rue = htmlspecialchars($_POST['rue']);
-  $telephone = htmlspecialchars($_POST['telephone']);
+  $city = htmlspecialchars($_POST['ville']);
+  $street = htmlspecialchars($_POST['rue']);
+  $phone = htmlspecialchars($_POST['telephone']);
 
-
+  // On vérife que tous les champs soient bien remplis
   if (!empty($_POST['pseudo']) and !empty($_POST['civilite']) and !empty($_POST['password']) and !empty($_POST['password-confirm']) and !empty($_POST['email']) and !empty($_POST['pays']) and !empty($_POST['postcode']) and !empty($_POST['ville']) and !empty($_POST['rue']) and !empty($_POST['telephone'])) {
     $pseudoLenght = strlen($pseudo);
+
+    // On sélectionne dans la table client toutes les lignes avec le pseudo voulu
     $reqPseudo = $bdd->prepare("SELECT * FROM client WHERE pseudo_client  = ?");
     $reqPseudo->execute(array($pseudo));
-    $pseudoExist = $reqPseudo->rowCount();
+    $pseudoExist = $reqPseudo->rowCount(); // On compte les lignes retournées
     if ($pseudoExist == 0) {
+      // Si le pseudo n'existe pas
+
       if ($pseudoLenght >= 3 && $pseudoLenght < 18) {
+        // Si le pseudo est entre 3 et 18 caractères
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+          // On sélectionne dans la table client toutes les lignes avec l'email voulu
           $reqemail = $bdd->prepare("SELECT * FROM client WHERE email_client = ?");
           $reqemail->execute(array($email));
-          $mailexist = $reqemail->rowCount();
+          $mailexist = $reqemail->rowCount(); // On compte les lignes retournées
           if ($mailexist == 0) {
+            // Si le mail n'existe pas
+
             if (preg_match($regxr, $password) == 1) {
+              // Si le mot de passe suit nos recommandations
+
               if ($passwordConfirm === $password) {
-                if (filter_var(intval($telephone), FILTER_VALIDATE_INT)) {
-                  $telephoneLenght = strlen($telephone);
-                  if ($telephoneLenght == 10) {
+                // Si les mdp concordent
+
+                if (filter_var(intval($phone), FILTER_VALIDATE_INT)) {
+                  $phoneLenght = strlen($phone);
+                  if ($phoneLenght == 10) {
                     if (filter_var(intval($postcode), FILTER_VALIDATE_INT)) {
+
+                      // On hash le mdp
                       $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+                      // On insère dans la table client les informations suivantes afin de créer un nouveau client
                       $reqinsert = $bdd->prepare('INSERT INTO client(pseudo_client,email_client,mdp_client,genre_client,pays_client,ville_client,postcode_client,rue_client,tel_client,role_client) VALUES (?,?,?,?,?,?,?,?,?,0)');
-                      $reqinsert->execute(array($pseudo, $email, $passwordHash, $civilite, $pays, $ville, $postcode, $rue, $telephone));
+                      $reqinsert->execute(array($pseudo, $email, $passwordHash, $sex, $country, $city, $postcode, $street, $phone));
                       header('location:../sign-in.php?created'); // Inscription réussi
                       exit();
                     } else {
@@ -68,8 +84,7 @@ if (isset($_POST['forminscription'])) {
           exit();
         }
       } else {
-        var_dump("$pseudoLenght");
-        // header('location:../sign-up.php?error=6'); // pseudo trop long
+        header('location:../sign-up.php?error=6'); // pseudo trop long
         exit();
       }
     } else {

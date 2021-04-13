@@ -1,4 +1,8 @@
 <?php
+
+// Fonction affichant un message avec une classe spécifique
+// $result -> le message à afficher
+// $state -> etat du message (success ou error)
 function display_message_url($result, $state)
 {
   if ($state === 1) {
@@ -15,6 +19,9 @@ function display_message_url($result, $state)
 <?php
 }
 
+// Fonction renvoyant un message d'erreur selon l'id en paramètre
+// $error -> id du message d'erreur
+// RETURN -> Message d'erreur
 function error_message($error)
 {
   $result = '';
@@ -29,7 +36,7 @@ function error_message($error)
       $result = "Les mots de passes ne concordent pas";
       break;
     case 3:
-      $result = "Le mot de passe ne suit pas nos indications";
+      $result = "Le mot de passe doit contenir une majuscule, une minuscule, un chiffre, et un caractère spécial parmis [$, %, ?, !] et faire entre 10 et 20 caractères";
       break;
     case 4:
       $result = "L'email existe déjà dans notre base de données";
@@ -57,15 +64,16 @@ function error_message($error)
   return $result;
 }
 
+// Fonction empechant d'accéder à certaine page (en passant par l'url) si l'on est pas connecté
 function access_denied()
 {
-  // Permet d'éviter d'accéder aux pages par l'url même en étant déconnecté
   if (isset($_SESSION) && count($_SESSION) === 0) {
     header('Location:index.php?QuestCeQueTuFouBordelDeMerde');
     exit();
   }
 }
 
+// Fonction qui redirige vers la page d'accueil client si l'on essaye d'accéder à des pages interdites
 function is_not_admin()
 {
   if ($_SESSION['role'] != 1) {
@@ -74,6 +82,7 @@ function is_not_admin()
   }
 }
 
+// Fonction qui redirige vers la page d'accueil admin si l'on essaye d'accéder à des pages interdites
 function is_admin()
 {
   if ($_SESSION['role'] == 1) {
@@ -82,6 +91,7 @@ function is_admin()
   }
 }
 
+// Fonction retournant un lien spécifique selon le role de l'utilisateur
 function role_link()
 {
   $link = '';

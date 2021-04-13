@@ -7,21 +7,26 @@ if (isset($_POST['formconnexion'])) {
   $password = htmlspecialchars($_POST['password']);
 
   if (!empty($pseudo) and !empty($password)) {
-    $req = $bdd->prepare('SELECT * FROM client WHERE (pseudo_client = ? or email_client =?)');
-    $req->execute(array($pseudo, $pseudo));
-    $clientExist = $req->rowCount();
+
+    // On sélectionne les lignes de la table client qui correspondent au pseudo de notre client
+    $req = $bdd->prepare('SELECT * FROM client WHERE pseudo_client = ?');
+    $req->execute(array($pseudo));
+    $clientExist = $req->rowCount(); // On compte le nombre de ligne (retourne 0 ou 1)
     if ($clientExist == 1) {
+      // Si le client existe 
       $infoClient = $req->fetch();
       $passwordUser = $infoClient['mdp_client'];
       $getRole = $infoClient['role_client'];
       if (password_verify($password, $passwordUser)) {
         if ($getRole == 1) {
+          // Admin
           $_SESSION['id'] = $infoClient['id_client'];
           $_SESSION['pseudo'] = $infoClient['pseudo_client'];
           $_SESSION['role'] = $infoClient['role_client'];
           header('location:../admin.php');
           exit();
         } elseif ($getRole == 0) {
+          // Client
           $_SESSION['id'] = $infoClient['id_client'];
           $_SESSION['pseudo'] = $infoClient['pseudo_client'];
           $_SESSION['role'] = $infoClient['role_client'];
