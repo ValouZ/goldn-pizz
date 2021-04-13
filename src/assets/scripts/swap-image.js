@@ -1,10 +1,10 @@
-let pizzaImages = document.getElementsByClassName("images")[0].children;
-let classCSS = "displayPizza";
-let swapImageInterval = 2000;
-let rotatePizza = 0;
-let oldPizza = pizzaImages[pizzaImages.length - 1];
+let pizzaImages = document.getElementsByClassName("images")[0].children; // Tableau contenant les 3 images à afficher
+let classCSS = "displayPizza"; // Class à ajouter à nos images
+let swapImageInterval = 2000; // Temps entre le changement des images
+let rotatePizza = 0; // Indice de la première image
+let oldPizza = pizzaImages[pizzaImages.length - 1]; // Indice de la pizza précédemment affiché
 
-pizzaImages[rotatePizza].classList.add(classCSS);
+pizzaImages[rotatePizza].classList.add(classCSS); // On ajoute la class d'affichage à la première image
 
 setInterval(swapPizza, swapImageInterval);
 
