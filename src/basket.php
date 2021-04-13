@@ -12,9 +12,7 @@ $deliveryFees = 2.50;
 $serviceFees = 1.50;
 $totalPrice;
 
-
 access_denied();
-
 
 // requête pour séléctionner le panier de l'utilisateur connecté. L'inner join lie la table pizza et panier ensemble
 $req_pizza = $bdd->prepare('SELECT * FROM panier INNER JOIN pizza ON panier.id_pizza = pizza.id_pizza WHERE panier.id_client = ?');

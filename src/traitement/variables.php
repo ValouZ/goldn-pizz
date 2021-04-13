@@ -1,4 +1,5 @@
 <?php
+// regexr pour le mot de passe
 $regxr = '~^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[$%?!]).{10,20}$~u';
 
 // Tableau contenant les Titre des pages et le type de menu à afficher

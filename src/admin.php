@@ -10,7 +10,7 @@ include_once('traitement/functions.php');
 $info = $header_info[6]; // Voir variables.php
 include_once('header.php');
 
-// si jamais il n'est pas connecté et que ce n'est pas un admin
+// Redirection de sécurité si l'on n'as pas les droits d'accéder à cette page
 access_denied();
 is_not_admin();
 
@@ -21,7 +21,7 @@ $reqUsers = $bdd->query('SELECT * FROM client WHERE role_client != 1');
 // Requête qui récupère toutes les infos des pizzas.
 $reqPizza = $bdd->query('SELECT * FROM pizza WHERE 1');
 
-//stock les deux requetes dans un tableau
+//stock les résultats des deux requetes dans un tableau
 $resultatUsers = $reqUsers->fetchAll(PDO::FETCH_ASSOC);
 $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
 
