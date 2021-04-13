@@ -65,43 +65,44 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
   </tbody>
 
 </table>
-    <form class="update-form" action="traitement/update-admin.php" method="post">
-      <table class="table2">
-        <thead class="table__center">
-          <tr>
-            <th>Tableau pizza</th>
-          </tr>
-        </thead>
-        
-        <tbody>
+<form class="update-form" action="traitement/update-admin.php" method="post">
+  <table class="table2">
+    <thead class="table__center">
+      <tr>
+        <th>Tableau pizza</th>
+      </tr>
+    </thead>
 
-          <tr>
-            
-            <th class="th">Nom pizza</>
-            <th class="th">Prix</th>
-          </tr>
+    <tbody>
 
-          <?php
-          //parcours le tableau $resultatPizza
-            foreach($resultatPizza as $pizza){
+      <tr>
+
+        <th class="th">Nom pizza</>
+        <th class="th">Prix</th>
+      </tr>
+
+      <?php
+      //parcours le tableau $resultatPizza
+      foreach ($resultatPizza as $pizza) {
+      ?>
+        <tr class="table__top">
+
+          <input type="hidden" name="id-pizza" value="<?= $pizza['id_pizza'] ?>">
+          <?php // var_dump($pizza['id_pizza'])
           ?>
-          <tr class="table__top">
-            
-            <input type="hidden" name="id-pizza" value="<?= $pizza['id_pizza']?>">
-            <?php // var_dump($pizza['id_pizza'])?>
-            
-            <td class="td">
-              <input id="pizzanom" type="text" value="<?= $pizza['nom_pizza']?>" disabled="true" name="nom-pizza">       
-            </td>
-            <td class="td">
-              <input id="pizzaprix" type="text" value="<?= $pizza['prix_pizza']?>" disabled="true" name="prix-pizza">       
-            </td>
-            <td class="td">
-              <button class="button__update">Modifier</button>
-            </td>
-            <td class="td">
-              <a href="traitement/delete-pizza.php?id=<?= $pizza['id_pizza'] ?>">Supprimer</a>
-            </td>
+
+          <td class="td">
+            <input id="pizzanom" type="text" value="<?= $pizza['nom_pizza'] ?>" disabled="true" name="nom-pizza">
+          </td>
+          <td class="td">
+            <input id="pizzaprix" type="text" value="<?= $pizza['prix_pizza'] ?>" disabled="true" name="prix-pizza">
+          </td>
+          <td class="td">
+            <button class="button__update">Modifier</button>
+          </td>
+          <td class="td">
+            <a href="traitement/delete-pizza.php?id=<?= $pizza['id_pizza'] ?>">Supprimer</a>
+          </td>
           </section>
         </tr>
       <?php
