@@ -37,7 +37,7 @@ foreach ($resultats_pizza as $pizza) {
   <main class="product-background">
     <section class="background-info">
       <div class="images">
-      <!-- Affichage des images et des alts de la pizza choisi -->
+        <!-- Affichage des images et des alts de la pizza choisi -->
         <img src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt'] ?>" class="pizza">
         <img src="<?= $pizza['image2'] ?>" alt="<?= $pizza['alt'] ?>" class="pizza">
         <img src="<?= $pizza['image3'] ?>" alt="<?= $pizza['alt'] ?>" class="pizza">
@@ -52,12 +52,12 @@ foreach ($resultats_pizza as $pizza) {
         </section>
 
         <section class="price-component" aria-label="Choisir la quantité">
-        <!-- Affichage du prix de la pizza choisi -->
+          <!-- Affichage du prix de la pizza choisi -->
           <p class="price" id="app-price"><?= $pizza['prix_pizza'] ?><span> € </span></p>
           <div class="quantity">
             <button id="app-remove"><img src="assets/images/remove.svg" alt="Remove" class="remove"></button>
             <p id="app-quantity"><?php
-            // si le panier est rempli alors on affiche le nombre de pizza ajouté sinon on affiche 0
+                                  // si le panier est rempli alors on affiche le nombre de pizza ajouté sinon on affiche 0
                                   if ($resultat_panier) {
                                     echo $resultat_panier["nbr_pizza"];
                                   } else {
@@ -98,12 +98,14 @@ foreach ($resultats_pizza as $pizza) {
     </section>
   </main>
 <?php
-// fin du foreach
+  // fin du foreach
 };
 ?>
-
+<?php if (count($_SESSION) > 0) { ?>
+  <!-- Si on est connecté -->
+  <script src="assets/scripts/number-pizza.js"></script>
+<?php } ?>
 <script src="assets/scripts/pizza-size.js"></script>
-<script src="assets/scripts/number-pizza.js"></script>
 <script src="assets/scripts/ajax-product.js"></script>
 <script src="assets/scripts/swap-image.js"></script>
 </body>
