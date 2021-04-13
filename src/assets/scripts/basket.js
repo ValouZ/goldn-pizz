@@ -26,7 +26,9 @@ function changeQuantity(value, button) {
 
   counter += value; // Le nouveau nombre de pizza à commander
   quantity.textContent = counter; // On modifie l'affichage de la quantité
-  price.innerHTML = priceDisplay(priceOnePizza * counter); // On modifie l'affichage du prix
+  let priceValue = priceOnePizza * counter;
+  priceValue = priceValue.toFixed(2);
+  price.innerHTML = priceDisplay(priceValue); // On modifie l'affichage du prix
 
   if (counter === 0) {
     // Si une pizza à une quantité nulle
