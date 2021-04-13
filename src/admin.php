@@ -1,18 +1,27 @@
 <?php
-$i = 0; // ROBIN ??????
+
+//Inclusion de variables / functions / pdo
+
 include_once("traitement/variables.php");
 include_once('traitement/pdo.php');
 include_once('traitement/functions.php');
 
+
 $info = $header_info[6]; // Voir variables.php
 include_once('header.php');
 
+// si jamais il n'est pas connecté et que ce n'est pas un admin
 access_denied();
 is_not_admin();
 
+
+// Requête pour récupérer toutes les infos des clients où leurs rôles est différent de 1 donc administrateur
 $reqUsers = $bdd->query('SELECT * FROM client WHERE role_client != 1');
+
+// Requête qui récupère toutes les infos des pizzas.
 $reqPizza = $bdd->query('SELECT * FROM pizza WHERE 1');
 
+//stock les deux requetes dans un tableau
 $resultatUsers = $reqUsers->fetchAll(PDO::FETCH_ASSOC);
 $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
 
@@ -30,7 +39,9 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
       <th class="th">Email</th>
       <th class="th">Numéro Téléphone</th>
     </tr>
+
     <?php
+    //parcours le tableau $resultatUsers
     foreach ($resultatUsers as $users) {
 
     ?>
@@ -71,11 +82,13 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
           </tr>
 
           <?php
+          //parcours le tableau $resultatPizza
             foreach($resultatPizza as $pizza){
           ?>
           <tr class="table__top">
             
             <input type="hidden" name="id-pizza" value="<?= $pizza['id_pizza']?>">
+            <?php var_dump($pizza['id_pizza'])?>
             
             <td class="td">
               <input id="pizzanom" type="text" value="<?= $pizza['nom_pizza']?>" disabled="true" name="nom-pizza">       

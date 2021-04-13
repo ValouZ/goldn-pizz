@@ -6,29 +6,38 @@ include_once('traitement/functions.php');
 $info = $header_info[4]; // Voir variables.php
 include_once('header.php');
 
+// déclaration des variables pour le paiement
 $totalProducts = 0;
 $deliveryFees = 2.50;
 $serviceFees = 1.50;
-$totalOfAllTheFuckingTotal;
+$totalPrice;
 
 
 access_denied();
 
+
+// requête pour séléctionner le panier de l'utilisateur connecté. L'inner join lie la table pizza et panier ensemble
 $req_pizza = $bdd->prepare('SELECT * FROM panier INNER JOIN pizza ON panier.id_pizza = pizza.id_pizza WHERE panier.id_client = ?');
+// Execute la requete
 $req_pizza->execute(array($_SESSION['id']));
+// On stock les resultats dans un tableau nommé $resultats_pizza
 $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <div class="basket">
   <h2 class="page-title basket-title main-title <?php if (!($resultats_pizza)) echo "center-empty" ?>">Mon panier</h2>
 
+<!-- Si le tableau est rempli -->
   <?php if ($resultats_pizza) { ?>
     <div class="basket-content">
       <section class="basket-products">
 
         <?php
+        // Parcours le tableau $resultats_pizza
         foreach ($resultats_pizza as $pizza) {
+          // $price = prix de la pizza sélectionné * le nbr de fois ou elle a y été ajouté
           $price = $pizza['prix_pizza'] * $pizza['nbr_pizza'];
+          // $totalProducts = Prix total de toutes les pizzas ajouté au panier
           $totalProducts += $price;
         ?>
           <div class="basket-card">
@@ -46,7 +55,8 @@ $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
           </div>
         <?php
         }
-        $totalOfAllTheFuckingTotal = $totalProducts + $deliveryFees + $serviceFees;
+        // $totalPrice = Prix total des produits + frais de livraison + frais de service
+        $totalPrice = $totalProducts + $deliveryFees + $serviceFees;
         ?>
       </section>
 
@@ -66,7 +76,7 @@ $resultats_pizza = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
           </div>
           <div class="price-review__item total">
             <h4>Total :</h4>
-            <p class="price"><?= $totalOfAllTheFuckingTotal ?> <span>€</span></p>
+            <p class="price"><?= $totalPrice ?> <span>€</span></p>
           </div>
         </section>
 

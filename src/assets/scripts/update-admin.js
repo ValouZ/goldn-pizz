@@ -20,6 +20,7 @@ function updateAdmin(button){
   
 
   console.log(prixPizza);
+  console.log(nomPizza);
 
   prixPizza.disabled = false;
   nomPizza.disabled = false;

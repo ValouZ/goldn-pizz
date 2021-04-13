@@ -1,11 +1,16 @@
 <?php
+//Inclusion de variables / pdo
 include_once("traitement/variables.php");
 include_once("traitement/pdo.php");
 
 $info = $header_info[0]; // Voir variables.php
 include_once('header.php');
 
-$req = $bdd->query('SELECT * FROM pizza');
+// requête pour avoir toutes les informations de la table pizza
+$req = $bdd->prepare('SELECT * FROM pizza');
+// On éxécute la requête
+$req->execute();
+// On met le résultat de la requête dans un tableau
 $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -20,6 +25,7 @@ $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
 
 <section class="cards">
   <?php
+  // Parcours le tableau $resultats pour nous permettre d'afficher toutes les pizzas
   foreach ($resultats as $pizza) {
   ?>
     <a class="card" href="product-page.php?id=<?= $pizza['id_pizza']?>">

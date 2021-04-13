@@ -1,14 +1,25 @@
 <?php
 session_start();
+//Inclusion de functions / pdo
 include_once('traitement/pdo.php');
 include_once('traitement/functions.php');
 
+// $count_pizza sert à compter le nombre d'article dans le panier, il se trouve dans la nav
 $count_pizza = 0;
+
+// Si nous sommes connecté alors :
 if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
+  // On stock l'id du client
+  $idClient = $_SESSION['id'];
+   // Requete pour tout récupérer du panier pour le client connecté
   $req_pizza = $bdd->prepare('SELECT * FROM panier WHERE id_client = ?');
-  $req_pizza->execute(array($_SESSION['id']));
+  // On execute la requete
+  $req_pizza->execute(array($idClient));
+  // On stock les données dans un tableau 
   $pizzas = $req_pizza->fetchAll(PDO::FETCH_ASSOC);
+  // Permet de parcourir le tableau $pizzas
   foreach ($pizzas as $item) {
+    // On augmente le compteur de pizzas
     $count_pizza += $item['nbr_pizza'];
   }
 }
@@ -32,6 +43,7 @@ if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
     <nav>
       <ul class="list-items">
         <?php
+        // Si l'utilisateur est connecté en admin on affiche cette nav
         if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
           if ($info[1] == 1) {
         ?>
@@ -39,7 +51,7 @@ if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
             <li><a href="traitement/logout.php"><img src="assets/images/logout.svg" alt="Déconnexion"></a></li>
       </ul>
     <?php
-          } elseif ($info[1] == 2) { // Menu général en mode client
+          } elseif ($info[1] == 2) { // Menu général en mode client connecté
     ?>
       <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
       <li>

@@ -1,12 +1,16 @@
 <?php
+
+//Inclusion de variables / functions / pdo
 include_once("traitement/variables.php");
 include_once('traitement/functions.php');
 include_once('traitement/pdo.php');
 
+// Ici nous donnons à la variable info quel header nous souhaitons
 $info = $header_info[3]; // Voir variables.php
 include_once("header.php");
 
 $result = "";
+// Si le $_get['error'] existe alors nous affichons un message d'erreur
 if (isset($_GET['error'])) {
   $error = $_GET['error'];
   $result = error_message($error);
@@ -304,6 +308,7 @@ if (isset($_GET['error'])) {
   </div>
 
   <?php
+  //Affichage du résultat de l'inscription
   if ($result !== '') {
     display_message_url($result, 0);
   }
