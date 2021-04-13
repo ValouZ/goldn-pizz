@@ -20,7 +20,7 @@ if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> <?= $title ?> - Goldn Pizz'</title>
+  <title> <?= $info[0] ?> - Goldn Pizz'</title>
   <link rel="shortcut icon" href="assets/favicon/pizza.svg" type="image/x-icon">
   <link rel="stylesheet" href="assets/styles/main.css">
   <script src="assets/scripts/basket-icon.js" defer></script>
@@ -32,13 +32,13 @@ if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
       <ul class="list-items">
         <?php
         if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
-          if ($menu == "1") {
+          if ($info[1] == 1) {
         ?>
             <li class="home"><a href="admin.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
             <li><a href="logout.php">Deconnexion</a></li>
       </ul>
     <?php
-          } elseif ($menu == "2") { // Menu général en mode client
+          } elseif ($info[1] == 2) { // Menu général en mode client
     ?>
       <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
       <li>
@@ -52,11 +52,11 @@ if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
     <?php
           }
         } else {
-          if ($menu == "1") { // Menu page de connexion et inscription
+          if ($info[1] == 1) { // Menu page de connexion et inscription
     ?>
       <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
     <?php
-          } elseif ($menu == "2") { // Menu général en mode visiteur
+          } elseif ($info[1] == 2) { // Menu général en mode visiteur
     ?>
       <li class="home"><a href="index.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
       <li><a href="sign-in.php">Connexion</a></li>

@@ -1,8 +1,10 @@
 <?php
-$title = "Profil";
-$menu = "2";
-include_once('traitement/pdo.php');
+
+include_once("traitement/variables.php");
+include_once("traitement/pdo.php");
 include_once('traitement/functions.php');
+
+$info = $header_info[1]; // Voir variables.php
 include_once('header.php');
 
 access_denied();

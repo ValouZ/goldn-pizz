@@ -1,8 +1,10 @@
 <?php
-$title = "Se connecter";
-$menu = "1";
-include_once('header.php');
+
+include_once("traitement/variables.php");
 include_once('traitement/functions.php');
+
+$info = $header_info[2]; // Voir variables.php
+include_once('header.php');
 
 $result = "";
 if (isset($_GET['error'])) {
