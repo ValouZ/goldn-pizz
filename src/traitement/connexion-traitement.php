@@ -1,9 +1,6 @@
 <?php
-
-include_once('pdo.php');
-
 session_start();
-
+include_once('pdo.php');
 
 if (isset($_POST['formconnexion'])) {
   $pseudo = htmlspecialchars($_POST['pseudo']);
