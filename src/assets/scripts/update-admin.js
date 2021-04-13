@@ -14,7 +14,7 @@ function updateAdmin(button) {
   let prixPizza = line.children[2].children[0];
   let validateButton = line.children[4].children[0];
 
-  disabledUpdate();
+  disableUpdate();
   console.log(validateButton);
   // console.log(nomPizza);
 
@@ -24,7 +24,7 @@ function updateAdmin(button) {
   validateButton.classList.remove("hide");
 }
 
-function disabledUpdate() {
+function disableUpdate() {
   for (let i = 0; i < updateButtonLength; i++) {
     updateButton[i].disabled = true;
   }
