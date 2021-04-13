@@ -28,9 +28,9 @@ foreach ($resultats_pizza as $pizza) {
   <main class="product-background">
     <section class="background-info">
       <div class="images">
-        <img src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt'] ?>" class="pizza">
-        <img src="<?= $pizza['image2'] ?>" alt="<?= $pizza['alt'] ?>" class="pizza">
-        <img src="<?= $pizza['image3'] ?>" alt="<?= $pizza['alt'] ?>" class="pizza">
+        <img src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt1'] ?>" class="pizza">
+        <img src="<?= $pizza['image2'] ?>" alt="<?= $pizza['alt2'] ?>" class="pizza">
+        <img src="<?= $pizza['image3'] ?>" alt="<?= $pizza['alt3'] ?>" class="pizza">
       </div>
       <h1><?= $pizza['nom_pizza'] ?></h1>
       <div class="choice">

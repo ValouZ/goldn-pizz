@@ -22,7 +22,7 @@ $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
   foreach ($resultats as $pizza) {
   ?>
     <a class="card" href="product-page.php?id=<?= $pizza['id_pizza']?>">
-      <img src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt'] ?>">
+      <img src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt1'] ?>">
       <div class="content">
         <h2 class="pizza-name"><?= $pizza['nom_pizza'] ?></h2>
         <p class="description"><?= $pizza['description_pizza'] ?></p>

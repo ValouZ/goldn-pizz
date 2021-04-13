@@ -53,38 +53,31 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
   </tbody>
 
 </table>
-<form class="update-form" action="traitement/update-admin.php" method="post">
-  <table class="table2">
-    <thead class="table__center">
-      <tr>
-        <th>Tableau pizza</th>
-      </tr>
-    </thead>
+    <form class="update-form" action="traitement/update-admin.php?id=" method="post">
+      <table class="table2">
+        <thead class="table__center">
+          <tr>
+            <th>Tableau pizza</th>
+          </tr>
+        </thead>
+        
+        <tbody>
 
-    <tbody>
+          <tr>
+            
+            <th class="th">Nom pizza</>
+            <th class="th">Prix</th>
+          </tr>
 
-      <tr>
-        <th class="th">Id pizza</th>
-        <th class="th">Nom pizza</th>
-        <th class="th">Prix</th>
-      </tr>
-
-      <?php
-      foreach ($resultatPizza as $pizza) {
-      ?>
-        <tr class="table__top">
-          <td class="td">
-            <input id="idpizza" type="text" value="<?= $pizza['nom_pizza'] ?>" name="id-pizza">
-          </td>
-          <td class="td">
-            <input id="pizzanom" type="text" value="<?= $pizza['nom_pizza'] ?>" disabled="true" name="nom-pizza">
-          </td>
-          <td class="td">
-            <input id="pizzaprix" type="text" value="<?= $pizza['prix_pizza'] ?>" disabled="true" name="prix-pizza">
-          </td>
-          <section class="app-update">
+          <?php
+            foreach($resultatPizza as $pizza){
+          ?>
+          <tr class="table__top">
+            
+            <input type="hidden" name="id-pizza" value="<?= $pizza['id_pizza']?>">
+            
             <td class="td">
-              <button class="button__update">Modifier</button>
+              <input id="pizzanom" type="text" value="<?= $pizza['nom_pizza']?>" disabled="true" name="nom-pizza">       
             </td>
             <td class="td">
               <a href="traitement/delete-pizza.php?id=<?= $pizza['id_pizza'] ?>">Supprimer</a>
