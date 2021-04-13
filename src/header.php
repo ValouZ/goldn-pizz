@@ -11,7 +11,7 @@ $count_pizza = 0;
 if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
   // On stock l'id du client
   $idClient = $_SESSION['id'];
-   // Requete pour tout récupérer du panier pour le client connecté
+  // Requete pour tout récupérer du panier pour le client connecté
   $req_pizza = $bdd->prepare('SELECT * FROM panier WHERE id_client = ?');
   // On execute la requete
   $req_pizza->execute(array($idClient));
@@ -35,7 +35,6 @@ if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
   <title> <?= $info[0] ?> - Goldn Pizz'</title>
   <link rel="shortcut icon" href="assets/favicon/pizza.svg" type="image/x-icon">
   <link rel="stylesheet" href="assets/styles/main.css">
-  <script src="assets/scripts/basket-icon.js" defer></script>
 </head>
 
 <body>
