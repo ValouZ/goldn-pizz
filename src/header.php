@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once('traitement/pdo.php');
+include_once('traitement/functions.php');
 
 $count_pizza = 0;
 if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
@@ -35,7 +36,7 @@ if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
           if ($info[1] == 1) {
         ?>
             <li class="home"><a href="admin.php"><img src="assets/images/home.svg" alt="Accueil"></a></li>
-            <li><a href="logout.php">Deconnexion</a></li>
+            <li><a href="traitement/logout.php"><img src="assets/images/logout.svg" alt="Déconnexion"></a></li>
       </ul>
     <?php
           } elseif ($info[1] == 2) { // Menu général en mode client
@@ -48,7 +49,7 @@ if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
         </a>
       </li>
       <li><a href="profile.php"><img src="assets/images/user.svg" alt="Profil"></a></li>
-      <li><a href="logout.php"><img src="assets/images/logout.svg" alt="Déconnexion"></a></li>
+      <li><a href="traitement/logout.php"><img src="assets/images/logout.svg" alt="Déconnexion"></a></li>
     <?php
           }
         } else {
@@ -68,4 +69,11 @@ if (count($_SESSION) > 0 and isset($_SESSION['id'])) {
   </ul>
     </nav>
   </header>
-  <h1 class="goldn-pizz"><a href="index.php">Goldn Pizz'</a></h1>
+  <h1 class="goldn-pizz"><a href="<?= role_link() ?>">Goldn Pizz'</a></h1>
+
+  <?php
+  // Si on est pas sur la page admin.php et qu'on est connecté comme admin, on redirige sur admin.php
+  if (count($_SESSION) > 0 and $info[0] != 'Admin') {
+    is_admin();
+  }
+  ?>

@@ -62,6 +62,7 @@ function access_denied()
   // Permet d'éviter d'accéder aux pages par l'url même en étant déconnecté
   if (isset($_SESSION) && count($_SESSION) === 0) {
     header('Location:index.php?QuestCeQueTuFouBordelDeMerde');
+    exit();
   }
 }
 
@@ -69,5 +70,27 @@ function is_not_admin()
 {
   if ($_SESSION['role'] != 1) {
     header('Location:index.php?TuTePrendsPourQui');
+    exit();
   }
+}
+
+function is_admin()
+{
+  if ($_SESSION['role'] == 1) {
+    header('Location:admin.php?ResteAdminCommeTuEs');
+    exit();
+  }
+}
+
+function role_link()
+{
+  $link = '';
+  if (count($_SESSION) > 0) {
+    // Si la session est active et que l'on est pas admin, on met le lien vers index.php, sinon admin.php
+    $link = $_SESSION['role'] != 1 ? 'index.php' : 'admin.php';
+  } else {
+    // Sinon on met le lien vers index.php
+    $link = 'index.php';
+  }
+  return $link;
 }
