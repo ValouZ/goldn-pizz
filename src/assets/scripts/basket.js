@@ -22,6 +22,7 @@ function changeQuantity(value, button) {
   let price = button.parentNode.parentNode.children[1].children[2]; // Section d'affichage du prix
   let priceContent = parseFloat(price.textContent); // Le prix
   let priceOnePizza = priceContent / counter; // Prix d'une pizza unique
+  priceOnePizza = priceOnePizza.toFixed(2); // Arrondi à deux chiffres apres la virgule
 
   counter += value; // Le nouveau nombre de pizza à commander
   quantity.textContent = counter; // On modifie l'affichage de la quantité
@@ -52,6 +53,7 @@ function updateBill() {
     // On fait la somme des prix contenu dans chacune des cartes de la page
     productPrice += parseFloat(cards[i].children[1].children[2].textContent);
   }
+  productPrice = productPrice.toFixed(2); // Arrondi à deux chiffres apres la virgule
 
   // On affiche ce nouveau prix calculé
   productReview.innerHTML = priceDisplay(productPrice);
@@ -60,6 +62,7 @@ function updateBill() {
     // On fait la somme des prix contenu dans chacune des lignes du récap des prix
     totalPrice += parseFloat(priceReview[i].children[1].textContent);
   }
+  totalPrice = totalPrice.toFixed(2); // Arrondi à deux chiffres apres la virgule
 
   // On affiche ce nouveau total calculé
   totalReview.innerHTML = priceDisplay(totalPrice);
