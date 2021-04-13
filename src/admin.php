@@ -10,7 +10,7 @@ include_once('traitement/functions.php');
 $info = $header_info[6]; // Voir variables.php
 include_once('header.php');
 
-// Redirection de sécurité si l'on n'as pas les droits d'accéder à cette page
+// Redirections de sécurité si l'on n'as pas les droits d'accéder à cette page
 access_denied();
 is_not_admin();
 
