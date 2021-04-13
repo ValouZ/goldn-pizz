@@ -18,18 +18,15 @@ if (isset($_POST['formconnexion'])) {
       $passwordUser = $infoClient['mdp_client'];
       $getRole = $infoClient['role_client'];
       if (password_verify($password, $passwordUser)) {
+        $_SESSION['id'] = $infoClient['id_client'];
+        $_SESSION['pseudo'] = $infoClient['pseudo_client'];
+        $_SESSION['role'] = $infoClient['role_client'];
         if ($getRole == 1) {
           // Admin
-          $_SESSION['id'] = $infoClient['id_client'];
-          $_SESSION['pseudo'] = $infoClient['pseudo_client'];
-          $_SESSION['role'] = $infoClient['role_client'];
           header('location:../admin.php');
           exit();
         } elseif ($getRole == 0) {
           // Client
-          $_SESSION['id'] = $infoClient['id_client'];
-          $_SESSION['pseudo'] = $infoClient['pseudo_client'];
-          $_SESSION['role'] = $infoClient['role_client'];
           header('location:../index.php');
           exit();
         }
