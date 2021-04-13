@@ -75,9 +75,10 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
   <tbody>
 
     <tr>
-
-      <th class="th">Nom pizza</>
+      
+      <th class="th">Nom pizza</th>
       <th class="th">Prix</th>
+      <th class="th">Description</th>
     </tr>
 
     <?php
@@ -88,13 +89,15 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
         <tr class="table__top">
 
           <input type="hidden" name="id-pizza" value="<?= $pizza['id_pizza'] ?>">
-          <?php var_dump($pizza['id_pizza']) ?>
 
           <td class="td">
             <input id="pizzanom" type="text" value="<?= $pizza['nom_pizza'] ?>" disabled="true" name="nom-pizza">
           </td>
           <td class="td">
             <input id="pizzaprix" type="text" value="<?= $pizza['prix_pizza'] ?>" disabled="true" name="prix-pizza">
+          </td>
+          <td class="td">
+            <input id="pizzadescri" type="text" value="<?= $pizza['description_pizza'] ?>" disabled="true" name="descri-pizza">
           </td>
           <td class="td">
             <button class="button__update">Modifier</button>
