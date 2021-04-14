@@ -7,7 +7,7 @@ $info = $header_info[0]; // Voir variables.php
 include_once('header.php');
 
 // requête pour avoir toutes les informations de la table pizza
-$req = $bdd->prepare('SELECT * FROM pizza');
+$req = $bdd->prepare('SELECT * FROM pizza ORDER BY prix_pizza');
 // On éxécute la requête
 $req->execute();
 // On met le résultat de la requête dans un tableau
