@@ -1,0 +1,107 @@
+.price-component {
+  @include flex($align: center);
+  position: relative;
+  height: 48px;
+  width: 231px;
+  @include box-shadow();
+  border-radius: 50px;
+  font-family: "Oswald Bold";
+
+  @include tablet {
+    width: 297px;
+    height: 64px;
+  }
+
+  .price {
+    @include pAbsolute($left: 26px);
+    font-size: 24px;
+
+    @include tablet {
+      font-size: 34px;
+      left: 33px;
+    }
+
+    span {
+      font-size: 18px;
+
+      @include tablet {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.quantity {
+  @include flex($justify: space-between, $align: center);
+  @include pAbsolute($right: 0, $top: 0);
+  background: var(--yellow);
+  width: 124px;
+  height: 100%;
+  border-radius: inherit;
+  font-family: "Oswald Bold";
+
+  @include tablet {
+    width: 150px;
+  }
+
+  button {
+    @include flex($justify: center, $align: center);
+    width: 45px;
+    height: 100%;
+    border-radius: inherit;
+    background: none;
+
+    @include tablet {
+      width: 55px;
+    }
+
+    img {
+      transition: 0.1s;
+    }
+
+    @include tablet {
+      .add {
+        width: 32px;
+      }
+      .remove {
+        height: 7px;
+      }
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  p {
+    font-family: inherit;
+    font-size: 26px;
+
+    @include tablet {
+      font-size: 36px;
+    }
+  }
+}
+
+.disconnected {
+  font-family: "Oswald Light";
+  margin-top: 20px;
+  background: rgba($color: red, $alpha: 0.4);
+  width: 100%;
+  padding: 5px 10px 5px 10px;
+  max-width: 315px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 16px;
+
+  @include tablet {
+    max-width: unset;
+    font-size: 24px;
+    padding: 1px 20px 5px 20px;
+  }
+
+  @include desktop {
+    position: absolute;
+    bottom: -60px;
+  }
+}

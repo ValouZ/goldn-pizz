@@ -1,0 +1,36 @@
+.table {
+  margin-top: 200px;
+  width: 900px;
+  border-collapse: collapse;
+
+  @include flex($direction: column, $align: center);
+}
+
+.table2 {
+  margin-top: 35px;
+  border-collapse: collapse;
+  width: 800px;
+
+  @include flex($direction: column, $align: center);
+}
+
+.th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 0 5px;
+  height: 40px;
+
+  input {
+    padding: 0 5px;
+    height: 100%;
+  }
+}
+
+.large-field {
+  width: 250px;
+}

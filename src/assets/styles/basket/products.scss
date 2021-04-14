@@ -1,0 +1,118 @@
+.basket {
+  @include flex($direction: column, $align: center);
+}
+
+.basket-title {
+  margin-top: 76px;
+  margin-bottom: 23px;
+
+  @include desktop {
+    margin-top: var(--margin-desktop);
+    margin-bottom: 64px;
+  }
+}
+
+@include desktop {
+  .basket-content {
+    @include flex($justify: space-between, $align: flex-start);
+    width: 1120px;
+  }
+}
+
+.basket-products {
+  @include box-shadow();
+  border-radius: 19px;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.basket-card {
+  width: 350px;
+  height: 115px;
+  @include flex($align: center);
+  position: relative;
+  border-radius: 19px;
+
+  &:hover {
+    background: var(--low-yellow);
+  }
+
+  @include tablet {
+    width: 501px;
+    height: 165px;
+  }
+
+  .product {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-right: 18px;
+
+    @include tablet {
+      width: 130px;
+      height: 130px;
+    }
+  }
+
+  .content {
+    .pizza-name {
+      font-size: 22px;
+      letter-spacing: 0.5px;
+      margin-bottom: 7px;
+
+      @include tablet {
+        font-size: 32px;
+      }
+    }
+
+    .size {
+      font-size: 14px;
+      color: var(--text-description);
+      margin-bottom: 11px;
+
+      @include tablet {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .quantity {
+    @include pAbsolute($right: 16px, $top: unset, $bottom: 13px);
+    border-radius: 100px;
+    height: 29px;
+    width: 88px;
+
+    @include tablet {
+      width: 130px;
+      height: 42px;
+      right: 40px;
+      bottom: 23px;
+    }
+
+    button {
+      img {
+        width: 16px;
+
+        @include tablet {
+          width: 22px;
+        }
+      }
+
+      &:hover img {
+        transform: scale(1.1);
+      }
+    }
+    p {
+      font-size: 20px;
+
+      @include tablet {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.remove-card {
+  display: none;
+}

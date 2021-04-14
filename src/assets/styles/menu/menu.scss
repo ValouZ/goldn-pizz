@@ -1,0 +1,100 @@
+.menu {
+  @include pFixed(0);
+  z-index: 5;
+  font-size: 20px;
+  width: 100%;
+
+  @include tablet {
+    font-size: 25px;
+  }
+
+  @include desktop {
+    top: 0;
+    bottom: unset;
+    margin-top: unset;
+  }
+
+  nav {
+    width: 100%;
+    background: var(--yellow);
+
+    @include desktop {
+      @include flex($justify: flex-end);
+    }
+  }
+}
+
+.list-items {
+  @include flex($justify: space-around, $align: center);
+  height: var(--menu-height);
+
+  @include desktop {
+    width: 35%;
+  }
+
+  a {
+    @include flex($justify: center, $align: center);
+    position: relative;
+    padding: 10px;
+  }
+
+  img {
+    height: 25px;
+    width: 25px;
+
+    @include tablet {
+      height: 35px;
+      width: 35px;
+    }
+  }
+}
+
+.home {
+  a {
+    width: 39px;
+    height: 39px;
+    background: white;
+    border-radius: 100%;
+
+    @include tablet {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.goldn-pizz {
+  margin-top: 26px;
+  font-size: 36px;
+
+  @include tablet {
+    margin-top: 40px;
+    font-size: 50px;
+  }
+
+  @include desktop {
+    @include pFixed($top: 12px);
+    z-index: 6;
+    margin-top: 0px;
+  }
+
+  a {
+    font-family: inherit;
+  }
+}
+
+.basket-counter {
+  @include flex($align: center, $justify: center);
+  @include pAbsolute($bottom: 5px, $right: 8px);
+  position: absolute;
+  background: black;
+  color: white;
+  width: 18px;
+  height: 18px;
+  font-size: 14px;
+  border-radius: 100%;
+}
