@@ -18,7 +18,7 @@ $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
   <label for="search">
     <img src="assets/images/rechercher.svg" alt="Rechercher">
   </label>
-  <input type="text" id='app-search-bar' placeholder="Rechercher">
+  <input type="text" id='app-search-bar' value="Goldn " placeholder="Rechercher">
 </section>
 
 
