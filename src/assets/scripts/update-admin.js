@@ -1,15 +1,22 @@
-
 // On récupère le bouton update
 let updateButton = document.getElementsByClassName("button__update");
 // Création d'une variable pour la longueur du bouton updatebutton
 let updateButtonLength = updateButton.length;
+let deleteButtons = document.getElementsByClassName("app-delete");
+deleteButtonsLength = deleteButtons.length;
 
-
-// Boucle qui permet d'ajouter des eventListener sur les boutons 
+// Boucle qui permet d'ajouter des eventListener sur les boutons
 for (let i = 0; i < updateButtonLength; i++) {
   updateButton[i].addEventListener("click", function (e) {
     e.preventDefault();
     updateAdmin(this);
+  });
+}
+
+for (let i = 0; i < deleteButtonsLength; i++) {
+  deleteButtons[i].addEventListener("click", function (e) {
+    e.preventDefault();
+    confirmDelete(this);
   });
 }
 
@@ -41,5 +48,11 @@ function updateAdmin(button) {
 function disableUpdate() {
   for (let i = 0; i < updateButtonLength; i++) {
     updateButton[i].disabled = true;
+  }
+}
+
+function confirmDelete(button) {
+  if (confirm("Êtes vous sur de vouloir supprimer cette ligne ?")) {
+    document.location.href = button.href;
   }
 }

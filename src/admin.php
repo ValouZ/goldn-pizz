@@ -55,7 +55,7 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
           <?= $users['tel_client'] ?>
         </td>
         <td class="td">
-          <a href="traitement/delete-users.php?id=<?= $users['id_client'] ?>">Supprimer</a>
+          <a class="app-delete" href="traitement/delete-users.php?id=<?= $users['id_client'] ?>">Supprimer</a>
         </td>
       </tr>
     <?php
@@ -75,7 +75,7 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
   <tbody>
 
     <tr>
-      
+
       <th class="th">Nom pizza</th>
       <th class="th">Prix</th>
       <th class="th">Description</th>
@@ -91,24 +91,24 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
           <input type="hidden" name="id-pizza" value="<?= $pizza['id_pizza'] ?>">
 
           <td class="td">
-            <input id="pizzanom" type="text" value="<?= $pizza['nom_pizza'] ?>" disabled="true" name="nom-pizza">
+            <input type="text" value="<?= $pizza['nom_pizza'] ?>" disabled="true" name="nom-pizza">
           </td>
           <td class="td">
-            <input id="pizzaprix" type="text" value="<?= $pizza['prix_pizza'] ?>" disabled="true" name="prix-pizza">
+            <input type="text" value="<?= $pizza['prix_pizza'] ?>" disabled="true" name="prix-pizza">
           </td>
           <td class="td">
-            <input id="pizzadescri" type="text" value="<?= $pizza['description_pizza'] ?>" disabled="true" name="descri-pizza">
+            <input class='large-field' type="text" value="<?= $pizza['description_pizza'] ?>" disabled="true" name="descri-pizza">
           </td>
           <td class="td">
             <button class="button__update">Modifier</button>
           </td>
           <td class="td">
-            <button class="button__validate hide" id="validate" name="validate">
+            <button class="button__validate hide" name="validate">
               Valider
             </button>
           </td>
           <td class="td">
-            <a href="traitement/delete-pizza.php?id=<?= $pizza['id_pizza'] ?>">Supprimer</a>
+            <a class="app-delete" href="traitement/delete-pizza.php?id=<?= $pizza['id_pizza'] ?>">Supprimer</a>
           </td>
         </tr>
       </form>
@@ -124,3 +124,5 @@ $resultatPizza = $reqPizza->fetchAll(PDO::FETCH_ASSOC);
 </body>
 
 </html>
+
+<!-- href="traitement/delete-pizza.php?id=<= :// $pizza['id_pizza'] ?>" -->
