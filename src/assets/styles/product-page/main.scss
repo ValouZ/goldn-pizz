@@ -91,3 +91,38 @@
   opacity: 1 !important;
   transform: translateX(0);
 }
+
+.back-to-index {
+  position: absolute;
+  left: 25px;
+  top: 0px;
+  transition: transform 0.5s ease-out;
+  padding: 10px;
+
+  @include tablet{
+    left: 50px;
+    top: 25px;
+  }
+
+  @include desktop{
+    top: -247px;
+  }
+
+  &:hover{
+    transform: translateX(-5px);
+    padding-right: 15px;
+
+    @include desktop{
+      transform: translateX(-10px);
+      padding-right: 20px;
+    }
+  }
+
+  img {
+    width: 30px;
+    transform: rotateZ(180deg);
+    @include desktop{
+      width: 40px;
+    }
+  }
+}

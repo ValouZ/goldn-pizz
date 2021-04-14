@@ -21,8 +21,6 @@ $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
   <input type="text" id='app-search-bar' value="Goldn " placeholder="Rechercher">
 </section>
 
-
-
 <section class="cards">
   <?php
   // Parcours le tableau $resultats pour nous permettre d'afficher toutes les pizzas

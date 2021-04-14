@@ -36,6 +36,7 @@ foreach ($resultats_pizza as $pizza) {
 
   <main class="product-background">
     <section class="background-info">
+      <a href="index.php" class="back-to-index"><img src="assets/images/arrow.svg" alt="Retour en arrière"></a>
       <div class="images">
         <!-- Affichage des images et des alts de la pizza choisi -->
         <img src="<?= $pizza['image1'] ?>" alt="<?= $pizza['alt'] ?>" class="pizza">
