@@ -1,3 +1,7 @@
 .cache
 node_modules
 dist/
+.htaccess
+
+*.css
+!main.css

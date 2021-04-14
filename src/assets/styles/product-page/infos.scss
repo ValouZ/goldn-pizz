@@ -1,0 +1,101 @@
+.info {
+  margin-top: 40px;
+
+  @include tablet {
+    margin-top: 60px;
+  }
+
+  @include desktop {
+    margin-top: 80px;
+  }
+
+  @include desktop {
+    @include flex($wrap: wrap);
+  }
+}
+
+.ingredients {
+  margin-bottom: 26px;
+
+  @include tablet {
+    margin-bottom: 50px;
+  }
+
+  @include desktop {
+    margin-bottom: 60px;
+    margin-right: 50px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  letter-spacing: 0.6px;
+  margin-bottom: 11px;
+
+  @include tablet {
+    font-size: 42px;
+  }
+}
+
+.items,
+.description p {
+  @include flex($wrap: wrap);
+  width: 355px;
+
+  @include tablet {
+    width: 744px;
+  }
+}
+
+.item {
+  @include flex($align: center);
+  height: 40px;
+  @include box-shadow();
+  border-radius: 50px;
+  padding-right: 9px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+
+  @include tablet {
+    height: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-right: 18px;
+  }
+
+  img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    margin: 0 5px;
+
+    @include tablet {
+      width: 43px;
+      height: 43px;
+      margin-right: 10px;
+    }
+  }
+
+  p {
+    font-family: "Oswald Light";
+    font-size: 16px;
+
+    @include tablet {
+      font-size: 26px;
+    }
+  }
+}
+
+.description {
+  p {
+    font-family: "Oswald Light";
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-align: justify;
+
+    @include tablet {
+      font-size: 18px;
+      width: 600px;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.form {
+  @include flex($direction: column, $align: center);
+
+  @include desktop {
+    align-items: flex-end;
+  }
+}
+
+.sign-up-selector {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  margin-bottom: 50px;
+  font-size: 24px;
+  color: #727272;
+  @include tablet {
+    font-size: 30px;
+  }
+}
+
+.sign-up-form-left-group {
+  margin-bottom: 50px;
+}
+
+.sign-up-form {
+  @include desktop {
+    @include flex($direction: row);
+  }
+}
+
+.sign-up-form div:not(:last-child) {
+  @include desktop {
+    margin-right: 50px;
+  }
+}
+
+.connect {
+  @include desktop {
+    margin-top: 50px;
+  }
+}
+
+.error,
+.success {
+  width: 100%;
+  padding: 0 10px;
+  margin-top: 30px;
+  max-width: 315px;
+  background: rgba($color: red, $alpha: 0.4);
+  border-radius: 100px;
+  text-align: center;
+  font-size: 16px;
+
+  @include tablet {
+    max-width: 400px;
+    font-size: 24px;
+  }
+
+  @include desktop{
+    margin-top: 0;
+    max-width: 900px;
+  }
+}
+
+.success {
+  background: rgba($color: green, $alpha: 0.4);
+  margin-bottom: 20px;
+}

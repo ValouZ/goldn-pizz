@@ -1,0 +1,28 @@
+@import "init/fonts.scss";
+@import "init/mixins.scss";
+@import "init/reset.scss";
+
+@import "menu/menu.scss";
+
+@import "index/searchbar.scss";
+@import "index/cards.scss";
+
+@import "product-page/main.scss";
+@import "product-page/pizza-size.scss";
+@import "product-page/price-component.scss";
+@import "product-page/infos.scss";
+
+@import "basket/products.scss";
+@import "basket/price-review.scss";
+@import "basket/order.scss";
+@import "basket/empty.scss";
+
+@import "ordered/ordered.scss";
+
+@import "profile/update.scss";
+
+@import "sign-in/form.scss";
+
+@import "sign-up/form.scss";
+
+@import "admin/admin.scss";

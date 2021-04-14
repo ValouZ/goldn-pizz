@@ -1,0 +1,75 @@
+.conclude {
+  @include flex($direction: column, $align: center);
+}
+
+.price-review {
+  @include flex($direction: column);
+  width: 350px;
+  margin-top: 23px;
+
+  @include tablet {
+    width: 400px;
+  }
+
+  &__item {
+    @include flex($justify: space-between);
+    font-size: 18px;
+
+    @include tablet {
+      font-size: 26px;
+    }
+
+    @include desktop {
+      font-size: 32px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
+
+    h4 {
+      color: var(--text-description);
+      font-family: "Oswald Light";
+    }
+  }
+
+  .total {
+    margin-top: 5px;
+    h4 {
+      font-size: 24px;
+      color: black;
+
+      @include tablet {
+        font-size: 30px;
+      }
+
+      @include desktop {
+        font-size: 36px;
+      }
+    }
+
+    .price {
+      font-size: 24px;
+
+      @include tablet {
+        font-size: 30px;
+      }
+
+      @include desktop {
+        font-size: 36px;
+      }
+
+      span {
+        font-size: 18px;
+
+        @include tablet {
+          font-size: 24px;
+        }
+
+        @include desktop {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}

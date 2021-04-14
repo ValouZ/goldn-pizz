@@ -1,0 +1,128 @@
+.only-desktop {
+  display: none;
+
+  @include desktop {
+    display: initial;
+  }
+}
+
+.product-background {
+  position: absolute;
+  top: 59px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, var(--low-yellow) 50%, #ffffff 50%);
+  width: 100%;
+  padding-bottom: calc(2 * var(--menu-height));
+
+  @include tablet {
+    top: 85px;
+  }
+
+  @include desktop {
+    top: 0;
+  }
+}
+
+.background-info {
+  @include flex($direction: column, $align: center);
+  position: relative;
+  width: 100%;
+  margin-top: 153px;
+  height: 100%;
+  background: white;
+  border-radius: 27px 27px 0 0;
+  padding-top: 80px;
+
+  @include tablet {
+    padding-top: 95px;
+  }
+
+  @include desktop {
+    margin-top: 332px;
+    padding: 180px 100px 75px 100px;
+    align-items: unset;
+  }
+
+  .pizza {
+    width: 160px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+
+    @include tablet {
+      width: 190px;
+    }
+    @include desktop {
+      width: 250px;
+    }
+  }
+
+  .pizza {
+    @include pAbsolute($top: 0, $left: 50%);
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+
+    @include desktop {
+      left: 100px;
+      top: -142px;
+      transform: translate(0, 0);
+    }
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    @include tablet {
+      font-size: 50px;
+      margin-top: 35px;
+    }
+
+    @include desktop {
+      @include pAbsolute($top: -44px, $left: 415px);
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.displayPizza {
+  opacity: 1 !important;
+  transform: translateX(0);
+}
+
+.back-to-index {
+  position: absolute;
+  left: 25px;
+  top: 0px;
+  transition: transform 0.5s ease-out;
+  padding: 10px;
+
+  @include tablet{
+    left: 50px;
+    top: 25px;
+  }
+
+  @include desktop{
+    top: -247px;
+  }
+
+  &:hover{
+    transform: translateX(-5px);
+    padding-right: 15px;
+
+    @include desktop{
+      transform: translateX(-10px);
+      padding-right: 20px;
+    }
+  }
+
+  img {
+    width: 30px;
+    transform: rotateZ(180deg);
+    @include desktop{
+      width: 40px;
+    }
+  }
+}
